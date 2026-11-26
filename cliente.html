@@ -474,8 +474,8 @@ const OLHO_F='<svg class="eye" viewBox="0 0 24 24" width="20" height="20" aria-h
 function dh(iso){try{const d=new Date(iso);return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})+' às '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}catch(e){return ''}}
 function chaveChip(){if(!DB||!DB.__site||CLIENTE)return;let c=document.getElementById('chavechip');if(!c){c=document.createElement('div');c.id='chavechip';document.body.appendChild(c)}
   if(DB.temChave()){c.innerHTML='<span>'+OLHO_A+' Olho liberado neste aparelho</span><button type="button">Sair</button>';c.querySelector('button').onclick=()=>{DB.sairChave();chaveChip();toast('Chave removida deste aparelho.')}}
-  else{c.innerHTML='<span>'+OLHO_F+' Só visualização</span><button type="button">Liberar edição</button>';c.querySelector('button').onclick=()=>abrirChave()}}
-function abrirChave(depois){const o=document.createElement('div');o.className='chovl';o.innerHTML=`<form class="chbox" autocomplete="off"><h3>Liberar o olho neste aparelho</h3><p>Este aparelho ainda não foi liberado. Abra o <b>link de liberação</b> que a Moreira enviou para a equipe, ou cole a chave abaixo (uma única vez).</p>
+  else{c.remove()}}
+function abrirChave(depois){const o=document.createElement('div');o.className='chovl';o.innerHTML=`<form class="chbox" autocomplete="off"><h3>Falta abrir o link da equipe</h3><p>Abra uma vez, neste aparelho, o <b>link do olho</b> enviado no grupo do administrativo. Depois é só clicar no olho, sem pedir mais nada.</p>
   <label>Chave de acesso da equipe<span class="chpw"><input name="chave" type="password" required placeholder="Cole aqui a chave"><button type="button" class="chver" aria-label="Mostrar chave">${OLHO_A}</button></span></label>
   <p class="cherr" hidden></p><div class="chbtns"><button type="button" class="chno">Cancelar</button><button type="submit" class="chok">Salvar e liberar</button></div></form>`;
   document.body.appendChild(o);const f=o.querySelector('form');f.chave.focus();
