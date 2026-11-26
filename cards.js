@@ -52,7 +52,7 @@ function noticia(cv,i){
   const lay=(s,draw)=>{
     let hs=70;for(;hs>=46;hs-=2){x.font=`900 ${hs}px ${F}`;const n=lines(x,head,tw).length+(dest?lines(x,dest,tw).length:0);if(n<=3&&lines(x,head,tw).every(l=>x.measureText(l).width<=tw))break}
     const lh=hs*1.02;let y=200+hs*.8;x.font=`900 ${hs}px ${F}`;const l1=lines(x,head,tw),l2=dest?lines(x,dest,tw):[];
-    if(draw){x.fillStyle=C.branco;l1.forEach((l,n)=>x.fillText(l,M,y+n*lh));x.fillStyle=C.ouroL;l2.forEach((l,n)=>x.fillText(l,M,y+(l1.length+n)*lh))}
+    if(draw){x.fillStyle=C.branco;l1.forEach((l,n)=>x.fillText(l,M,y+n*lh));x.fillStyle=C.branco;l2.forEach((l,n)=>x.fillText(l,M,y+(l1.length+n)*lh))}
     const fs=Math.round(31*s),flh=Math.round(fs*1.38);y+=(l1.length+l2.length-1)*lh+Math.round(hs*.6)+fs;
     const fN=`400 ${fs}px ${F}`,fB=`700 ${fs}px ${F}`;const sl=rlines(x,k.sub,tw,fN,fB);
     if(draw)rdraw(x,sl,M,y,flh,{fN,fB,cN:'rgba(255,255,255,.9)',cB:C.ouroL,fs});
@@ -134,7 +134,7 @@ function comunicado(cv,o){
   const g=x.createLinearGradient(0,0,W*.5,headH);g.addColorStop(0,C.azul);g.addColorStop(1,C.a700);x.fillStyle=g;x.fillRect(0,0,W,headH);
   chev(x,700,30,200,'#fff');logo(x,assets.logoBranco,M,70,280);
   x.textAlign='right';x.fillStyle=C.ouroL;x.font=`700 26px ${F}`;x.fillText(('Comunicado ao cliente · '+br(o.data)).toUpperCase(),W-M,112);x.textAlign='left';
-  x.font=`900 ${hs}px ${F}`;let y=214;x.fillStyle=C.branco;hl1.forEach((l,n)=>x.fillText(l,M,y+n*hs*1.04));y+=hl1.length*hs*1.04;x.fillStyle=C.ouroL;hl2.forEach((l,n)=>x.fillText(l,M,y+n*hs*1.04));
+  x.font=`900 ${hs}px ${F}`;let y=214;x.fillStyle=C.branco;hl1.forEach((l,n)=>x.fillText(l,M,y+n*hs*1.04));y+=hl1.length*hs*1.04;x.fillStyle=C.branco;hl2.forEach((l,n)=>x.fillText(l,M,y+n*hs*1.04));
   const ph=Ht-128-40-panelTop;x.save();x.shadowColor='rgba(10,16,26,.14)';x.shadowBlur=30;x.shadowOffsetY=10;x.fillStyle='#fff';rr(x,M,panelTop,tw,ph,24);x.fill();x.restore();
   x.fillStyle=C.ouro;rr(x,M,panelTop,tw,8,[24,24,0,0]);x.fill();
   lay(s,true,panelTop+pad);
