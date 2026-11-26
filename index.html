@@ -226,6 +226,75 @@ a.btn.pri{background:var(--azul);color:#fff}
 .tabs button[aria-selected=true]{background:var(--azul);color:#fff}
 .tabs button:not([aria-selected=true]):hover{background:var(--soft)}
 .vendo{margin:10px 0 0;color:var(--mute);font-size:15px}.vendo b{color:var(--navy)}
+
+/* ===== v4: área do cliente e visibilidade ===== */
+.vis{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:14px;padding:10px 12px;border-radius:10px;background:#E9F6EF;border:1px solid #BFE3CF}
+.vis.off{background:#FFF4E5;border-color:#F0D3A6}
+.visbtn{min-height:38px;font-size:14px;border-color:#1F8F55;color:#1F8F55;background:#fff}
+.vis.off .visbtn{border-color:#B7791F;color:#8A5A12}
+.visbtn[disabled]{opacity:1;cursor:default}
+.vis small{color:var(--mute);font-size:13px}
+.eye{font-size:16px}
+.cliente .rule,.cliente .tools,.cliente #status,.cliente #alerta,.cliente #list,.cliente #areaTabs{display:none!important}
+.cliente .hero{padding-bottom:26px}
+#capp{margin-top:6px}
+.cnav{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cnav button{display:flex;align-items:center;gap:14px;text-align:left;background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px 18px;min-height:84px;color:var(--navy);position:relative}
+.cnav button b{display:block;font-size:19px}.cnav button small{display:block;font-size:13.5px;color:var(--mute);font-weight:500;margin-top:2px}
+.cnav button[aria-selected=true]{border-color:var(--azul);background:var(--azul);color:#fff}.cnav button[aria-selected=true] small{color:rgba(255,255,255,.8)}
+.cico{flex:none;width:46px;height:46px;border-radius:12px;background:#E3EAF5;color:var(--azul);display:grid;place-items:center;font-weight:900;font-size:17px}
+.cico.dp{background:#F6EBCB;color:#7A5F12}
+.cnav button[aria-selected=true] .cico{background:rgba(255,255,255,.16);color:#fff}
+.cnt{position:absolute;top:10px;right:12px;background:var(--ouroL);color:var(--navy);font-style:normal;font-weight:800;font-size:12px;border-radius:999px;padding:2px 9px}
+.cnt[hidden]{display:none}
+.cview{display:inline-flex;gap:6px;margin:16px 0 6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:5px}
+.cview button{border:0;min-height:42px;border-radius:8px;padding:0 18px;color:var(--navy);background:none}
+.cview button[aria-selected=true]{background:var(--navy);color:#fff}
+.ccard{background:#fff;border:1px solid var(--line);border-top:4px solid var(--azul);border-radius:14px;padding:20px 22px;margin:14px 0;box-shadow:0 2px 10px rgba(29,46,70,.05)}
+.ccard.is-dp{border-top-color:var(--ouro)}
+.cmeta{font-size:13px;color:var(--mute);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.cnovo{background:var(--azul);color:#fff;border-radius:6px;padding:1px 8px;font-weight:700;font-size:12px}
+.cimp{background:var(--ouro);color:#111;border-radius:6px;padding:1px 8px;font-weight:700;font-size:12px}
+.ccard h3{font-size:21px;line-height:1.3;color:var(--navy);margin:6px 0 8px}
+.csub{font-size:16.5px;color:#26354D;margin:0}
+.ccard mark{background:#F5E9C2;color:var(--navy);font-weight:700;padding:0 3px;border-radius:3px}
+.cbloco{margin-top:14px}.cbloco span,.cquando span,.cacao2 span{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-weight:700;margin-bottom:4px}
+.cbloco ul{margin:0;padding-left:20px}.cbloco li{margin:5px 0;font-size:16px}
+.cquando{margin-top:14px;display:inline-block;background:#FFF8E6;border:1px solid #EBD9A6;border-radius:10px;padding:8px 14px;font-weight:700;color:var(--navy)}
+.cacao2{margin-top:14px;background:var(--soft);border-left:4px solid var(--azul);border-radius:8px;padding:12px 14px;font-weight:700;color:var(--navy);font-size:16px}
+.cfoot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--mute)}
+a.btn.sm,button.sm{min-height:38px;font-size:14px;padding:0 14px}
+.cimg{margin-top:14px;max-width:360px}.cimg img{width:100%;border-radius:10px;display:block;margin-bottom:8px;box-shadow:0 4px 14px rgba(29,46,70,.18)}.cimg[hidden]{display:none}.cimg button{width:100%}
+.csemana{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:#FFF8E6;border:1px solid #EBD9A6;border-radius:12px;padding:12px 14px;margin:10px 0}
+.csemana>b{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#7A5F12;margin-right:4px}
+.achip.fer{background:#E9F6EF;border-color:#BFE3CF}
+button.gold2{background:var(--ouroL);border-color:var(--ouroL);color:var(--navy)}
+.cmes{font-size:17px;color:var(--navy);margin:22px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+.cprazo{display:grid;grid-template-columns:62px minmax(0,1fr);gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0}
+.cprazo.fer{background:#F1FAF5;border-color:#BFE3CF}
+.cdia{background:var(--navy);color:#fff;border-radius:10px;text-align:center;padding:6px 0}.cdia b{display:block;font-size:22px;line-height:1.1}.cdia small{font-size:12px;opacity:.8}
+.cprazo.fer .cdia{background:#1F8F55}
+.ctit{font-weight:700;color:var(--navy);font-size:16px}.cprazo p{margin:4px 0 0;color:var(--mute);font-size:14.5px}
+.tfer{background:#1F8F55;color:#fff;border-radius:6px;padding:1px 8px;font-size:12px}
+@media(max-width:640px){.cnav{grid-template-columns:1fr}.cview{display:flex}.cview button{flex:1}.ccard{padding:16px}}
+
+.gbanner{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:linear-gradient(120deg,var(--navy),var(--azul));color:#fff;border:0;border-radius:16px;padding:16px 18px;margin:10px 0 4px;min-height:80px;cursor:pointer}
+.gbanner b{display:block;font-size:18px}.gbanner small{display:block;color:rgba(255,255,255,.82);font-weight:500;font-size:14px;margin-top:2px}
+.gbico{flex:none;width:48px;height:48px;border-radius:12px;background:var(--ouroL);color:var(--navy);display:grid;place-items:center;font-weight:900}
+.garr{margin-left:auto;font-size:30px;color:var(--ouroL)}
+.gtop{display:flex;flex-direction:column;gap:10px;align-items:flex-start;margin:12px 0}.gtop h2{margin:0;color:var(--navy)}.gtop p{margin:4px 0 0;color:var(--mute)}
+.gitem{background:#fff;border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:0 16px}
+.gitem summary{min-height:60px;font-size:17px;color:var(--navy);gap:12px}
+.gic{flex:none;width:34px;height:34px;border-radius:10px;background:#E3EAF5;color:var(--azul);display:grid;place-items:center;font-weight:900;font-size:13px}
+.gitem[open] .gic{background:var(--azul);color:#fff}
+.gbody{padding:2px 0 16px;font-size:16px;color:#26354D}.gbody p{margin:8px 0}
+.gl{padding-left:20px;margin:6px 0}.gl li{margin:7px 0}
+.gt{width:100%;border-collapse:collapse;font-size:15px;margin:6px 0}.gt th,.gt td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}.gt th{background:var(--soft);color:var(--navy)}
+.gfonte{font-size:13px;color:var(--mute)}
+.gcta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:#FFF8E6;border:1px solid #EBD9A6;border-radius:14px;padding:14px 16px;margin:16px 0}
+@media(max-width:600px){.gt{font-size:13.5px}}
+.tp.feriado,.ge.feriado{background:#1F8F55;color:#fff}
+.ccid{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0;font-weight:700;color:var(--navy);font-size:15px}.ccid select{height:42px;border:1px solid var(--line);border-radius:8px;padding:0 10px;font:inherit;font-size:15px;background:#fff}
 </style>
 </head>
 <body>
@@ -257,7 +326,7 @@ a.btn.pri{background:var(--azul);color:#fff}
     <select id="perfil" aria-label="Filtrar por tipo de cliente"><option value="">Todos os clientes</option><option value="simples">Simples Nacional</option><option value="mei">MEI</option><option value="presumido">Lucro Presumido</option><option value="real">Lucro Real</option><option value="comercio">Comércio e indústria</option><option value="empregador">Empresas com empregados</option><option value="pf">Pessoa física</option></select>
     <select id="setor" aria-label="Filtrar por área"><option value="">Fiscal e DP</option><option value="fiscal">Só fiscal</option><option value="dp">Só Departamento Pessoal</option></select>
     <select id="imp" aria-label="Filtrar por impacto">
-      <option value="">Todos os impactos</option><option value="alto">Impacto alto</option><option value="medio">Impacto médio</option><option value="baixo">Impacto baixo</option>
+      <option value="">Todos os impactos</option><option value="vis:on">Visíveis para o cliente</option><option value="vis:off">Ocultas / aguardando aprovação</option><option value="alto">Impacto alto</option><option value="medio">Impacto médio</option><option value="baixo">Impacto baixo</option>
     </select>
   </div>
   <div class="cal" id="cal" hidden><div class="calhead"><h2 style="margin:0">Calendário semanal</h2><span class="lede" style="font-size:14px">Cada semana guarda o seu resumo. Escolha uma semana para ver o post e as atualizações dela.</span></div><div class="weeks" id="weeks" role="tablist"></div></div>
@@ -268,6 +337,15 @@ a.btn.pri{background:var(--azul);color:#fff}
       <div class="row"><button class="pri" id="dlWeek">Baixar resumo semanal</button><button id="copyWeek">Copiar legenda</button></div>
       <div class="msg" id="weekCap" style="margin-top:14px"></div></div>
   </section>
+  <div id="capp" hidden>
+    <div class="cnav" role="tablist" aria-label="Área">
+      <button role="tab" data-a="fiscal" aria-selected="true"><span class="cico">F</span><span><b>Fiscal</b><small>Impostos, notas fiscais e declarações</small></span><em class="cnt" data-cnt="fiscal"></em></button>
+      <button role="tab" data-a="dp" aria-selected="false"><span class="cico dp">DP</span><span><b>Departamento Pessoal</b><small>Funcionários, folha, FGTS, escalas e feriados</small></span><em class="cnt" data-cnt="dp"></em></button>
+    </div>
+    <div class="cview" role="tablist" aria-label="O que ver"><button role="tab" data-v="nov" aria-selected="true">Novidades</button><button role="tab" data-v="cal" aria-selected="false">Calendário e prazos</button></div>
+    <div id="cappBox"></div>
+    <div id="cbody"></div>
+  </div>
   <div class="areatabs" id="areaTabs" hidden><div class="tabs" role="tablist" aria-label="Escolha o assunto"><button role="tab" data-area="" aria-selected="true">Fiscal e Departamento Pessoal</button><button role="tab" data-area="fiscal" aria-selected="false">Fiscal</button><button role="tab" data-area="dp" aria-selected="false">Departamento Pessoal</button></div><p class="vendo" id="vendo"></p></div>
   <div id="list"><p class="empty">Carregando atualizações…</p></div>
   <p class="foot interno">Todas as fontes são órgãos oficiais do governo; o link de cada uma está na própria atualização. Confira a norma publicada antes de orientar o cliente. Atualizado automaticamente todos os dias.</p>
@@ -297,7 +375,7 @@ const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const safeUrl=u=>/^https:\/\//.test(String(u||''))?String(u):'';
 const fmt=d=>{const [y,m,dd]=String(d||'').split('-');return dd?`${dd}/${m}/${y}`:esc(d)};
 const IMP={alto:'Impacto alto',medio:'Impacto médio',baixo:'Impacto baixo'};
-let items=[],prazos=[],base=[],meta={};
+let items=[],prazos=[],base=[],meta={};let DB=null;
 const CLIENTE=!!window.MODO_CLIENTE||/[?&]cliente/.test(location.search);
 if(CLIENTE){document.documentElement.classList.add('cliente');}
 const WA='5594991198085';
@@ -335,7 +413,7 @@ fetch('prazos_base.json?v=2',{cache:'no-store'}).then(r=>r.json()).then(b=>{base
 function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),1800)}
 async function copy(text){try{await navigator.clipboard.writeText(text);toast('Texto copiado')}catch(e){toast('Não foi possível copiar — selecione o texto manualmente')}}
 
-const TIPO={imposto:'Guia / imposto',declaracao:'Declaração',trabalhista:'Trabalhista',reforma:'Reforma Tributária',outros:'Prazo'};let tipoSel='';
+const TIPO={imposto:'Guia / imposto',declaracao:'Declaração',trabalhista:'Trabalhista',reforma:'Reforma Tributária',outros:'Prazo',feriado:'Feriado'};let tipoSel='';
 const DSEM=['dom','seg','ter','qua','qui','sex','sáb'];
 function renderTrack(){
   const today=hoje();const all=allP();renderAlerta(all);
@@ -350,6 +428,7 @@ function renderTrack(){
   $('#calList').innerHTML=meses.map(mk=>{const [y,m]=mk.split('-');let nome=new Date(+y,+m-1,1).toLocaleDateString('pt-BR',{month:'long',year:'numeric'});nome=nome.charAt(0).toUpperCase()+nome.slice(1);
     return `<div class="mes">${esc(nome)}</div>`+list.filter(p=>p.data.startsWith(mk)).map(p=>{const dt=new Date(p.data+'T12:00:00');const u=safeUrl(p.fonte_url);
       return `<div class="cl${p.data<today?' past':''}"><div class="d">${esc(p.data.slice(8))}/${esc(m)}<small>${DSEM[dt.getDay()]}</small></div><div><span class="tp ${esc(p.tipo||'')}">${esc(TIPO[p.tipo]||'Prazo')}</span><div><b>${esc(p.titulo)}</b></div>${p.detalhe?`<p>${esc(p.detalhe)}</p>`:''}<div class="clinks">${u?`<a href="${esc(u)}" target="_blank" rel="noopener">Fonte: ${esc(p.fonte_nome||'oficial')}</a>`:(p.fonte_nome?`<span>Fonte: ${esc(p.fonte_nome)}</span>`:'')}${p.data>=today?`<a href="${esc(gcal(p))}" target="_blank" rel="noopener">+ Google Agenda</a><button class="lnk" data-ics="${esc(p.id||p.data)}">+ Outlook/celular (.ics)</button>`:''}</div></div></div>`}).join('')}).join('')||'<p>Nenhum prazo deste tipo.</p>';
+  if(CLIENTE&&cView==='cal')renderCliente();
   renderGrid(list);$('#calGrid').hidden=calView!=='mes';$('#calList').hidden=calView==='mes';
 }
 function renderAlerta(all){const t=hoje();const w=all.filter(p=>{const k=ddiff(p.data);return k>=0&&k<=7});
@@ -368,10 +447,11 @@ $('#calList').addEventListener('click',e=>{const b=e.target.closest('button[data
 $('#tipoBtns').addEventListener('click',e=>{const b=e.target.closest('button[data-tipo]');if(!b)return;tipoSel=b.dataset.tipo;renderTrack()});
 function render(){
   const q=$('#q').value.trim().toLowerCase(),imp=$('#imp').value,st=$('#setor').value,pf=$('#perfil').value;
-  const W=CLIENTE?null:((selWeek&&selWeek!=='todas')?semana():(selWeek==='todas'?null:semana()));const f=items.filter(i=>(!W||(i.data>=W.ini&&i.data<=W.fim))&&(!imp||i.impacto===imp)&&(!st||(i.setor||'fiscal')===st)&&(!pf||perfis(i).includes(pf)||perfis(i).includes('todos'))&&(!q||[i.titulo,i.orgao,i.resumo,i.quem,i.acao].join(' ').toLowerCase().includes(q)))
+  const W=CLIENTE?null:((selWeek&&selWeek!=='todas')?semana():(selWeek==='todas'?null:semana()));const f=items.filter(i=>(!W||(i.data>=W.ini&&i.data<=W.fim))&&(!imp||(imp==='vis:on'?i.cliente!==false:imp==='vis:off'?i.cliente===false:i.impacto===imp))&&(!st||(i.setor||'fiscal')===st)&&(!pf||perfis(i).includes(pf)||perfis(i).includes('todos'))&&(!q||[i.titulo,i.orgao,i.resumo,i.quem,i.acao].join(' ').toLowerCase().includes(q)))
     .sort((a,b)=>String(b.data).localeCompare(String(a.data)));
+  if(CLIENTE){renderCliente();return}
   if(!f.length){if(CLIENTE)$('#vendo').innerHTML='Nenhuma notícia encontrada para esta escolha.';$('#list').innerHTML=`<p class="empty">${items.length?'Nada encontrado com esses filtros.':'Ainda não há atualizações registradas.'}</p>`;return}
-  if(CLIENTE){const nome={'':'Fiscal e Departamento Pessoal',fiscal:'Fiscal (impostos, notas e obrigações)',dp:'Departamento Pessoal (folha, jornada, FGTS e 13º)'}[st];$('#vendo').innerHTML=`Você está vendo <b>${f.length} ${f.length===1?'notícia':'notícias'}</b> de <b>${esc(nome)}</b>.`;$('#list').innerHTML=f.map(clienteItem).join('');return}
+  if(CLIENTE){renderCliente();return;const nome={'':'Fiscal e Departamento Pessoal',fiscal:'Fiscal (impostos, notas e obrigações)',dp:'Departamento Pessoal (folha, jornada, FGTS e 13º)'}[st];$('#vendo').innerHTML=`Você está vendo <b>${f.length} ${f.length===1?'notícia':'notícias'}</b> de <b>${esc(nome)}</b>.`;$('#list').innerHTML=f.map(clienteItem).join('');return}
   const days=[...new Set(f.map(i=>i.data))];
   $('#list').innerHTML=days.map(d=>{
     const g=f.filter(i=>i.data===d);
@@ -381,6 +461,7 @@ function render(){
       <div class="head"><div><div class="org"><b class="area ${i.setor==='dp'?'dp':''}">${i.setor==='dp'?'Departamento Pessoal':'Fiscal'}</b> · ${esc(i.orgao)}</div><h3>${esc(i.titulo)}</h3></div><span class="tag ${esc(i.impacto)}">${esc(IMP[i.impacto]||i.impacto)}</span></div>
       <p>${esc(i.resumo)}</p>
       <div class="meta"><div><span>Quem é afetado</span>${esc(i.quem)}</div><div><span>O que fazer</span>${esc(i.acao)}</div><div><span>Fonte oficial</span>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(i.fonte_nome||'Abrir fonte')}</a>`:esc(i.fonte_nome)}</div></div>
+      <div class="vis ${i.cliente===false?'off':'on'}"><button class="visbtn" data-vis="${esc(i.id)}" ${DB&&!DB.__ro?'':'disabled'} aria-pressed="${i.cliente!==false}"><span class="eye">${i.cliente===false?'⊘':'👁'}</span> ${i.cliente===false?'Oculto para o cliente':'Visível para o cliente'}</button><small>${i.cliente===false?(i.aguardando?'Nova notícia aguardando sua aprovação. ':'')+'Não aparece no aplicativo nem na página do cliente.':'Aparece no aplicativo e na página do cliente.'}${DB&&!DB.__ro?'':' Altere no radar do Claude.'}</small></div>
       <div class="perf">${perfis(i).filter(x=>x!=='todos').map(x=>`<span>${esc(PERFIS[x])}</span>`).join('')||'<span>Todos os clientes</span>'}</div>
       <div class="row acts"><a class="btn wa" href="${esc(waLink(waText(i)))}" target="_blank" rel="noopener">Enviar no WhatsApp</a><button data-leg="${esc(i.id)}">Copiar legenda do Instagram</button><button data-id="${esc(i.id)}">Copiar comunicado</button></div>
       <details><summary>Ver texto do comunicado</summary><div class="msg">${esc(i.comunicado)}</div></details>
@@ -400,10 +481,81 @@ function clienteItem(i){const u=safeUrl(i.fonte_url);const fale='https://wa.me/'
     <div class="row acts"><a class="btn pri" href="${esc(fale)}" target="_blank" rel="noopener">Falar com a Moreira</a><a class="btn wa" href="${esc(waLink(waText(i)))}" target="_blank" rel="noopener">Compartilhar no WhatsApp</a></div>
     <p class="cfonte">Fonte oficial: ${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(i.fonte_card||i.fonte_nome||'abrir')}</a>`:esc(i.fonte_card||i.fonte_nome||'')}</p>
   </div><aside class="imedia"><img data-post="${esc(i.id)}" alt="Card da notícia"><button class="pri" data-dlpost="${esc(i.id)}">Baixar imagem</button></aside></article>`}
+/* ===== Área do cliente v4 ===== */
+let cCidade=(()=>{try{return localStorage.getItem('radar_cidade')||''}catch(e){return ''}})();
+const CIDADES=['Marabá','Parauapebas','Castanhal','Xinguara','Itupiranga'];
+let cArea=(()=>{try{return localStorage.getItem('radar_area')||'fiscal'}catch(e){return 'fiscal'}})(),cView='nov';
+const vistosAntes=(()=>{try{const v=localStorage.getItem('radar_vistos_c');return v?JSON.parse(v):null}catch(e){return null}})();
+let vistosSalvo=false;
+const isNovo=i=>vistosAntes&&!vistosAntes.includes(i.id);
+const visivel=i=>i.cliente!==false;
+function prazoArea(p){if(p.area)return p.area;if(p.tipo==='trabalhista'||p.tipo==='feriado')return 'dp';
+  return /FGTS|eSocial|13º|folha|DARF da DCTFWeb|DCTFWeb|INSS|jornada|feriado|sindic|admiss|férias|rescis|funcion|invent[aá]rio/i.test(p.titulo+' '+(p.detalhe||''))?(/invent[aá]rio/i.test(p.titulo)?'fiscal':'dp'):'fiscal'}
+function amigo(p){const t=p.titulo;const m=t.match(/\((compet[eê]ncia [^)]*)\)/i);const comp=m?' · '+m[1]:'';
+  const R=[[/^DAS-MEI/i,'Guia mensal do MEI (DAS-MEI)'],[/^DAS do Simples/i,'Guia do Simples Nacional (DAS)'],[/^FGTS mensal/i,'Guia do FGTS dos funcionários'],[/^DARF da DCTFWeb/i,'Guia do INSS e do IR descontado dos funcionários'],[/^eSocial: fechamento/i,'Envio da folha de pagamento ao governo (eSocial)'],[/^DCTFWeb e eSocial da folha do 13/i,'Envio da folha do 13º salário ao governo'],[/^DCTFWeb/i,'Declaração do INSS da folha (DCTFWeb)'],[/^EFD-Reinf/i,'Declaração de retenções de impostos (EFD-Reinf)'],[/^EFD-Contribui/i,'Declaração do PIS e da Cofins (EFD-Contribuições)'],[/^PIS\/Cofins/i,'Guia do PIS e da Cofins'],[/^IPI/i,'Guia do IPI (indústrias)'],[/^IRPJ e CSLL por estimativa/i,'Guia do IR e da CSLL da empresa (Lucro Real, mensal)'],[/^IRPJ e CSLL trimestrais/i,'Guia do IR e da CSLL da empresa (trimestral)'],[/^Carnê-leão/i,'Carnê-leão: IR sobre aluguel ou serviços recebidos de pessoa física']];
+  for(const [re,nome] of R)if(re.test(t))return nome+comp;return t}
 function MoreiraHL(t){return esc(String(t||'')).replace(/\*\*(.+?)\*\*/g,'<mark>$1</mark>')}
+function cCard(i){const u=safeUrl(i.fonte_url);const fale='https://wa.me/'+WA+'?text='+encodeURIComponent('Olá, Moreira! Vi no aplicativo a notícia "'+P(i.card_titulo||i.titulo)+(i.card_destaque?' '+P(i.card_destaque):'')+'" e quero saber se isso afeta a minha empresa.');
+  return `<article class="ccard${i.setor==='dp'?' is-dp':''}">
+  <div class="cmeta">${esc(fmt(i.data))}${isNovo(i)?' <span class="cnovo">Novo</span>':''}${i.impacto==='alto'?' <span class="cimp">Importante</span>':''}</div>
+  <h3>${esc(P(i.card_titulo||i.titulo))}${i.card_destaque?' '+esc(P(i.card_destaque)):''}</h3>
+  <p class="csub">${MoreiraHL(i.card_sub||i.resumo)}</p>
+  ${(i.card_pontos||[]).length?`<div class="cbloco"><span>O que muda para você</span><ul>${i.card_pontos.map(x=>`<li>${MoreiraHL(x)}</li>`).join('')}</ul></div>`:''}
+  ${i.card_quando?`<div class="cquando"><span>Quando</span>${esc(P(i.card_quando))}</div>`:''}
+  <div class="cacao2"><span>O que você deve fazer</span>${esc(P(i.card_acao||i.acao))}</div>
+  <div class="cfoot"><span>Fonte oficial: ${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(i.fonte_card||i.fonte_nome||'abrir')}</a>`:esc(i.fonte_card||i.fonte_nome||'')}</span>
+   <span class="row"><a class="btn pri sm" href="${esc(fale)}" target="_blank" rel="noopener">Falar com a Moreira</a><a class="btn wa sm" href="${esc(waLink(waText(i)))}" target="_blank" rel="noopener">Compartilhar</a><button class="sm" data-verimg="${esc(i.id)}">Ver imagem</button></span></div>
+  <div class="cimg" hidden><img data-post="${esc(i.id)}" alt="Card da notícia"><button class="pri" data-dlpost="${esc(i.id)}">Baixar imagem</button></div>
+</article>`}
+
+const GUIA=[
+{t:'O que é a Reforma Tributária',ic:'1',h:`<p>É a mudança na forma de cobrar os impostos sobre o consumo (o que se paga ao comprar e vender produtos e serviços). <b>Cinco impostos atuais serão trocados por dois novos</b>, e haverá ainda um imposto extra só para produtos que fazem mal à saúde ou ao meio ambiente.</p><p>O governo afirma que a ideia não é aumentar o total de impostos pagos no país, e sim simplificar a cobrança.</p>`,f:['Ministério da Fazenda','https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria/perguntas-e-respostas']},
+{t:'Quais impostos mudam',ic:'2',h:`<table class="gt"><tr><th>Como é hoje</th><th>Como vai ficar</th><th>Quando</th></tr><tr><td>PIS e Cofins (federais)</td><td><b>CBS</b> – Contribuição sobre Bens e Serviços</td><td>A partir de 2027</td></tr><tr><td>IPI (federal)</td><td>Zerado (exceto alguns produtos da Zona Franca de Manaus) e criação do <b>Imposto Seletivo</b></td><td>A partir de 2027</td></tr><tr><td>ICMS (estadual) e ISS (municipal)</td><td><b>IBS</b> – Imposto sobre Bens e Serviços</td><td>Aos poucos, de 2029 a 2033</td></tr></table><p>O <b>Imposto Seletivo</b> será cobrado sobre itens como veículos, cigarros e bebidas alcoólicas e açucaradas.</p>`,f:['Ministério da Fazenda','https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria/perguntas-e-respostas']},
+{t:'Calendário da mudança (2026 a 2033)',ic:'3',h:`<ul class="gl"><li><b>2026 – ano de teste:</b> as notas já mostram a CBS (0,9%) e o IBS (0,1%), mas <b>não há pagamento</b> desses valores para quem cumpre as obrigações. Os impostos atuais continuam iguais.</li><li><b>2027:</b> a CBS passa a ser cobrada de verdade e <b>PIS e Cofins acabam</b>. Começa o Imposto Seletivo. O IBS fica simbólico (0,05% estadual + 0,05% municipal) em 2027 e 2028.</li><li><b>2029 a 2032:</b> ICMS e ISS diminuem aos poucos (10% em 2029, 20% em 2030, 30% em 2031 e 40% em 2032) enquanto o IBS aumenta.</li><li><b>2033:</b> ICMS, ISS e IPI acabam. Ficam só CBS, IBS e Imposto Seletivo.</li></ul>`,f:['Ministério da Fazenda','https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria/perguntas-e-respostas/como-sera-a-transicao-para']},
+{t:'Alíquotas: quanto vai custar',ic:'%',h:`<p>A alíquota final ainda está sendo definida. Para a CBS de 2027, o Tribunal de Contas da União calculou <b>11,3%</b> como referência, e o <b>Senado tem até 15 de dezembro de 2026</b> para fixar o valor. Isso não quer dizer que os preços vão subir 11,3%: a CBS substitui o PIS e a Cofins, que já existem.</p><ul class="gl"><li><b>Imposto zero:</b> produtos da cesta básica e medicamentos.</li><li><b>Redução de 60%:</b> itens essenciais, como produtos de higiene, e serviços de saúde e educação.</li><li><b>Cashback:</b> devolução de parte do imposto para famílias de baixa renda.</li></ul>`,f:['Ministério da Fazenda e TCU','https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/transformacao-ecologica/programas-em-destaque/reforma-tributaria-sustentavel']},
+{t:'Empresas do Simples Nacional e MEI',ic:'S',h:`<p><b>O Simples Nacional continua.</b> A partir de 2027, a CBS e o IBS entram dentro da guia única do Simples (DAS).</p><ul class="gl"><li>A empresa do Simples pode escolher pagar a CBS e o IBS <b>“por fora” do Simples</b> (regime regular). Isso pode interessar a quem vende para outras empresas, porque o cliente aproveita mais crédito.</li><li>Essa escolha é feita em <b>setembro e março</b> de cada ano. Para o 1º semestre de 2027, o prazo foi de 1º/09 a 30/10/2026.</li><li>Para o <b>MEI</b> não existe essa opção: ele continua como está.</li></ul>`,f:['Portal do Simples Nacional e Ministério da Fazenda','https://www8.receita.fazenda.gov.br/SimplesNacional/Arquivos/manual/Manual%20op%C3%A7%C3%A3o%20regime%20regular%20IBS%20e%20CBS%20no%20Simples%20Nacional.pdf']},
+{t:'Nota fiscal',ic:'NF',h:`<ul class="gl"><li>As notas fiscais passam a ter campos para a CBS e o IBS. Em 2026, esses valores aparecem só como informação e <b>não entram no total da nota</b>.</li><li>Prestadores de serviço do Simples emitem a nota pelo <b>Emissor Nacional da NFS-e</b> desde 1º de novembro de 2026.</li><li>A obrigação de mostrar a CBS e o IBS na nota foi adiada para <b>janeiro ou março de 2027</b>, conforme a atividade.</li></ul>`,f:['Comitê Gestor do IBS','https://www.cgibs.gov.br/reforma-tributaria-comeca-em-2026-com-periodo-de-adaptacao-destaque-informativo-dos-novos-tributos-e-dispensa-de-penalidades']},
+{t:'Multas e juros',ic:'!',h:`<ul class="gl"><li><b>Reforma em 2026:</b> não há multa por deixar de preencher os campos da CBS e do IBS na nota até o 1º dia do 4º mês depois da publicação dos regulamentos. O ano é de adaptação.</li><li>As notas e obrigações dos <b>impostos atuais continuam valendo</b> normalmente, com as multas de sempre.</li><li><b>Imposto federal pago com atraso:</b> multa de <b>0,33% por dia</b>, limitada a <b>20%</b>, mais juros pela taxa Selic e 1% no mês do pagamento.</li></ul>`,f:['Receita Federal','https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/pagamentos-e-parcelamentos/pagamento-em-atraso/como-calcular-multa-de-mora-acrescimos-legais']},
+{t:'Split payment (imposto separado no pagamento)',ic:'$',h:`<p>No futuro, quando o cliente pagar com cartão, Pix ou boleto, a parte do imposto poderá ser <b>separada automaticamente</b> e enviada direto ao governo. O vendedor recebe o valor já sem o imposto. A implantação será gradual, e a Moreira vai avisar antes de começar.</p>`,f:['Ministério da Fazenda','https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria/regulamentacao-da-reforma-tributaria/lei-geral-do-ibs-da-cbs-e-do-imposto-seletivo/apresentacoes/2024-04-24_regulamentacao-da-reforma-tributaria.pdf']},
+{t:'O que você deve fazer agora',ic:'✓',h:`<ul class="gl chk"><li>Confira se o seu sistema de notas fiscais já está atualizado para a CBS e o IBS.</li><li>Prestador de serviço do Simples: use o Emissor Nacional da NFS-e.</li><li>Mantenha o cadastro dos seus produtos e serviços em dia (NCM e códigos de serviço).</li><li>Se você vende para outras empresas, fale com a Moreira para avaliar se vale pagar a CBS e o IBS fora do Simples.</li><li>Acompanhe as novidades neste aplicativo. A Moreira cuida das declarações para você.</li></ul>`,f:['Moreira Contabilidade, com base nas fontes oficiais acima','']}
+];
+function renderGuia(){return `<div class="gtop"><button class="sm" data-v2="nov">‹ Voltar</button><div><h2>Entenda a Reforma Tributária</h2><p>O essencial em linguagem simples. Toque em um tópico para abrir. Todas as informações vêm de sites oficiais do governo.</p></div></div>`+
+  GUIA.map((g,n)=>`<details class="gitem"${n===0?' open':''}><summary><span class="gic">${esc(g.ic)}</span>${esc(g.t)}</summary><div class="gbody">${g.h}${g.f[1]?`<p class="gfonte">Fonte oficial: <a href="${esc(g.f[1])}" target="_blank" rel="noopener">${esc(g.f[0])}</a></p>`:''}</div></details>`).join('')+
+  `<div class="gcta"><b>Ficou com dúvida sobre a sua empresa?</b><a class="btn pri" href="https://wa.me/${WA}?text=${encodeURIComponent('Olá, Moreira! Li o guia da Reforma Tributária e quero entender como ela afeta a minha empresa.')}" target="_blank" rel="noopener">Falar com a Moreira</a></div>`}
+function renderCliente(){if(!CLIENTE)return;$('#capp').hidden=false;
+  const vis=items.filter(visivel);
+  document.querySelectorAll('.cnav button').forEach(b=>{const a=b.dataset.a;b.setAttribute('aria-selected',a===cArea);const n=vis.filter(i=>(i.setor||'fiscal')===a&&isNovo(i)).length;const c=b.querySelector('.cnt');c.textContent=n?n+(n>1?' novas':' nova'):'';c.hidden=!n});
+  document.querySelectorAll('.cview button').forEach(b=>b.setAttribute('aria-selected',b.dataset.v===cView||(cView==='guia'&&b.dataset.v==='nov')));
+  const nomeA=cArea==='dp'?'Departamento Pessoal':'Fiscal';
+  if(cView==='guia'){$('#cbody').innerHTML=renderGuia();return}
+  if(cView==='nov'){const f=vis.filter(i=>(i.setor||'fiscal')===cArea).sort((a,b)=>String(b.data).localeCompare(String(a.data)));
+    $('#cbody').innerHTML=(cArea==='fiscal'?`<button class="gbanner" data-v2="guia"><span class="gbico">RT</span><span><b>Entenda a Reforma Tributária</b><small>O que muda, quais impostos, alíquotas, Simples, nota fiscal, multas e juros. Toque aqui.</small></span><span class="garr">›</span></button>`:'')+`<p class="vendo">Você está vendo <b>${f.length} ${f.length===1?'novidade':'novidades'}</b> de <b>${nomeA}</b>, da mais recente para a mais antiga.</p>`+(f.map(cCard).join('')||'<p class="empty">Nenhuma novidade nesta área por enquanto.</p>');}
+  else{const t=hoje();const lim=new Date();lim.setDate(lim.getDate()+120);const L=lim.toISOString().slice(0,10);
+    const ps=allP().filter(p=>p.data>=t&&p.data<=L&&prazoArea(p)===cArea&&(!p.cidade||!cCidade||p.cidade===cCidade));
+    const sem=ps.filter(p=>ddiff(p.data)<=7);const meses=[...new Set(ps.map(p=>p.data.slice(0,7)))];
+    $('#cbody').innerHTML=`<p class="vendo">Prazos e datas de <b>${nomeA}</b> dos próximos meses. A Moreira cuida das entregas; fique atento ao que depende de você, como enviar informações e pagar as guias.</p>
+    ${sem.length?`<div class="csemana"><b>Esta semana</b>${sem.map(p=>{const k=ddiff(p.data);return `<span class="achip${k<=3?' urg':''}${p.tipo==='feriado'?' fer':''}"><b>${esc(p.data.slice(8))}/${esc(p.data.slice(5,7))}</b> ${esc(p.tipo==='feriado'?p.titulo:amigo(p))}</span>`}).join('')}</div>`:''}
+    ${cArea==='dp'?`<label class="ccid">Sua cidade (para os feriados municipais): <select id="cCid"><option value="">Todas as cidades</option>${CIDADES.map(c=>`<option${c===cCidade?' selected':''}>${c}</option>`).join('')}</select></label>`:''}
+    <div class="row" style="margin:6px 0 4px"><button class="gold2" data-icsarea="1">Adicionar estes prazos à minha agenda</button></div>
+    ${meses.map(mk=>{const [y,m]=mk.split('-');let nome=new Date(+y,+m-1,1).toLocaleDateString('pt-BR',{month:'long',year:'numeric'});nome=nome.charAt(0).toUpperCase()+nome.slice(1);
+      return `<h3 class="cmes">${esc(nome)}</h3>`+ps.filter(p=>p.data.startsWith(mk)).map(p=>{const dt=new Date(p.data+'T12:00:00');const k=ddiff(p.data);
+        return `<div class="cprazo${p.tipo==='feriado'?' fer':''}"><div class="cdia"><b>${esc(p.data.slice(8))}</b><small>${DSEM[dt.getDay()]}</small></div><div><div class="ctit">${p.tipo==='feriado'?'<span class="tfer">'+(p.cidade?'Feriado · '+esc(p.cidade):'Feriado')+'</span> ':''}${esc(p.tipo==='feriado'?p.titulo:amigo(p))}${k<=3?' <span class="cimp">'+(k===0?'hoje':k===1?'amanhã':'em '+k+' dias')+'</span>':''}</div>${p.detalhe?`<p>${esc(p.detalhe.replace(/ Data calculada pela regra oficial;.*$/,''))}</p>`:''}</div></div>`}).join('')}).join('')||'<p class="empty">Nenhum prazo cadastrado para os próximos meses.</p>'}`}
+  if(!vistosSalvo&&items.length){vistosSalvo=true;try{localStorage.setItem('radar_vistos_c',JSON.stringify(items.map(i=>i.id)))}catch(e){}}
+  renderPost()}
+if(CLIENTE){
+  $('#capp').addEventListener('change',e=>{if(e.target.id==='cCid'){cCidade=e.target.value;try{localStorage.setItem('radar_cidade',cCidade)}catch(x){}renderCliente()}});
+  $('#capp').addEventListener('click',e=>{const a=e.target.closest('.cnav button');if(a){cArea=a.dataset.a;if(cView==='guia')cView='nov';try{localStorage.setItem('radar_area',cArea)}catch(x){}renderCliente();return}
+    const v=e.target.closest('.cview button');if(v){cView=v.dataset.v;renderCliente();return}
+    const v2=e.target.closest('[data-v2]');if(v2){cView=v2.dataset.v2;renderCliente();window.scrollTo({top:$('#capp').offsetTop-10,behavior:'smooth'});return}
+    const im=e.target.closest('button[data-verimg]');if(im){const box=im.closest('.ccard').querySelector('.cimg');box.hidden=!box.hidden;im.textContent=box.hidden?'Ver imagem':'Esconder imagem';return}
+    const ic=e.target.closest('button[data-icsarea]');if(ic){const t=hoje();saveBlob(ics(allP().filter(p=>p.data>=t&&prazoArea(p)===cArea&&(!p.cidade||!cCidade||p.cidade===cCidade))),`prazos-moreira-${cArea}.ics`);return}
+    const dp=e.target.closest('button[data-dlpost]');if(dp){const i=items.find(x=>x.id===dp.dataset.dlpost);if(i){const c=document.createElement('canvas');MoreiraCards.noticia(c,i);savePng(c,`moreira-${i.id}.png`)}}});
+}
 $('#list').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   if(b.dataset.id){const i=items.find(x=>x.id===b.dataset.id);if(i)copy(i.comunicado)}
+  if(b.dataset.vis&&DB&&!DB.__ro){const i=items.find(x=>x.id===b.dataset.vis);if(!i)return;const novo=i.cliente===false;b.disabled=true;
+    Promise.resolve(DB.doc('atualizacoes/'+i.id).update({cliente:novo,aguardando:false})).then(()=>toast(novo?'Agora o cliente vê esta notícia':'Notícia ocultada do cliente')).catch(()=>{b.disabled=false;toast('Não foi possível salvar. Tente de novo.')});return}
   if(b.dataset.leg){const i=items.find(x=>x.id===b.dataset.leg);if(i)copy(legenda(i))}
   if(b.dataset.dl){const i=items.find(x=>x.id===b.dataset.dl);if(i)savePng(cvItem(i),`comunicado-moreira-${i.id}.png`)}
   if(b.dataset.dlpost){const i=items.find(x=>x.id===b.dataset.dlpost);if(i){const c=document.createElement('canvas');MoreiraCards.noticia(c,i);savePng(c,`post-moreira-${i.id}.png`)}}
@@ -452,21 +604,21 @@ function renderPost(){if(!window.MoreiraCards||!MoreiraCards.ready())return;
 $('#dlWeek').addEventListener('click',()=>{const w=semana();if(w)savePng(cvSemana(w),`resumo-semanal-moreira-${w.ini}-a-${w.fim}.png`)});
 $('#copyWeek').addEventListener('click',()=>{const w=semana();if(w)copy(legendaSemana(w))});
 $('#q').addEventListener('input',()=>{render();renderPost()});$('#imp').addEventListener('change',()=>{render();renderPost()});$('#setor').addEventListener('change',()=>{render();renderPost()});$('#perfil').addEventListener('change',()=>{render();renderPost()});
-if(CLIENTE){$('#areaTabs').hidden=false;$('#areaTabs').addEventListener('click',e=>{const b=e.target.closest('button[data-area]');if(!b)return;$('#setor').value=b.dataset.area;document.querySelectorAll('#areaTabs button').forEach(x=>x.setAttribute('aria-selected',x===b));render();renderPost()})}
-if(CLIENTE){$('#eyebrow').textContent='Moreira Contabilidade · para você, cliente';$('#h1').textContent='Novidades e prazos para a sua empresa';$('#lede').textContent='O que mudou nos impostos, na folha de pagamento e nas obrigações da sua empresa, explicado de forma simples. Tudo com base em fontes oficiais do governo. Em caso de dúvida, fale com a nossa equipe.';$('#heroLinks').innerHTML='<a class="btn-gold" href="https://wa.me/'+WA+'" target="_blank" rel="noopener">Falar com a Moreira no WhatsApp</a>';document.title='Novidades e prazos · Moreira Contabilidade';}
+if(false){$('#areaTabs').hidden=false;$('#areaTabs').addEventListener('click',e=>{const b=e.target.closest('button[data-area]');if(!b)return;$('#setor').value=b.dataset.area;document.querySelectorAll('#areaTabs button').forEach(x=>x.setAttribute('aria-selected',x===b));render();renderPost()})}
+if(CLIENTE){$('#eyebrow').textContent='Moreira Contabilidade · para você, cliente';$('#h1').textContent='Novidades e prazos para a sua empresa';$('#lede').textContent='Escolha a área: Fiscal ou Departamento Pessoal. Em cada uma você vê as novidades explicadas de forma simples e o calendário de prazos e feriados.';$('#heroLinks').innerHTML='<a class="btn-gold" href="https://wa.me/'+WA+'" target="_blank" rel="noopener">Falar com a Moreira no WhatsApp</a>';document.title='Novidades e prazos · Moreira Contabilidade';}
 
 function status(){
   const last=meta.ultima_verificacao?new Date(meta.ultima_verificacao).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'}):'—';
   const today=new Date().toISOString().slice(0,10);const key=p=>p.data+'|'+String(p.titulo).toLowerCase().slice(0,22);const ids=new Set(prazos.map(p=>p.id)),ks=new Set(prazos.map(key));const nx=[...prazos,...base.filter(b=>!ids.has(b.id)&&!ks.has(key(b)))].filter(p=>p.data>=today).sort((a,b)=>a.data.localeCompare(b.data))[0];
   if(CLIENTE){$('#status').innerHTML=`<div class="kpi"><span>Próximo prazo</span><b>${nx?fmt(nx.data).slice(0,5):'—'}</b><small>${nx?esc(curtoT(nx.titulo).slice(0,40)):''}</small></div><div class="kpi"><span>Novidades</span><b>${items.length}</b><small>explicadas para você</small></div><div class="kpi"><span><span class="dot"></span>Atualizado em</span><b class="sm">${esc(last)}</b><small>conferido 2x ao dia</small></div>`;return}
-  $('#status').innerHTML=`<div class="kpi"><span>Próximo prazo</span><b>${nx?fmt(nx.data).slice(0,5):'—'}</b><small>${nx?esc(String(nx.titulo).split(':')[0].slice(0,38)):''}</small></div><div class="kpi"><span>Atualizações</span><b>${items.length}</b><small>registradas no radar</small></div><div class="kpi"><span>Impacto alto</span><b>${items.filter(i=>i.impacto==='alto').length}</b><small>pedem ação do cliente</small></div><div class="kpi"><span><span class="dot"></span>Última verificação</span><b class="sm">${esc(last)}</b><small>busca automática 2x ao dia</small></div>`;
+  $('#status').innerHTML=`<div class="kpi"><span>Próximo prazo</span><b>${nx?fmt(nx.data).slice(0,5):'—'}</b><small>${nx?esc(String(nx.titulo).split(':')[0].slice(0,38)):''}</small></div><div class="kpi"><span>Atualizações</span><b>${items.length}</b><small>registradas no radar</small></div><div class="kpi"><span>Aguardando aprovação</span><b>${items.filter(i=>i.cliente===false).length}</b><small>${items.filter(i=>i.cliente!==false).length} visíveis para o cliente</small></div><div class="kpi"><span><span class="dot"></span>Última verificação</span><b class="sm">${esc(last)}</b><small>busca automática 2x ao dia</small></div>`;
 }
 
 (async()=>{
   const timer=setTimeout(()=>{if(!items.length)$('#list').innerHTML='<p class="empty">Não foi possível carregar agora. Abra a página novamente em instantes.</p>'},10000);
   MoreiraCards.load('').then(renderPost);
   claude.use('downloads').then(d=>{dl=d});
-  const db=await claude.use('db');
+  const db=await claude.use('db');DB=db;
   if(!db){clearTimeout(timer);$('#list').innerHTML='<p class="empty">Entre na sua conta Claude para ver as atualizações.</p>';$('#status').textContent='';return}
   const dat=d=>(typeof d.data==='function'?d.data():d.data)||{};
   const has=d=>d&&(typeof d.exists==='function'?d.exists():d.exists!==false);
