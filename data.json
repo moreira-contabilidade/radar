@@ -3,39 +3,147 @@
  "prazos": [
   {
    "data": "2026-11-30",
-   "titulo": "13º salário: prazo da 1ª parcela"
+   "titulo": "13º salário: prazo da 1ª parcela",
+   "id": "2026-11-30-13o-1",
+   "tipo": "trabalhista",
+   "detalhe": "Metade da remuneração do mês anterior.",
+   "fonte_url": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2025/novembro/decimo-terceiro-salario-entenda-o-direito-regras-e-prazos-de-pagamento",
+   "fonte_nome": "Ministério do Trabalho"
   },
   {
    "data": "2026-12-15",
-   "titulo": "DeRE: 1ª entrega mensal da 2ª fase (competência nov.)"
+   "titulo": "DeRE: 1ª entrega mensal da 2ª fase (competência nov.)",
+   "id": "2026-12-15-dere",
+   "tipo": "declaracao",
+   "detalhe": "Declaração da Reforma para serviços financeiros, planos de saúde e loterias.",
+   "fonte_url": "https://cgibs.gov.br/cgibs-aprova-ajustes-ao-regulamento-do-ibs-e-prorroga-a-dere-em-reuniao-em-joinville",
+   "fonte_nome": "Comitê Gestor do IBS"
+  },
+  {
+   "id": "2026-12-15-efd-reinf",
+   "data": "2026-12-15",
+   "titulo": "EFD-Reinf (competência novembro): entrega",
+   "tipo": "declaracao",
+   "detalhe": "Até o dia 15 do mês seguinte; se não houver expediente bancário, antecipa para o dia útil anterior.",
+   "fonte_url": "http://sped.rfb.gov.br/estatico/28/40FAAC1C636CC110D4C12D2790B43C641C6BCA/Manual%20da%20EFD-Reinf%20vers%C3%A3o%202.1.2.1.pdf",
+   "fonte_nome": "Receita Federal · SPED"
   },
   {
    "data": "2026-12-15",
-   "titulo": "Prazo do Senado para fixar a alíquota de referência da CBS"
+   "titulo": "Prazo do Senado para fixar a alíquota de referência da CBS",
+   "id": "2026-12-15-senado",
+   "tipo": "reforma",
+   "detalhe": "O Senado fixa a alíquota de referência da CBS para 2027 (o TCU calculou 11,3%).",
+   "fonte_url": "https://portal.tcu.gov.br/imprensa/noticias/presidente-do-tcu-entrega-ao-senado-acordao-sobre-aliquota-de-referencia-da-cbs",
+   "fonte_nome": "TCU"
   },
   {
    "data": "2026-12-16",
-   "titulo": "Jornada máxima de 42h e duas folgas semanais (fim da escala 6x1)"
+   "titulo": "Jornada máxima de 42h e duas folgas semanais (fim da escala 6x1)",
+   "id": "2026-12-16-jornada-42h",
+   "tipo": "trabalhista",
+   "detalhe": "Começa a jornada máxima de 42h semanais com dois repousos remunerados.",
+   "fonte_url": "https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/noticias/2026/11/201co-que-estamos-fazendo-e-humanizar-o-mundo-do-trabalho201d-diz-lula-ao-assinar-decreto-que-regulamenta-o-fim-da-escala-6x1",
+   "fonte_nome": "Planalto"
+  },
+  {
+   "id": "2026-12-18-fgts",
+   "data": "2026-12-18",
+   "titulo": "FGTS mensal (competência novembro): vencimento da guia",
+   "tipo": "imposto",
+   "detalhe": "O prazo é o dia 20, que cai num domingo; sem expediente bancário, o pagamento é antecipado para o dia útil anterior.",
+   "fonte_url": "https://www.gov.br/pt-br/servicos/emissao-de-guia-para-recolhimento-do-fgts-atraves-do-fgts-digital",
+   "fonte_nome": "FGTS Digital (gov.br)"
   },
   {
    "data": "2026-12-20",
-   "titulo": "13º salário: prazo da 2ª parcela"
+   "titulo": "13º salário: prazo da 2ª parcela",
+   "id": "2026-12-20-13o-2",
+   "tipo": "trabalhista",
+   "detalhe": "Prazo legal até 20 de dezembro, que em 2026 cai num domingo: programe o pagamento com antecedência.",
+   "fonte_url": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2025/novembro/decimo-terceiro-salario-entenda-o-direito-regras-e-prazos-de-pagamento",
+   "fonte_nome": "Ministério do Trabalho"
+  },
+  {
+   "id": "2026-12-21-das",
+   "data": "2026-12-21",
+   "titulo": "DAS do Simples Nacional (competência novembro): vencimento",
+   "tipo": "imposto",
+   "detalhe": "O prazo é o dia 20, que cai num domingo; sem expediente bancário, o DAS passa para o dia útil seguinte.",
+   "fonte_url": "https://www8.receita.fazenda.gov.br/SimplesNacional/ConteudoApoio/agenda/agenda.aspx",
+   "fonte_nome": "Portal do Simples Nacional"
+  },
+  {
+   "id": "2026-12-30-transacao",
+   "data": "2026-12-30",
+   "titulo": "Adesão aos Editais de Transação RFB nº 9 e nº 10/2026 (regularização de débitos)",
+   "tipo": "outros",
+   "detalhe": "Prazo prorrogado pela Receita Federal para quem tem débitos em discussão administrativa.",
+   "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-prorroga-prazo-para-adesao-a-editais-de-transacao-tributaria-ate-30-de-dezembro",
+   "fonte_nome": "Receita Federal (gov.br)"
   },
   {
    "data": "2027-01-01",
-   "titulo": "Início previsto da CBS e do IBS; 3ª fase da DeRE"
+   "titulo": "Início previsto da CBS e do IBS; 3ª fase da DeRE",
+   "id": "2027-01-01-cbs",
+   "tipo": "reforma",
+   "detalhe": "Começam CBS e IBS no Simples e as novas regras da Reforma.",
+   "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/comite-gestor-do-simples-nacional-publica-novas-regras-para-o-simples-nacional-e-para-a-transicao-da-reforma-tributaria",
+   "fonte_nome": "Receita Federal"
+  },
+  {
+   "id": "2027-01-15-efd-reinf",
+   "data": "2027-01-15",
+   "titulo": "EFD-Reinf (competência dezembro): entrega",
+   "tipo": "declaracao",
+   "detalhe": "Até o dia 15 do mês seguinte.",
+   "fonte_url": "http://sped.rfb.gov.br/estatico/28/40FAAC1C636CC110D4C12D2790B43C641C6BCA/Manual%20da%20EFD-Reinf%20vers%C3%A3o%202.1.2.1.pdf",
+   "fonte_nome": "Receita Federal · SPED"
+  },
+  {
+   "id": "2027-01-20-das",
+   "data": "2027-01-20",
+   "titulo": "DAS do Simples Nacional (competência dezembro): vencimento",
+   "tipo": "imposto",
+   "detalhe": "Até o dia 20 do mês seguinte.",
+   "fonte_url": "https://www8.receita.fazenda.gov.br/SimplesNacional/ConteudoApoio/agenda/agenda.aspx",
+   "fonte_nome": "Portal do Simples Nacional"
+  },
+  {
+   "id": "2027-01-20-fgts",
+   "data": "2027-01-20",
+   "titulo": "FGTS mensal (competência dezembro): vencimento da guia",
+   "tipo": "imposto",
+   "detalhe": "Até o dia 20 do mês seguinte.",
+   "fonte_url": "https://www.gov.br/pt-br/servicos/emissao-de-guia-para-recolhimento-do-fgts-atraves-do-fgts-digital",
+   "fonte_nome": "FGTS Digital (gov.br)"
   },
   {
    "data": "2027-02-02",
-   "titulo": "Início da cobrança do Imposto Seletivo"
+   "titulo": "Início da cobrança do Imposto Seletivo",
+   "id": "2027-02-02-is",
+   "tipo": "reforma",
+   "detalhe": "Início previsto da cobrança do Imposto Seletivo.",
+   "fonte_url": "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/novembro/governo-federal-define-aliquotas-do-imposto-seletivo-para-2027-por-meio-de-medida-provisoria",
+   "fonte_nome": "Ministério da Fazenda"
   },
   {
    "data": "2027-03-01",
-   "titulo": "IBS/CBS na nota: Simples Nacional (demais casos), plataformas e TI"
+   "titulo": "IBS/CBS na nota: Simples Nacional (demais casos), plataformas e TI",
+   "id": "2027-03-01-dfe",
+   "tipo": "reforma",
+   "detalhe": "IBS/CBS obrigatórios na nota para Simples (demais casos), plataformas digitais e TI.",
+   "fonte_url": "https://www.gov.br/nfse/pt-br/noticias/cgnfs-e-informa-ato-conjunto-rfb-cgibs-no-7-2026-atualiza-o-cronograma-de-obrigatoriedade-de-emissao-da-nfs-e-para-ibs-e-cbs",
+   "fonte_nome": "Portal da NFS-e"
   },
   {
    "data": "2027-03-31",
-   "titulo": "Entrega da Defis 2026 (Simples Nacional)"
+   "titulo": "Entrega da Defis 2026 (Simples Nacional)",
+   "id": "2027-03-31-defis",
+   "tipo": "declaracao",
+   "detalhe": "Declaração anual do Simples Nacional referente a 2026.",
+   "fonte_url": "https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2026/11/simples-nacional-tem-novas-regras-para-adaptacao-a-reforma-tributaria",
+   "fonte_nome": "Secom (gov.br)"
   }
  ],
  "atualizacoes": [

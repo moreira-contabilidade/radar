@@ -69,6 +69,11 @@ a{color:var(--brick)}
 .week{grid-template-columns:1fr}}
 .thumbs{display:grid;grid-template-columns:1fr 1fr;gap:12px}.thumbs figure{margin:0}.thumbs figcaption{font-size:13px;color:var(--mute);margin:6px 0}.thumbs button{width:100%;font-size:14px;padding:0 8px}
 .area{font-weight:700;color:var(--ink)}.area.dp{color:var(--brick)}
+.tp{display:inline-block;font-size:12px;font-weight:700;border-radius:4px;padding:2px 7px;margin-bottom:6px;background:rgba(255,255,255,.14)}.tp.imposto{background:#A6841F;color:#111}.tp.declaracao{background:#688BC0;color:#111}.tp.trabalhista{background:#c8371e;color:#fff}
+.cal2{margin-top:22px;border-top:1px solid color-mix(in srgb,var(--bg) 25%,transparent);padding-top:14px}.cal2 summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}
+.cal2 .row button{color:var(--bg);border-color:color-mix(in srgb,var(--bg) 40%,transparent);min-height:38px;font-size:14px}.cal2 .row button[aria-pressed=true]{background:var(--bg);color:var(--ink)}
+.mes{font-size:15px;font-weight:700;margin:18px 0 6px;opacity:.85}
+.cl{display:grid;grid-template-columns:92px minmax(0,1fr);gap:4px 16px;padding:10px 0;border-bottom:1px solid color-mix(in srgb,var(--bg) 18%,transparent)}.cl .d{font-weight:700;font-size:20px;white-space:nowrap}.cl .d small{display:block;font-size:12px;font-weight:500;opacity:.7}.cl p{margin:2px 0 0;font-size:14px;opacity:.8}.cl a{color:#D9B54A;font-size:13px}.cl.past{opacity:.45}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}.gal figure{margin:0}.gal canvas{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.16)}.gal figcaption{font-size:14px;margin:8px 0}.gal button{width:100%}
 .cardbox canvas{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
 @media(max-width:760px){.post{grid-template-columns:1fr}}
@@ -84,8 +89,13 @@ a{color:var(--brick)}
 </div></header>
 
 <section class="band rule"><div class="wrap">
-  <h2>Próximos prazos</h2>
+  <h2>Próximos prazos e vencimentos</h2>
   <div class="track" id="track"></div>
+  <details class="cal2" id="calAll"><summary>Ver calendário completo de obrigações (declarações, impostos, trabalhista e Reforma)</summary>
+    <div class="row" style="margin:14px 0" id="tipoBtns"></div>
+    <div id="calList"></div>
+    <p class="foot" style="color:inherit;opacity:.75">Datas conferidas nas fontes oficiais indicadas em cada linha. Confira sempre a Agenda Tributária da Receita Federal e a legislação estadual e municipal do cliente.</p>
+  </details>
 </div></section>
 
 <main class="band"><div class="wrap">
@@ -132,15 +142,24 @@ let items=[],prazos=[],meta={};
 function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),1800)}
 async function copy(text){try{await navigator.clipboard.writeText(text);toast('Comunicado copiado')}catch(e){toast('Não foi possível copiar — selecione o texto manualmente')}}
 
+const TIPO={imposto:'Guia / imposto',declaracao:'Declaração',trabalhista:'Trabalhista',reforma:'Reforma Tributária',outros:'Prazo'};let tipoSel='';
+const DSEM=['dom','seg','ter','qua','qui','sex','sáb'];
 function renderTrack(){
   const today=new Date().toISOString().slice(0,10);
-  const up=prazos.filter(p=>p.data>=today).sort((a,b)=>a.data.localeCompare(b.data)).slice(0,5);
+  const all=[...prazos].sort((a,b)=>a.data.localeCompare(b.data)||String(a.titulo).localeCompare(String(b.titulo)));
+  const up=all.filter(p=>p.data>=today).slice(0,5);
   $('#track').innerHTML=up.length?up.map((p,i)=>{
     const [y,m,d]=p.data.split('-');const days=Math.round((new Date(p.data)-new Date(today))/864e5);
-    return `<div class="stop${i===0?' hot':''}"><div class="d">${esc(d)}/${esc(m)}<small>${esc(y)}</small></div><div class="t">${esc(p.titulo)}</div><div class="t" style="opacity:.7;font-size:13px">em ${days} dia${days===1?'':'s'}</div></div>`}).join('')
+    return `<div class="stop${i===0?' hot':''}"><span class="tp ${esc(p.tipo||'')}">${esc(TIPO[p.tipo]||'Prazo')}</span><div class="d">${esc(d)}/${esc(m)}<small>${esc(y)}</small></div><div class="t">${esc(p.titulo)}</div><div class="t" style="opacity:.7;font-size:13px">${days===0?'hoje':'em '+days+' dia'+(days===1?'':'s')}</div></div>`}).join('')
     :'<div class="stop"><div class="t">Nenhum prazo cadastrado.</div></div>';
+  const tipos=[...new Set(all.map(p=>p.tipo||'outros'))];
+  $('#tipoBtns').innerHTML=['',...tipos].map(t=>`<button data-tipo="${esc(t)}" aria-pressed="${t===tipoSel}">${esc(t?TIPO[t]||t:'Todos')}</button>`).join('');
+  const list=all.filter(p=>!tipoSel||(p.tipo||'outros')===tipoSel);const meses=[...new Set(list.map(p=>p.data.slice(0,7)))];
+  $('#calList').innerHTML=meses.map(mk=>{const [y,m]=mk.split('-');let nome=new Date(+y,+m-1,1).toLocaleDateString('pt-BR',{month:'long',year:'numeric'});nome=nome.charAt(0).toUpperCase()+nome.slice(1);
+    return `<div class="mes">${esc(nome)}</div>`+list.filter(p=>p.data.startsWith(mk)).map(p=>{const dt=new Date(p.data+'T12:00:00');const u=safeUrl(p.fonte_url);
+      return `<div class="cl${p.data<today?' past':''}"><div class="d">${esc(p.data.slice(8))}/${esc(m)}<small>${DSEM[dt.getDay()]}</small></div><div><span class="tp ${esc(p.tipo||'')}">${esc(TIPO[p.tipo]||'Prazo')}</span><div><b>${esc(p.titulo)}</b></div>${p.detalhe?`<p>${esc(p.detalhe)}</p>`:''}${u?`<a href="${esc(u)}" target="_blank" rel="noopener">Fonte: ${esc(p.fonte_nome||'oficial')}</a>`:(p.fonte_nome?`<p>Fonte: ${esc(p.fonte_nome)}</p>`:'')}</div></div>`}).join('')}).join('')||'<p>Nenhum prazo deste tipo.</p>';
 }
-
+$('#tipoBtns').addEventListener('click',e=>{const b=e.target.closest('button[data-tipo]');if(!b)return;tipoSel=b.dataset.tipo;renderTrack()});
 function render(){
   const q=$('#q').value.trim().toLowerCase(),imp=$('#imp').value,st=$('#setor').value;
   const W=(selWeek&&selWeek!=='todas')?semana():(selWeek==='todas'?null:semana());const f=items.filter(i=>(!W||(i.data>=W.ini&&i.data<=W.fim))&&(!imp||i.impacto===imp)&&(!st||(i.setor||'fiscal')===st)&&(!q||[i.titulo,i.orgao,i.resumo,i.quem,i.acao].join(' ').toLowerCase().includes(q)))
