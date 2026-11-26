@@ -11,7 +11,7 @@ box.innerHTML=`<div class="appico"><img src="app/icon-192.png" alt=""></div>
 <div class="row appbtns"><button class="pri" id="appInstall">Instalar o aplicativo</button><button id="appNotif">Ativar avisos no celular</button><button class="lnk2" id="appClose">Agora não</button></div>
 <p class="appios" id="appIos" hidden>No iPhone: toque em <b>Compartilhar</b> (o quadrado com a seta) e depois em <b>Adicionar à Tela de Início</b>. Depois abra o app pela tela inicial e toque em “Ativar avisos”.</p>
 <p class="appmsg" id="appMsg"></p></div>`;
-function montar(){const ref=document.getElementById('areaTabs');if(!ref){setTimeout(montar,300);return}ref.parentNode.insertBefore(box,ref);atualizar()}
+function montar(){const ref=document.getElementById('capp')||document.getElementById('areaTabs');if(!ref){setTimeout(montar,300);return}ref.parentNode.insertBefore(box,ref);box.classList.add('apptopo');atualizar()}
 function atualizar(){const fechado=LS.get('radar_app_fechado')==='1';const perm=('Notification' in window)?Notification.permission:'unsupported';
   const bi=document.getElementById('appInstall'),bn=document.getElementById('appNotif');
   bi.hidden=instalado;bn.hidden=perm==='granted'||perm==='unsupported';
@@ -31,7 +31,7 @@ document.addEventListener('click',async e=>{
   if(e.target.id==='appClose'){LS.set('radar_app_fechado','1');box.hidden=true}
 });
 /* novidades desde a última visita */
-fetch('data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>{const ids=(d.atualizacoes||[]).map(x=>x.id);const old=LS.get('radar_vistos');
+Promise.all([fetch('data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()),fetch('visibilidade.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([d,vj])=>{const vis=(vj&&vj.itens)||{};const ids=(d.atualizacoes||[]).filter(a=>{const x=vis[a.id];return x&&typeof x.cliente==='boolean'?x.cliente:a.cliente!==false}).map(x=>x.id);const old=LS.get('radar_vistos');
   if(old){const v=JSON.parse(old);const n=ids.filter(i=>!v.includes(i)).length;if(n){const c=document.createElement('div');c.className='novas';c.innerHTML=`<b>${n} ${n>1?'novidades':'novidade'}</b> desde a sua última visita`;const h=document.querySelector('.hero .wrap');h&&h.insertBefore(c,document.getElementById('status'))}}
   LS.set('radar_vistos',JSON.stringify(ids));if(navigator.clearAppBadge)navigator.clearAppBadge().catch(()=>{})}).catch(()=>{});
 montar();

@@ -1,5 +1,5 @@
 /* Radar Moreira — service worker (app opcional do cliente) */
-const CACHE='radar-moreira-v1';
+const CACHE='radar-moreira-v2';
 const SHELL=['./cliente.html','./cards.js','./brand/moreira_horizontal_branco_1000w.png','./brand/moreira_horizontal_azul_1000w.png','./app/icon-192.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
@@ -7,7 +7,8 @@ self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.me
   // dados e páginas: rede primeiro (sempre atualizado), cache se estiver sem internet
   e.respondWith(fetch(e.request).then(r=>{const cp=r.clone();caches.open(CACHE).then(c=>c.put(e.request,cp));return r}).catch(()=>caches.match(e.request,{ignoreSearch:true})))});
 /* verificação em segundo plano (Android com o app instalado) */
-async function checar(){try{const r=await fetch('./data.json?sw='+Date.now(),{cache:'no-store'});const d=await r.json();
+async function checar(){try{const r=await fetch('./data.json?sw='+Date.now(),{cache:'no-store'});const d=await r.json();let vis={};try{const v=await fetch('./visibilidade.json?sw='+Date.now(),{cache:'no-store'});if(v.ok)vis=(await v.json()).itens||{}}catch(x){}
+  d.atualizacoes=(d.atualizacoes||[]).filter(a=>{const x=vis[a.id];return x&&typeof x.cliente==='boolean'?x.cliente:a.cliente!==false});
   const c=await caches.open('radar-moreira-estado');const old=await c.match('vistos');const vistos=old?await old.json():null;
   const ids=(d.atualizacoes||[]).map(x=>x.id);
   if(vistos){const novos=(d.atualizacoes||[]).filter(x=>!vistos.includes(x.id));

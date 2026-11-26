@@ -232,6 +232,18 @@ a.btn.pri{background:var(--azul);color:#fff}
 .vis.off{background:#FFF4E5;border-color:#F0D3A6}
 .visbtn{min-height:38px;font-size:14px;border-color:#1F8F55;color:#1F8F55;background:#fff}
 .vis.off .visbtn{border-color:#B7791F;color:#8A5A12}
+.visbtn .eye{vertical-align:-4px;margin-right:4px}.vis.note small{color:#5A6B82}
+#chavechip{position:fixed;left:14px;bottom:14px;z-index:40;display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #D5DDE8;border-radius:999px;padding:6px 6px 6px 14px;box-shadow:0 6px 20px rgba(29,46,70,.14);font-size:13px;color:#1D2E46}
+#chavechip .eye{vertical-align:-5px;margin-right:4px}#chavechip button{border:0;background:#355380;color:#fff;border-radius:999px;padding:7px 12px;font:inherit;font-weight:600;cursor:pointer}
+.chovl{position:fixed;inset:0;background:rgba(29,46,70,.55);z-index:60;display:grid;place-items:center;padding:16px}
+.chbox{background:#fff;border-radius:16px;max-width:420px;width:100%;padding:22px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.chbox h3{margin:0 0 8px;color:#1D2E46}.chbox p{margin:0 0 14px;color:#41516A;font-size:14px;line-height:1.45}
+.chbox label{display:block;font-size:13px;font-weight:600;color:#1D2E46;margin-bottom:12px}
+.chbox input{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:11px 12px;border:1px solid #C9D3E0;border-radius:10px;font:inherit;font-size:15px}
+.chpw{position:relative;display:block}.chpw input{padding-right:46px}.chver{position:absolute;right:6px;top:50%;transform:translateY(-38%);border:0;background:none;color:#355380;cursor:pointer;padding:6px}
+.cherr{color:#B42318!important;font-weight:600}.chbtns{display:flex;gap:10px;justify-content:flex-end}
+.chbtns button{border-radius:10px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;border:1px solid #C9D3E0;background:#fff;color:#1D2E46}.chbtns .chok{background:#1D2E46;color:#fff;border-color:#1D2E46}
+@media print{#chavechip{display:none}}
 .visbtn{cursor:pointer}.visbtn:hover{filter:brightness(.96);box-shadow:0 0 0 3px rgba(31,143,85,.15)}.vis small a{color:var(--azul);font-weight:600}
 .vis small{color:var(--mute);font-size:13px}
 .eye{font-size:16px}
@@ -380,9 +392,36 @@ button.gold2{background:var(--ouroL);border-color:var(--ouroL);color:var(--navy)
 
 <script>
 (function(){
-let DATA=null;const ready=fetch('data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>DATA=d);
+const REPO='moreira-contabilidade/radar',API='https://api.github.com/repos/'+REPO+'/contents/visibilidade.json';
+const K='radar_chave_equipe',N='radar_nome_equipe';
+const ls={get:k=>{try{return localStorage.getItem(k)||''}catch(e){return ''}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},del:k=>{try{localStorage.removeItem(k)}catch(e){}}};
+const tok=()=>ls.get(K),nome=()=>ls.get(N);
+const H=t=>({Authorization:'Bearer '+t,Accept:'application/vnd.github+json'});
+const dec=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,'')),c=>c.charCodeAt(0)));
+const enc=s=>{const b=new TextEncoder().encode(s);let r='';for(let i=0;i<b.length;i+=0x8000)r+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(r)};
+async function lerRemoto(t){const r=await fetch(API+'?ref=main&_='+Date.now(),{headers:H(t),cache:'no-store'});
+  if(r.status===404)return{sha:null,j:{itens:{}}};if(r.status===401||r.status===403)throw 'chave';if(!r.ok)throw 'rede';
+  const x=await r.json();return{sha:x.sha,j:JSON.parse(dec(x.content))}}
+const lerPublico=()=>fetch('visibilidade.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{itens:{}}).catch(()=>({itens:{}}));
+const lerVis=()=>tok()&&!window.MODO_CLIENTE?lerRemoto(tok()).then(x=>x.j).catch(()=>lerPublico()):lerPublico();
+let DATA=null;
+const ready=Promise.all([fetch('data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()),lerVis()]).then(([d,v])=>{
+  const it=(v&&v.itens)||{};(d.atualizacoes||[]).forEach(a=>{const x=it[a.id];if(x&&typeof x.cliente==='boolean'){a.cliente=x.cliente;a.aguardando=false;a.vis_por=x.por||'';a.vis_em=x.em||''}});DATA=d});
 const snap=a=>({docs:a.map(d=>({id:d.id||(d.data+d.titulo),data:()=>d}))});
-const db={__ro:true,collection:n=>({onSnapshot:(cb,err)=>{ready.then(()=>cb(snap(n==='atualizacoes'?DATA.atualizacoes:n==='prazos'?DATA.prazos:[]))).catch(e=>err&&err(e));return()=>{}}}),
+let fila=Promise.resolve();
+function setVis(id,val){const t=tok();if(!t)return Promise.reject('chave');
+  const p=fila.then(async()=>{for(let k=0;k<5;k++){const {sha,j}=await lerRemoto(t);j.itens=j.itens||{};const agora=new Date().toISOString();
+    j.itens[id]={cliente:val,por:nome()||'Equipe',em:agora};j.atualizado_em=agora;
+    const body={message:(val?'Visível':'Oculta')+' para o cliente: '+id+' ('+(nome()||'Equipe')+')',content:enc(JSON.stringify(j,null,1)+'\n'),branch:'main'};if(sha)body.sha=sha;
+    const r=await fetch(API,{method:'PUT',headers:Object.assign(H(t),{'Content-Type':'application/json'}),body:JSON.stringify(body)});
+    if(r.ok)return true;if(r.status===401||r.status===403||r.status===404)throw 'chave';if(r.status===409||r.status===422){await new Promise(s=>setTimeout(s,700+k*500));continue}throw 'rede'}throw 'rede'});
+  fila=p.catch(()=>{});return p}
+async function entrar(t,n){if(!n)return 'Informe o seu nome.';if(!t)return 'Cole a chave de acesso da equipe.';
+  try{const r=await fetch('https://api.github.com/repos/'+REPO,{headers:H(t),cache:'no-store'});if(r.status===401)return 'Chave inválida ou vencida. Confira com o responsável.';if(!r.ok)return 'Não foi possível conferir a chave agora. Tente de novo.';
+    const j=await r.json();if(j.permissions&&j.permissions.push===false)return 'Esta chave não tem permissão para alterar o radar.'}catch(e){return 'Sem conexão. Tente de novo.'}
+  ls.set(K,t);ls.set(N,n);return true}
+const db={__ro:true,__site:!window.MODO_CLIENTE,temChave:()=>!!tok(),nome,setVis,entrar,sairChave:()=>ls.del(K),
+  collection:n=>({onSnapshot:(cb,err)=>{ready.then(()=>cb(snap(n==='atualizacoes'?DATA.atualizacoes:n==='prazos'?DATA.prazos:[]))).catch(e=>err&&err(e));return()=>{}}}),
   doc:()=>({onSnapshot:cb=>{ready.then(()=>cb({exists:true,data:()=>({ultima_verificacao:DATA.gerado_em})}));return()=>{}}})};
 const downloads={save:async({filename,data})=>{const url=URL.createObjectURL(data);const a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000)}};
 window.claude={use:async n=>n==='db'?db:n==='downloads'?downloads:null};
@@ -430,6 +469,22 @@ async function saveBlob(b,name){if(dl){try{await dl.save({filename:name,data:b})
 let calView='lista',calMes=hoje().slice(0,7);
 fetch('prazos_base.json?v=2',{cache:'no-store'}).then(r=>r.json()).then(b=>{base=b;renderTrack();try{status()}catch(e){}}).catch(()=>{});
 
+const OLHO_A='<svg class="eye" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>';
+const OLHO_F='<svg class="eye" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/><path d="M3 21 21 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
+function dh(iso){try{const d=new Date(iso);return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})+' às '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}catch(e){return ''}}
+function chaveChip(){if(!DB||!DB.__site||CLIENTE)return;let c=document.getElementById('chavechip');if(!c){c=document.createElement('div');c.id='chavechip';document.body.appendChild(c)}
+  if(DB.temChave()){c.innerHTML='<span>'+OLHO_A+' Edição liberada: <b></b></span><button type="button">Sair</button>';c.querySelector('b').textContent=DB.nome()||'Equipe';c.querySelector('button').onclick=()=>{DB.sairChave();chaveChip();toast('Chave removida deste aparelho.')}}
+  else{c.innerHTML='<span>'+OLHO_F+' Só visualização</span><button type="button">Liberar edição</button>';c.querySelector('button').onclick=()=>abrirChave()}}
+function abrirChave(depois){const o=document.createElement('div');o.className='chovl';o.innerHTML=`<form class="chbox" autocomplete="off"><h3>Liberar o olho neste aparelho</h3><p>Para mostrar ou esconder notícias do cliente, informe a <b>chave de acesso da equipe</b> (só precisa fazer uma vez neste computador ou celular).</p>
+  <label>Seu nome<input name="nome" required maxlength="40" placeholder="Ex.: Ana - Administrativo"></label>
+  <label>Chave de acesso da equipe<span class="chpw"><input name="chave" type="password" required placeholder="Cole aqui a chave"><button type="button" class="chver" aria-label="Mostrar chave">${OLHO_A}</button></span></label>
+  <p class="cherr" hidden></p><div class="chbtns"><button type="button" class="chno">Cancelar</button><button type="submit" class="chok">Salvar e liberar</button></div></form>`;
+  document.body.appendChild(o);const f=o.querySelector('form');try{f.nome.value=DB.nome()||''}catch(e){}(f.nome.value?f.chave:f.nome).focus();
+  o.querySelector('.chver').onclick=()=>{const t=f.chave.type==='password';f.chave.type=t?'text':'password';o.querySelector('.chver').innerHTML=t?OLHO_F:OLHO_A};
+  o.querySelector('.chno').onclick=()=>o.remove();o.addEventListener('click',e=>{if(e.target===o)o.remove()});
+  f.onsubmit=async e=>{e.preventDefault();const er=o.querySelector('.cherr');er.hidden=true;const ok=o.querySelector('.chok');ok.disabled=true;ok.textContent='Conferindo...';
+    const r=await DB.entrar(f.chave.value.trim(),f.nome.value.trim());ok.disabled=false;ok.textContent='Salvar e liberar';
+    if(r===true){o.remove();chaveChip();toast('Pronto! Agora é só clicar no olho.',3500);if(depois)depois()}else{er.textContent=r;er.hidden=false}}}
 function toast(t,ms){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),ms||1800)}
 async function copy(text){try{await navigator.clipboard.writeText(text);toast('Texto copiado')}catch(e){toast('Não foi possível copiar — selecione o texto manualmente')}}
 
@@ -481,7 +536,7 @@ function render(){
       <div class="head"><div><div class="org"><b class="area ${i.setor==='dp'?'dp':''}">${i.setor==='dp'?'Departamento Pessoal':'Fiscal'}</b> · ${esc(i.orgao)}</div><h3>${esc(i.titulo)}</h3></div><span class="tag ${esc(i.impacto)}">${esc(IMP[i.impacto]||i.impacto)}</span></div>
       <p>${esc(i.resumo)}</p>
       <div class="meta"><div><span>Quem é afetado</span>${esc(i.quem)}</div><div><span>O que fazer</span>${esc(i.acao)}</div><div><span>Fonte oficial</span>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(i.fonte_nome||'Abrir fonte')}</a>`:esc(i.fonte_nome)}</div></div>
-      <div class="vis ${i.cliente===false?'off':'on'}"><button class="visbtn" data-vis="${esc(i.id)}" aria-pressed="${i.cliente!==false}" title="Clique para ${i.cliente===false?'mostrar ao':'esconder do'} cliente"><span class="eye">${i.cliente===false?'⊘':'👁'}</span> ${i.cliente===false?'Oculto para o cliente':'Visível para o cliente'}</button><small>${i.cliente===false?(i.aguardando?'Nova notícia aguardando sua aprovação. ':'')+'Não aparece no aplicativo nem na página do cliente.':'Aparece no aplicativo e na página do cliente.'}${DB&&!DB.__ro?' <b>Clique no botão para '+(i.cliente===false?'liberar':'esconder')+'.</b>':' <a href="https://claude.ai/artifact/1HVLhmYUjWUrmbh22fjHD5" target="_blank" rel="noopener">Para mudar, abra o radar do Claude ↗</a>'}</small></div>
+      ${DB&&DB.__site?`<div class="vis ${i.cliente===false?'off':'on'}"><button class="visbtn" data-vis="${esc(i.id)}" aria-pressed="${i.cliente!==false}" title="Clique no olho para ${i.cliente===false?'mostrar ao':'esconder do'} cliente">${i.cliente===false?OLHO_F:OLHO_A} ${i.cliente===false?'Oculto para o cliente':'Visível para o cliente'}</button><small>${i.cliente===false?(i.aguardando?'Nova notícia aguardando aprovação. ':'')+'Não aparece no aplicativo nem na página do cliente.':'Aparece no aplicativo e na página do cliente.'}${i.vis_por?' Alterado por '+esc(i.vis_por)+(i.vis_em?' em '+esc(dh(i.vis_em)):'')+'.':''}</small></div>`:`<div class="vis note"><small>Para mostrar ou esconder esta notícia do cliente, use o olho no <a href="https://moreira-contabilidade.github.io/radar/" target="_blank" rel="noopener">site da equipe ↗</a>.</small></div>`}
       <div class="perf">${perfis(i).filter(x=>x!=='todos').map(x=>`<span>${esc(PERFIS[x])}</span>`).join('')||'<span>Todos os clientes</span>'}</div>
       <div class="row acts"><a class="btn wa" href="${esc(waLink(waText(i)))}" target="_blank" rel="noopener">Enviar no WhatsApp</a><button data-leg="${esc(i.id)}">Copiar legenda do Instagram</button><button data-id="${esc(i.id)}">Copiar comunicado</button></div>
       <details><summary>Ver texto do comunicado</summary><div class="msg">${esc(i.comunicado)}</div></details>
@@ -585,10 +640,12 @@ if(CLIENTE){
 $('#list').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   if(b.dataset.id){const i=items.find(x=>x.id===b.dataset.id);if(i)copy(i.comunicado)}
-  if(b.dataset.vis){if(!DB||DB.__ro){toast('Esta página só mostra. Para liberar ou esconder, abra o radar do Claude.',4500);setTimeout(()=>window.open('https://claude.ai/artifact/1HVLhmYUjWUrmbh22fjHD5','_blank','noopener'),900);return}
-    const i=items.find(x=>x.id===b.dataset.vis);if(!i)return;const antes={cliente:i.cliente,aguardando:i.aguardando};const novo=i.cliente===false;
-    i.cliente=novo;i.aguardando=false;render();status();
-    Promise.resolve(DB.doc('atualizacoes/'+i.id).update({cliente:novo,aguardando:false})).then(()=>toast(novo?'Liberada para o cliente. Chega ao aplicativo em até 1 hora.':'Escondida do cliente. Sai do aplicativo em até 1 hora.',4000)).catch(()=>{Object.assign(i,antes);render();status();toast('Não foi possível salvar. Tente de novo.',4000)});return}
+  if(b.dataset.vis){if(!DB||!DB.__site)return;
+    if(!DB.temChave()){abrirChave(()=>b.click());return}
+    const i=items.find(x=>x.id===b.dataset.vis);if(!i)return;const antes={cliente:i.cliente,aguardando:i.aguardando,vis_por:i.vis_por,vis_em:i.vis_em};const novo=i.cliente===false;
+    i.cliente=novo;i.aguardando=false;i.vis_por=DB.nome();i.vis_em=new Date().toISOString();render();status();
+    DB.setVis(i.id,novo).then(()=>toast(novo?'Visível para o cliente. Aparece no aplicativo em 1 a 2 minutos.':'Oculta para o cliente. Some do aplicativo em 1 a 2 minutos.',4500)).catch(er=>{Object.assign(i,antes);render();status();
+      if(er==='chave'){DB.sairChave();chaveChip();toast('A chave de acesso não foi aceita. Informe a chave de novo.',5000)}else toast('Não foi possível salvar. Verifique a internet e tente de novo.',5000)});return}
   if(b.dataset.leg){const i=items.find(x=>x.id===b.dataset.leg);if(i)copy(legenda(i))}
   if(b.dataset.dl){const i=items.find(x=>x.id===b.dataset.dl);if(i)savePng(cvItem(i),`comunicado-moreira-${i.id}.png`)}
   if(b.dataset.dlpost){const i=items.find(x=>x.id===b.dataset.dlpost);if(i){const c=document.createElement('canvas');MoreiraCards.noticia(c,i);savePng(c,`post-moreira-${i.id}.png`)}}
@@ -651,7 +708,7 @@ function status(){
   const timer=setTimeout(()=>{if(!items.length)$('#list').innerHTML='<p class="empty">Não foi possível carregar agora. Abra a página novamente em instantes.</p>'},10000);
   MoreiraCards.load('').then(renderPost);
   claude.use('downloads').then(d=>{dl=d});
-  const db=await claude.use('db');DB=db;
+  const db=await claude.use('db');DB=db;try{chaveChip()}catch(e){}
   if(!db){clearTimeout(timer);$('#list').innerHTML='<p class="empty">Entre na sua conta Claude para ver as atualizações.</p>';$('#status').textContent='';return}
   const dat=d=>(typeof d.data==='function'?d.data():d.data)||{};
   const has=d=>d&&(typeof d.exists==='function'?d.exists():d.exists!==false);

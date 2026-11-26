@@ -8,3 +8,5 @@ button.lnk2{border:0;background:none;color:var(--mute);font-weight:500;text-deco
 .appmsg{color:#1F8F55!important;font-weight:700}
 .novas{display:inline-block;background:var(--ouroL);color:var(--navy);border-radius:999px;padding:6px 14px;font-size:14px;margin-top:16px}
 @media(max-width:600px){.appbox{flex-direction:column}}
+
+.appbox.apptopo{margin:14px auto 18px;border:2px solid #A6841F;box-shadow:0 8px 24px rgba(29,46,70,.12)}
