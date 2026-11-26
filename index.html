@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Radar Fiscal e Trabalhista · Moreira Contabilidade</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* VOICE: escritório de planejamento fiscal — sóbrio, direto, cada item acionável
    IDEA: o mural de prazos e o livro de registro de normas de um escritório contábil
    PICTURE: régua de prazos próximos (até a virada para 2027) + registro de atualizações
    COLOUR and TYPE: pedra, preto e tijolo; Schibsted Grotesk
    LAYOUT: cabeçalho com status, régua de prazos, filtros, registro em lista larga */
-:root{color-scheme:light dark;--bg:light-dark(#e7e4df,#171513);--ink:light-dark(#111,#eeeae4);--panel:light-dark(#fff,#221f1c);--line:light-dark(#cfcac2,#3a3531);--mute:light-dark(#5d5850,#a8a196);--brick:light-dark(#c8371e,#ef6a50);--soft:light-dark(#f4f1ec,#1d1a17)}
-:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+:root{color-scheme:light;--bg:#F2F5F9;--ink:#1D2E46;--panel:#fff;--line:#D5DDE8;--mute:#5A6A82;--brick:#355380;--soft:#EEF2F8;--azul:#355380;--navy:#1D2E46;--ouro:#A6841F;--ouroL:#D9B54A}
+
 *{box-sizing:border-box;min-width:0}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Schibsted Grotesk",system-ui,sans-serif;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Univia Pro","Montserrat",system-ui,sans-serif;overflow-x:clip}
 .band{padding:clamp(24px,4vw,56px) max(5vw,16px)}
 .wrap{max-width:1240px;margin:0 auto}
 h1{font-size:clamp(32px,5vw,48px);line-height:1.05;margin:0 0 10px;text-wrap:balance;font-weight:700}
@@ -79,10 +79,63 @@ a{color:var(--brick)}
 @media(max-width:760px){.post{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.toast{transition:none}}
 @media(max-width:600px){.head{grid-template-columns:1fr}.stop{border-right:0;border-bottom:1px solid color-mix(in srgb,var(--bg) 25%,transparent);margin-right:0}}
+
+/* ===== Identidade Moreira Contabilidade ===== */
+@font-face{font-family:"Univia Pro";src:url(fonts/UniviaPro-Regular.otf) format("opentype");font-weight:400;font-display:swap}
+@font-face{font-family:"Univia Pro";src:url(fonts/UniviaPro-Medium.otf) format("opentype");font-weight:500;font-display:swap}
+@font-face{font-family:"Univia Pro";src:url(fonts/UniviaPro-Bold.otf) format("opentype");font-weight:700;font-display:swap}
+@font-face{font-family:"Univia Pro";src:url(fonts/UniviaPro-Black.otf) format("opentype");font-weight:900;font-display:swap}
+h1,h2,h3{letter-spacing:-.01em}
+.hero{background:linear-gradient(120deg,var(--navy) 0%,var(--azul) 100%);color:#fff;position:relative;overflow:hidden;padding-top:clamp(22px,3vw,34px)}
+.hero::after{content:"";position:absolute;right:-120px;top:-60px;width:520px;height:520px;border:60px solid rgba(255,255,255,.05);border-radius:50%;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:clamp(26px,4vw,46px)}
+.topbar img{height:46px;width:auto;display:block}
+.topbar .contato{font-size:14px;color:rgba(255,255,255,.85)}
+.topbar .contato a{color:#fff;text-decoration:none;font-weight:700}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ouroL);margin-bottom:10px}
+.hero h1{color:#fff;font-weight:900;font-size:clamp(34px,5vw,54px)}
+.hero .lede{color:rgba(255,255,255,.82)}
+.hero .status{color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:10px 16px;display:inline-flex}
+.dot{background:var(--ouroL)}
+.rule{background:var(--navy);color:#fff}
+.rule h2{color:#fff}
+.track{border-top:3px solid var(--ouro)}
+.stop{border-right:1px solid rgba(255,255,255,.14)}
+.stop .d{color:#fff}
+.stop.hot .d{color:var(--ouroL)}
+.tp{background:rgba(255,255,255,.12);color:#fff}
+.tp.imposto{background:var(--ouro);color:#111}.tp.declaracao{background:#8FA9D2;color:var(--navy)}.tp.trabalhista{background:#fff;color:var(--navy)}.tp.reforma{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+.cal2{border-top:1px solid rgba(255,255,255,.16)}
+.cal2 .row button{color:#fff;border-color:rgba(255,255,255,.35)}.cal2 .row button[aria-pressed=true]{background:#fff;color:var(--navy)}
+.cl{border-bottom:1px solid rgba(255,255,255,.1)}.cl a{color:var(--ouroL)}
+button{border-color:var(--azul);color:var(--azul);font-weight:700}
+button.pri{background:var(--azul);border-color:var(--azul);color:#fff}
+button.pri:hover{background:var(--navy)}
+button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline-color:var(--ouro)}
+input[type=search],select{border-radius:8px}
+.day{border-bottom:2px solid var(--azul);color:var(--navy)}
+.item{border-radius:12px;border-left:4px solid var(--azul);box-shadow:0 2px 10px rgba(29,46,70,.06)}
+.item h3{color:var(--navy)}
+.tag.alto{background:var(--ouro);color:#111;border-color:var(--ouro)}
+.tag.medio{border-color:var(--azul);color:var(--azul)}
+.area{color:var(--azul)}.area.dp{color:var(--ouro)}
+.msg{border-left-color:var(--ouro)}
+a{color:var(--azul)}
+.wk[aria-selected=true]{background:var(--azul);border-color:var(--azul);color:#fff}
+.week{border-radius:12px;border-top:4px solid var(--ouro)}
+.toast{background:var(--navy);color:#fff}
+.site-foot{background:var(--navy);color:rgba(255,255,255,.8);font-size:14px}
+.site-foot .wrap{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:center;justify-content:space-between}
+.site-foot img{height:40px;width:auto;display:block}
+.site-foot a{color:#fff;font-weight:700;text-decoration:none}
+.site-foot .gold{height:4px;background:var(--ouro);margin:0}
 </style>
 </head>
 <body>
-<header class="band"><div class="wrap">
+<header class="band hero"><div class="wrap">
+  <div class="topbar"><img src="brand/moreira_horizontal_branco_1000w.png" alt="Moreira Contabilidade"><span class="contato">Atendimento <a href="https://wa.me/5594991198085">(94) 99119-8085</a></span></div>
+  <span class="eyebrow">Radar Moreira</span>
   <h1>Radar Fiscal e Trabalhista</h1>
   <p class="lede">Reforma Tributária, setor fiscal e Departamento Pessoal (folha, jornada, hora extra, FGTS, eSocial). Somente fontes oficiais: Receita Federal, Fazenda, Comitê Gestor do IBS, Ministério do Trabalho, FGTS Digital, eSocial, Planalto, TCU, Câmara, Senado e Diário Oficial. Cada atualização traz o comunicado e o post no padrão Moreira, prontos para baixar.</p>
   <div class="status" id="status"><span><span class="dot"></span>Carregando…</span></div>
@@ -117,6 +170,11 @@ a{color:var(--brick)}
   <div id="list"><p class="empty">Carregando atualizações…</p></div>
   <p class="foot">Todas as fontes são órgãos oficiais do governo; o link de cada uma está na própria atualização. Confira a norma publicada antes de orientar o cliente. Atualizado automaticamente todos os dias.</p>
 </div></main>
+<footer class="site-foot"><div class="gold"></div><div class="band"><div class="wrap">
+  <img src="brand/moreira_horizontal_branco_1000w.png" alt="Moreira Contabilidade">
+  <span>Moreira Contabilidade · CNPJ 33.980.531/0001-47 · Marabá/PA</span>
+  <span>Atendimento <a href="https://wa.me/5594991198085">(94) 99119-8085</a> · <a href="https://www.instagram.com/moreiracontabilidadeltda/">@moreiracontabilidadeltda</a></span>
+</div></div></footer>
 <div class="toast" id="toast" role="status"></div>
 <script src="cards.js"></script>
 

@@ -85,7 +85,7 @@ function resumo(cv,list,d,titulo,linha2){
   x.fillStyle=C.a50;x.fillRect(0,0,W,H);
   logo(x,assets.logoAzul,W/2,70,300,true);
   x.textAlign='center';x.fillStyle=C.a700;x.font=`900 74px ${F}`;x.fillText((titulo||'RADAR FISCAL').toUpperCase(),W/2,250);
-  x.fillStyle=C.ouro;x.font=`900 74px ${F}`;x.fillText((linha2||'DA SEMANA').toUpperCase(),W/2,328);
+  x.fillStyle=C.azul;x.font=`900 74px ${F}`;x.fillText((linha2||'DA SEMANA').toUpperCase(),W/2,328);
   x.fillStyle=C.c700;x.font=`500 27px ${F}`;x.fillText('Fiscal e Departamento Pessoal, explicado de forma simples · '+br(d),W/2,384);x.textAlign='left';
   const items=list.slice(0,3),top=430,bottom=H-128-40,gap=18,h=(bottom-top-gap*(items.length-1))/items.length,tw=W-2*M;
   items.forEach((i,n)=>{const k=campos(i),y=top+n*(h+gap);
