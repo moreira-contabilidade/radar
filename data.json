@@ -11,6 +11,16 @@
    "fonte_nome": "Ministério do Trabalho"
   },
   {
+   "id": "2026-12-05-salario-5-dia-util",
+   "data": "2026-12-05",
+   "titulo": "Pagamento dos salários de novembro/2026: até o 5º dia útil",
+   "tipo": "trabalhista",
+   "area": "dp",
+   "detalhe": "O salário do mês trabalhado deve ser pago até o 5º dia útil do mês seguinte. Na contagem, o sábado conta como dia útil; domingos e feriados não contam (se houver feriado municipal na sua cidade, o prazo passa um dia). Atrasar pode gerar multa na fiscalização e cobrança do sindicato.",
+   "fonte_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+   "fonte_nome": "Planalto · CLT, art. 459 (planalto.gov.br)"
+  },
+  {
    "id": "2026-12-14-efd-contribuicoes-202610",
    "data": "2026-12-14",
    "titulo": "EFD-Contribuições (competência outubro/2026): entrega",
@@ -211,6 +221,16 @@
    "fonte_nome": "Ministério da Gestão (gov.br)"
   },
   {
+   "id": "2027-01-07-salario-5-dia-util",
+   "data": "2027-01-07",
+   "titulo": "Pagamento dos salários de dezembro/2026: até o 5º dia útil",
+   "tipo": "trabalhista",
+   "area": "dp",
+   "detalhe": "O salário do mês trabalhado deve ser pago até o 5º dia útil do mês seguinte. Na contagem, o sábado conta como dia útil; domingos e feriados não contam (se houver feriado municipal na sua cidade, o prazo passa um dia). Atrasar pode gerar multa na fiscalização e cobrança do sindicato.",
+   "fonte_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+   "fonte_nome": "Planalto · CLT, art. 459 (planalto.gov.br)"
+  },
+  {
    "id": "2027-01-15-efd-reinf",
    "data": "2027-01-15",
    "titulo": "EFD-Reinf (competência dezembro): entrega",
@@ -346,6 +366,16 @@
    "detalhe": "Início previsto da cobrança do Imposto Seletivo.",
    "fonte_url": "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/novembro/governo-federal-define-aliquotas-do-imposto-seletivo-para-2027-por-meio-de-medida-provisoria",
    "fonte_nome": "Ministério da Fazenda"
+  },
+  {
+   "id": "2027-02-05-salario-5-dia-util",
+   "data": "2027-02-05",
+   "titulo": "Pagamento dos salários de janeiro/2027: até o 5º dia útil",
+   "tipo": "trabalhista",
+   "area": "dp",
+   "detalhe": "O salário do mês trabalhado deve ser pago até o 5º dia útil do mês seguinte. Na contagem, o sábado conta como dia útil; domingos e feriados não contam (se houver feriado municipal na sua cidade, o prazo passa um dia). Atrasar pode gerar multa na fiscalização e cobrança do sindicato.",
+   "fonte_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+   "fonte_nome": "Planalto · CLT, art. 459 (planalto.gov.br)"
   },
   {
    "id": "2027-02-08-feriado-carnaval-1",
@@ -512,6 +542,16 @@
    "fonte_nome": "Receita Federal / Sped (sped.rfb.gov.br)"
   },
   {
+   "id": "2027-03-05-salario-5-dia-util",
+   "data": "2027-03-05",
+   "titulo": "Pagamento dos salários de fevereiro/2027: até o 5º dia útil",
+   "tipo": "trabalhista",
+   "area": "dp",
+   "detalhe": "O salário do mês trabalhado deve ser pago até o 5º dia útil do mês seguinte. Na contagem, o sábado conta como dia útil; domingos e feriados não contam (se houver feriado municipal na sua cidade, o prazo passa um dia). Atrasar pode gerar multa na fiscalização e cobrança do sindicato.",
+   "fonte_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+   "fonte_nome": "Planalto · CLT, art. 459 (planalto.gov.br)"
+  },
+  {
    "id": "2027-03-12-efd-contribuicoes-202701",
    "data": "2027-03-12",
    "titulo": "EFD-Contribuições (competência janeiro/2027): entrega",
@@ -672,6 +712,16 @@
    "cidade": "Marabá"
   },
   {
+   "id": "2027-04-06-salario-5-dia-util",
+   "data": "2027-04-06",
+   "titulo": "Pagamento dos salários de março/2027: até o 5º dia útil",
+   "tipo": "trabalhista",
+   "area": "dp",
+   "detalhe": "O salário do mês trabalhado deve ser pago até o 5º dia útil do mês seguinte. Na contagem, o sábado conta como dia útil; domingos e feriados não contam (se houver feriado municipal na sua cidade, o prazo passa um dia). Atrasar pode gerar multa na fiscalização e cobrança do sindicato.",
+   "fonte_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+   "fonte_nome": "Planalto · CLT, art. 459 (planalto.gov.br)"
+  },
+  {
    "id": "2027-04-14-efd-contribuicoes-202702",
    "data": "2027-04-14",
    "titulo": "EFD-Contribuições (competência fevereiro/2027): entrega",
@@ -818,6 +868,16 @@
    "detalhe": "Feriado municipal em Xinguara, no mesmo dia do feriado nacional do Trabalho. Se a empresa abrir, quem trabalhar tem direito a folga em outro dia ou pagamento em dobro, conforme a lei e a convenção coletiva da categoria.",
    "fonte_url": "https://camaraxinguara.pa.gov.br/leis/lei-no-9832017-altera-o-artigo-1o-e-o-paragrafo-unico-da-lei-n-0921986-que-declara-feriado-municipal-o-dia-13-de-maio-e-da-outras-providencias/",
    "fonte_nome": "Câmara de Xinguara · Lei nº 983/2017 (pa.gov.br)"
+  },
+  {
+   "id": "2027-05-07-salario-5-dia-util",
+   "data": "2027-05-07",
+   "titulo": "Pagamento dos salários de abril/2027: até o 5º dia útil",
+   "tipo": "trabalhista",
+   "area": "dp",
+   "detalhe": "O salário do mês trabalhado deve ser pago até o 5º dia útil do mês seguinte. Na contagem, o sábado conta como dia útil; domingos e feriados não contam (se houver feriado municipal na sua cidade, o prazo passa um dia). Atrasar pode gerar multa na fiscalização e cobrança do sindicato.",
+   "fonte_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+   "fonte_nome": "Planalto · CLT, art. 459 (planalto.gov.br)"
   },
   {
    "id": "2027-05-13-feriado-xinguara-aniversário-de-xinguara",
@@ -967,6 +1027,16 @@
    "fonte_nome": "Receita Federal (gov.br)"
   },
   {
+   "id": "2027-06-05-salario-5-dia-util",
+   "data": "2027-06-05",
+   "titulo": "Pagamento dos salários de maio/2027: até o 5º dia útil",
+   "tipo": "trabalhista",
+   "area": "dp",
+   "detalhe": "O salário do mês trabalhado deve ser pago até o 5º dia útil do mês seguinte. Na contagem, o sábado conta como dia útil; domingos e feriados não contam (se houver feriado municipal na sua cidade, o prazo passa um dia). Atrasar pode gerar multa na fiscalização e cobrança do sindicato.",
+   "fonte_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+   "fonte_nome": "Planalto · CLT, art. 459 (planalto.gov.br)"
+  },
+  {
    "id": "2027-06-14-efd-contribuicoes-202704",
    "data": "2027-06-14",
    "titulo": "EFD-Contribuições (competência abril/2027): entrega",
@@ -1082,6 +1152,16 @@
    "detalhe": "Empresas do Lucro Real, do Lucro Presumido que distribuem lucro acima do presumido sem livro caixa, e demais obrigadas enviam a contabilidade digital até o último dia útil de junho. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
    "fonte_url": "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/perguntas-frequentes/sped/ecd/ecd",
    "fonte_nome": "Receita Federal (gov.br)"
+  },
+  {
+   "id": "2027-07-06-salario-5-dia-util",
+   "data": "2027-07-06",
+   "titulo": "Pagamento dos salários de junho/2027: até o 5º dia útil",
+   "tipo": "trabalhista",
+   "area": "dp",
+   "detalhe": "O salário do mês trabalhado deve ser pago até o 5º dia útil do mês seguinte. Na contagem, o sábado conta como dia útil; domingos e feriados não contam (se houver feriado municipal na sua cidade, o prazo passa um dia). Atrasar pode gerar multa na fiscalização e cobrança do sindicato.",
+   "fonte_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+   "fonte_nome": "Planalto · CLT, art. 459 (planalto.gov.br)"
   },
   {
    "id": "2027-07-14-efd-contribuicoes-202705",
@@ -1219,6 +1299,16 @@
    "detalhe": "Todas as empresas do Lucro Real, Presumido e Arbitrado (e imunes/isentas) entregam a ECF até o último dia útil de julho. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
    "fonte_url": "https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/perguntas-frequentes/sped/ecf/ecf",
    "fonte_nome": "Receita Federal (gov.br)"
+  },
+  {
+   "id": "2027-08-06-salario-5-dia-util",
+   "data": "2027-08-06",
+   "titulo": "Pagamento dos salários de julho/2027: até o 5º dia útil",
+   "tipo": "trabalhista",
+   "area": "dp",
+   "detalhe": "O salário do mês trabalhado deve ser pago até o 5º dia útil do mês seguinte. Na contagem, o sábado conta como dia útil; domingos e feriados não contam (se houver feriado municipal na sua cidade, o prazo passa um dia). Atrasar pode gerar multa na fiscalização e cobrança do sindicato.",
+   "fonte_url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm",
+   "fonte_nome": "Planalto · CLT, art. 459 (planalto.gov.br)"
   },
   {
    "id": "2027-08-15-feriado-para",

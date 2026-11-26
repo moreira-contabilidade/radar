@@ -295,6 +295,18 @@ button.gold2{background:var(--ouroL);border-color:var(--ouroL);color:var(--navy)
 @media(max-width:600px){.gt{font-size:13.5px}}
 .tp.feriado,.ge.feriado{background:#1F8F55;color:#fff}
 .ccid{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0;font-weight:700;color:var(--navy);font-size:15px}.ccid select{height:42px;border:1px solid var(--line);border-radius:8px;padding:0 10px;font:inherit;font-size:15px;background:#fff}
+
+.mbox{background:#FFF5F2;border:2px solid #E8B4A6;border-radius:16px;padding:14px 14px 6px;margin:12px 0 16px}
+.mhead{display:flex;gap:12px;align-items:center;margin-bottom:8px}.mhead b{display:block;font-size:18px;color:#8A2A12}.mhead small{display:block;color:#6B4A40;font-size:14px}
+.mico{flex:none;width:42px;height:42px;border-radius:50%;background:#B83A1B;color:#fff;display:grid;place-items:center;font-weight:900;font-size:22px}
+.mitem{background:#fff;border:1px solid #F0CFC5;border-radius:12px;margin:8px 0;padding:0 14px}
+.mitem summary{min-height:54px;font-size:16px;color:var(--navy);gap:10px}
+.mitem.top{border:2px solid #B83A1B}.mitem.top summary{font-size:17px}
+.murg{background:#B83A1B;color:#fff;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:800;flex:none}
+.mval{background:#FFF0EB;border-radius:8px;padding:8px 10px;color:#6B2A18}
+.cmulta{background:#B83A1B;color:#fff;border-radius:6px;padding:1px 8px;font-weight:700;font-size:12px}
+.mitem mark{background:#F5E9C2;color:var(--navy);font-weight:700;padding:0 3px;border-radius:3px}
+.cmulta,.cimp,.cnovo{white-space:nowrap;display:inline-block}
 </style>
 </head>
 <body>
@@ -497,7 +509,7 @@ function amigo(p){const t=p.titulo;const m=t.match(/\((compet[eê]ncia [^)]*)\)/
 function MoreiraHL(t){return esc(String(t||'')).replace(/\*\*(.+?)\*\*/g,'<mark>$1</mark>')}
 function cCard(i){const u=safeUrl(i.fonte_url);const fale='https://wa.me/'+WA+'?text='+encodeURIComponent('Olá, Moreira! Vi no aplicativo a notícia "'+P(i.card_titulo||i.titulo)+(i.card_destaque?' '+P(i.card_destaque):'')+'" e quero saber se isso afeta a minha empresa.');
   return `<article class="ccard${i.setor==='dp'?' is-dp':''}">
-  <div class="cmeta">${esc(fmt(i.data))}${isNovo(i)?' <span class="cnovo">Novo</span>':''}${i.impacto==='alto'?' <span class="cimp">Importante</span>':''}</div>
+  <div class="cmeta">${esc(fmt(i.data))}${isNovo(i)?' <span class="cnovo">Novo</span>':''}${i.impacto==='alto'?' <span class="cimp">Importante</span>':''}${i.setor==='dp'&&temMulta(i)?' <span class="cmulta">Pode gerar multa</span>':''}</div>
   <h3>${esc(P(i.card_titulo||i.titulo))}${i.card_destaque?' '+esc(P(i.card_destaque)):''}</h3>
   <p class="csub">${MoreiraHL(i.card_sub||i.resumo)}</p>
   ${(i.card_pontos||[]).length?`<div class="cbloco"><span>O que muda para você</span><ul>${i.card_pontos.map(x=>`<li>${MoreiraHL(x)}</li>`).join('')}</ul></div>`:''}
@@ -522,6 +534,17 @@ const GUIA=[
 function renderGuia(){return `<div class="gtop"><button class="sm" data-v2="nov">‹ Voltar</button><div><h2>Entenda a Reforma Tributária</h2><p>O essencial em linguagem simples. Toque em um tópico para abrir. Todas as informações vêm de sites oficiais do governo.</p></div></div>`+
   GUIA.map((g,n)=>`<details class="gitem"${n===0?' open':''}><summary><span class="gic">${esc(g.ic)}</span>${esc(g.t)}</summary><div class="gbody">${g.h}${g.f[1]?`<p class="gfonte">Fonte oficial: <a href="${esc(g.f[1])}" target="_blank" rel="noopener">${esc(g.f[0])}</a></p>`:''}</div></details>`).join('')+
   `<div class="gcta"><b>Ficou com dúvida sobre a sua empresa?</b><a class="btn pri" href="https://wa.me/${WA}?text=${encodeURIComponent('Olá, Moreira! Li o guia da Reforma Tributária e quero entender como ela afeta a minha empresa.')}" target="_blank" rel="noopener">Falar com a Moreira</a></div>`}
+
+const MULTAS=[
+{top:true,t:'Escala de trabalho: reorganize até 16 de dezembro de 2026',h:`<p>A partir de <mark>16/12/2026</mark>, a jornada máxima passa a ser de <b>42 horas por semana</b>, com <b>duas folgas semanais remuneradas</b>, e o salário <b>não pode ser reduzido</b>. Em 16/12/2027, o limite cai para 40 horas. Quem mantiver a escala antiga (6 dias de trabalho para 1 de folga) sem pagar as horas extras fica sujeito a autuação.</p><ul class="gl"><li>Monte a nova escala de cada funcionário (quais dias trabalha e quais são as duas folgas).</li><li>No comércio, a folga deve cair no domingo pelo menos 1 vez a cada 3 semanas.</li><li>O Ministério do Trabalho recomenda fechar o acordo com o sindicato até 16/12, quando a categoria precisar.</li></ul><p class="mval"><b>Multa:</b> infrações de jornada e descanso (CLT, art. 75) vão de cerca de R$ 41 a R$ 4.161 por infração, em dobro se houver reincidência (tabela da Portaria MTP nº 667/2021).</p>`,a:'Envie hoje para a Moreira a escala atual dos seus funcionários. Nós ajudamos a montar a nova.',f:['Ministério do Trabalho e Emprego','https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/novembro/governo-federal-publica-portaria-com-regras-complementares-para-aplicacao-da-escala-5x2']},
+{t:'Salário até o 5º dia útil',h:`<p>O salário do mês trabalhado deve ser pago <b>até o 5º dia útil do mês seguinte</b>. O sábado conta como dia útil; domingo e feriado não contam. Atraso pode gerar autuação da fiscalização e multa prevista na convenção coletiva.</p>`,a:'Programe o pagamento com antecedência. As datas de cada mês estão no Calendário.',f:['Planalto · CLT, art. 459','https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452compilado.htm']},
+{t:'Funcionário sem registro',h:`<p>Todo funcionário precisa ser registrado (carteira digital e eSocial) <b>antes de começar a trabalhar</b>. Para microempresa e empresa de pequeno porte, a multa é de <mark>R$ 800</mark> <b>por funcionário sem registro</b>.</p>`,a:'Contratou alguém? Envie os dados à Moreira antes do primeiro dia de trabalho.',f:['Planalto · Lei nº 13.467/2017','https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm']},
+{t:'INSS e FGTS pagos com atraso',h:`<p>Guia do INSS paga depois do vencimento tem multa de <b>0,33% por dia</b>, limitada a <b>20%</b>, mais juros (taxa Selic). O FGTS em atraso também tem multa e encargos no FGTS Digital.</p>`,a:'Pague as guias até o vencimento. As datas estão no Calendário.',f:['Receita Federal','https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/pagamentos-e-parcelamentos/pagamento-em-atraso/como-calcular-multa-de-mora-acrescimos-legais']},
+{t:'Trabalho em feriado',h:`<p>Se a empresa abrir em feriado, quem trabalhar tem direito a <b>folga em outro dia</b> ou <b>pagamento em dobro</b>, conforme a lei e a convenção coletiva. No comércio, abrir em feriado depende do que a convenção coletiva permite.</p>`,a:'Antes de escalar alguém para um feriado, confirme com a Moreira.',f:['Ministério do Trabalho e Emprego','https://www.gov.br/trabalho-e-emprego/pt-br']}
+];
+function renderMultas(){return `<section class="mbox"><div class="mhead"><span class="mico">!</span><div><b>Atenção: o que pode gerar multa</b><small>Os pontos de Departamento Pessoal que mais geram autuação. Toque para ver os detalhes.</small></div></div>`+
+  MULTAS.map((m,n)=>`<details class="mitem${m.top?' top':''}"${m.top?' open':''}><summary>${m.top?'<span class="murg">Urgente</span>':''}${esc(m.t)}</summary><div class="gbody">${m.h}<div class="cacao2"><span>O que você deve fazer</span>${esc(m.a)}</div><p class="gfonte">Fonte oficial: <a href="${esc(m.f[1])}" target="_blank" rel="noopener">${esc(m.f[0])}</a></p></div></details>`).join('')+`</section>`}
+const temMulta=i=>i.multa===true||/multa|escala|jornada|6x1|5x2|registro|sal[aá]rio|FGTS|13º|rescis|f[eé]rias/i.test([i.titulo,i.card_sub,i.resumo].join(' '));
 function renderCliente(){if(!CLIENTE)return;$('#capp').hidden=false;
   const vis=items.filter(visivel);
   document.querySelectorAll('.cnav button').forEach(b=>{const a=b.dataset.a;b.setAttribute('aria-selected',a===cArea);const n=vis.filter(i=>(i.setor||'fiscal')===a&&isNovo(i)).length;const c=b.querySelector('.cnt');c.textContent=n?n+(n>1?' novas':' nova'):'';c.hidden=!n});
@@ -529,7 +552,7 @@ function renderCliente(){if(!CLIENTE)return;$('#capp').hidden=false;
   const nomeA=cArea==='dp'?'Departamento Pessoal':'Fiscal';
   if(cView==='guia'){$('#cbody').innerHTML=renderGuia();return}
   if(cView==='nov'){const f=vis.filter(i=>(i.setor||'fiscal')===cArea).sort((a,b)=>String(b.data).localeCompare(String(a.data)));
-    $('#cbody').innerHTML=(cArea==='fiscal'?`<button class="gbanner" data-v2="guia"><span class="gbico">RT</span><span><b>Entenda a Reforma Tributária</b><small>O que muda, quais impostos, alíquotas, Simples, nota fiscal, multas e juros. Toque aqui.</small></span><span class="garr">›</span></button>`:'')+`<p class="vendo">Você está vendo <b>${f.length} ${f.length===1?'novidade':'novidades'}</b> de <b>${nomeA}</b>, da mais recente para a mais antiga.</p>`+(f.map(cCard).join('')||'<p class="empty">Nenhuma novidade nesta área por enquanto.</p>');}
+    $('#cbody').innerHTML=(cArea==='dp'?renderMultas():'')+(cArea==='fiscal'?`<button class="gbanner" data-v2="guia"><span class="gbico">RT</span><span><b>Entenda a Reforma Tributária</b><small>O que muda, quais impostos, alíquotas, Simples, nota fiscal, multas e juros. Toque aqui.</small></span><span class="garr">›</span></button>`:'')+`<p class="vendo">Você está vendo <b>${f.length} ${f.length===1?'novidade':'novidades'}</b> de <b>${nomeA}</b>, da mais recente para a mais antiga.</p>`+(f.map(cCard).join('')||'<p class="empty">Nenhuma novidade nesta área por enquanto.</p>');}
   else{const t=hoje();const lim=new Date();lim.setDate(lim.getDate()+120);const L=lim.toISOString().slice(0,10);
     const ps=allP().filter(p=>p.data>=t&&p.data<=L&&prazoArea(p)===cArea&&(!p.cidade||!cCidade||p.cidade===cCidade));
     const sem=ps.filter(p=>ddiff(p.data)<=7);const meses=[...new Set(ps.map(p=>p.data.slice(0,7)))];
@@ -539,7 +562,7 @@ function renderCliente(){if(!CLIENTE)return;$('#capp').hidden=false;
     <div class="row" style="margin:6px 0 4px"><button class="gold2" data-icsarea="1">Adicionar estes prazos à minha agenda</button></div>
     ${meses.map(mk=>{const [y,m]=mk.split('-');let nome=new Date(+y,+m-1,1).toLocaleDateString('pt-BR',{month:'long',year:'numeric'});nome=nome.charAt(0).toUpperCase()+nome.slice(1);
       return `<h3 class="cmes">${esc(nome)}</h3>`+ps.filter(p=>p.data.startsWith(mk)).map(p=>{const dt=new Date(p.data+'T12:00:00');const k=ddiff(p.data);
-        return `<div class="cprazo${p.tipo==='feriado'?' fer':''}"><div class="cdia"><b>${esc(p.data.slice(8))}</b><small>${DSEM[dt.getDay()]}</small></div><div><div class="ctit">${p.tipo==='feriado'?'<span class="tfer">'+(p.cidade?'Feriado · '+esc(p.cidade):'Feriado')+'</span> ':''}${esc(p.tipo==='feriado'?p.titulo:amigo(p))}${k<=3?' <span class="cimp">'+(k===0?'hoje':k===1?'amanhã':'em '+k+' dias')+'</span>':''}</div>${p.detalhe?`<p>${esc(p.detalhe.replace(/ Data calculada pela regra oficial;.*$/,''))}</p>`:''}</div></div>`}).join('')}).join('')||'<p class="empty">Nenhum prazo cadastrado para os próximos meses.</p>'}`}
+        return `<div class="cprazo${p.tipo==='feriado'?' fer':''}"><div class="cdia"><b>${esc(p.data.slice(8))}</b><small>${DSEM[dt.getDay()]}</small></div><div><div class="ctit">${p.tipo==='feriado'?'<span class="tfer">'+(p.cidade?'Feriado · '+esc(p.cidade):'Feriado')+'</span> ':''}${esc(p.tipo==='feriado'?p.titulo:amigo(p))}${k<=3?' <span class="cimp">'+(k===0?'hoje':k===1?'amanhã':'em '+k+' dias')+'</span>':''}${cArea==='dp'&&p.tipo!=='feriado'?' <span class="cmulta">Atraso gera multa</span>':''}</div>${p.detalhe?`<p>${esc(p.detalhe.replace(/ Data calculada pela regra oficial;.*$/,''))}</p>`:''}</div></div>`}).join('')}).join('')||'<p class="empty">Nenhum prazo cadastrado para os próximos meses.</p>'}`}
   if(!vistosSalvo&&items.length){vistosSalvo=true;try{localStorage.setItem('radar_vistos_c',JSON.stringify(items.map(i=>i.id)))}catch(e){}}
   renderPost()}
 if(CLIENTE){
