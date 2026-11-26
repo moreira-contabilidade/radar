@@ -173,6 +173,15 @@
    "fonte_nome": "Receita Federal (gov.br)"
   },
   {
+   "id": "2026-12-31-inventario",
+   "data": "2026-12-31",
+   "titulo": "Inventário físico dos estoques em 31/12/2026 (Livro Registro de Inventário)",
+   "tipo": "declaracao",
+   "detalhe": "Toda empresa contribuinte do ICMS (comércio e indústria), inclusive do Simples Nacional, conta e avalia os estoques existentes no fim do ano e registra no Livro Registro de Inventário. Faça a contagem física no último dia do ano.",
+   "fonte_url": "https://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=92278",
+   "fonte_nome": "Resolução CGSN nº 140/2018 (normas.receita.fazenda.gov.br)"
+  },
+  {
    "data": "2027-01-01",
    "titulo": "Início previsto da CBS e do IBS; 3ª fase da DeRE",
    "id": "2027-01-01-cbs",
@@ -441,6 +450,15 @@
    "detalhe": "IBS/CBS obrigatórios na nota para Simples (demais casos), plataformas digitais e TI.",
    "fonte_url": "https://www.gov.br/nfse/pt-br/noticias/cgnfs-e-informa-ato-conjunto-rfb-cgibs-no-7-2026-atualiza-o-cronograma-de-obrigatoriedade-de-emissao-da-nfs-e-para-ibs-e-cbs",
    "fonte_nome": "Portal da NFS-e"
+  },
+  {
+   "id": "2027-03-01-inventario-bloco-h",
+   "data": "2027-03-01",
+   "titulo": "Bloco H (inventário de 31/12/2026) na EFD ICMS/IPI de fevereiro, entregue em março",
+   "tipo": "declaracao",
+   "detalhe": "Empresas obrigadas à EFD ICMS/IPI informam o inventário de 31/12 no Bloco H da escrituração de fevereiro, que é entregue em março. O dia exato de entrega em março é definido pela Sefa do Pará; a tarefa diária confere na fonte estadual.",
+   "fonte_url": "http://sped.rfb.gov.br/estatico/2A/0527AC1622CF15194D9A4AB4AFD25A4A84B34A/Perguntas%20Frequentes%20-%207.1.pdf",
+   "fonte_nome": "Receita Federal / Sped (sped.rfb.gov.br)"
   },
   {
    "id": "2027-03-12-efd-contribuicoes-202701",
