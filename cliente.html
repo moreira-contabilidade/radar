@@ -219,6 +219,13 @@ a.btn.pri{background:var(--azul);color:#fff}
 .cliente .imedia img{aspect-ratio:auto;margin-bottom:10px}
 .cliente .imedia button{width:100%}
 @media(max-width:900px){.cliente .citem{grid-template-columns:1fr}}
+
+.areatabs{margin:6px 0 18px}
+.tabs{display:inline-flex;flex-wrap:wrap;gap:6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px}
+.tabs button{border:0;border-radius:8px;min-height:44px;padding:0 18px;color:var(--navy);background:transparent;font-weight:700}
+.tabs button[aria-selected=true]{background:var(--azul);color:#fff}
+.tabs button:not([aria-selected=true]):hover{background:var(--soft)}
+.vendo{margin:10px 0 0;color:var(--mute);font-size:15px}.vendo b{color:var(--navy)}
 </style>
 </head>
 <body>
@@ -261,6 +268,7 @@ a.btn.pri{background:var(--azul);color:#fff}
       <div class="row"><button class="pri" id="dlWeek">Baixar resumo semanal</button><button id="copyWeek">Copiar legenda</button></div>
       <div class="msg" id="weekCap" style="margin-top:14px"></div></div>
   </section>
+  <div class="areatabs" id="areaTabs" hidden><div class="tabs" role="tablist" aria-label="Escolha o assunto"><button role="tab" data-area="" aria-selected="true">Fiscal e Departamento Pessoal</button><button role="tab" data-area="fiscal" aria-selected="false">Fiscal</button><button role="tab" data-area="dp" aria-selected="false">Departamento Pessoal</button></div><p class="vendo" id="vendo"></p></div>
   <div id="list"><p class="empty">Carregando atualizações…</p></div>
   <p class="foot interno">Todas as fontes são órgãos oficiais do governo; o link de cada uma está na própria atualização. Confira a norma publicada antes de orientar o cliente. Atualizado automaticamente todos os dias.</p>
 </div></main>
@@ -361,10 +369,10 @@ $('#calList').addEventListener('click',e=>{const b=e.target.closest('button[data
 $('#tipoBtns').addEventListener('click',e=>{const b=e.target.closest('button[data-tipo]');if(!b)return;tipoSel=b.dataset.tipo;renderTrack()});
 function render(){
   const q=$('#q').value.trim().toLowerCase(),imp=$('#imp').value,st=$('#setor').value,pf=$('#perfil').value;
-  const W=(selWeek&&selWeek!=='todas')?semana():(selWeek==='todas'?null:semana());const f=items.filter(i=>(!W||(i.data>=W.ini&&i.data<=W.fim))&&(!imp||i.impacto===imp)&&(!st||(i.setor||'fiscal')===st)&&(!pf||perfis(i).includes(pf)||perfis(i).includes('todos'))&&(!q||[i.titulo,i.orgao,i.resumo,i.quem,i.acao].join(' ').toLowerCase().includes(q)))
+  const W=CLIENTE?null:((selWeek&&selWeek!=='todas')?semana():(selWeek==='todas'?null:semana()));const f=items.filter(i=>(!W||(i.data>=W.ini&&i.data<=W.fim))&&(!imp||i.impacto===imp)&&(!st||(i.setor||'fiscal')===st)&&(!pf||perfis(i).includes(pf)||perfis(i).includes('todos'))&&(!q||[i.titulo,i.orgao,i.resumo,i.quem,i.acao].join(' ').toLowerCase().includes(q)))
     .sort((a,b)=>String(b.data).localeCompare(String(a.data)));
-  if(!f.length){$('#list').innerHTML=`<p class="empty">${items.length?'Nada encontrado com esses filtros.':'Ainda não há atualizações registradas.'}</p>`;return}
-  if(CLIENTE){$('#list').innerHTML=f.map(clienteItem).join('');return}
+  if(!f.length){if(CLIENTE)$('#vendo').innerHTML='Nenhuma notícia encontrada para esta escolha.';$('#list').innerHTML=`<p class="empty">${items.length?'Nada encontrado com esses filtros.':'Ainda não há atualizações registradas.'}</p>`;return}
+  if(CLIENTE){const nome={'':'Fiscal e Departamento Pessoal',fiscal:'Fiscal (impostos, notas e obrigações)',dp:'Departamento Pessoal (folha, jornada, FGTS e 13º)'}[st];$('#vendo').innerHTML=`Você está vendo <b>${f.length} ${f.length===1?'notícia':'notícias'}</b> de <b>${esc(nome)}</b>.`;$('#list').innerHTML=f.map(clienteItem).join('');return}
   const days=[...new Set(f.map(i=>i.data))];
   $('#list').innerHTML=days.map(d=>{
     const g=f.filter(i=>i.data===d);
@@ -445,6 +453,7 @@ function renderPost(){if(!window.MoreiraCards||!MoreiraCards.ready())return;
 $('#dlWeek').addEventListener('click',()=>{const w=semana();if(w)savePng(cvSemana(w),`resumo-semanal-moreira-${w.ini}-a-${w.fim}.png`)});
 $('#copyWeek').addEventListener('click',()=>{const w=semana();if(w)copy(legendaSemana(w))});
 $('#q').addEventListener('input',()=>{render();renderPost()});$('#imp').addEventListener('change',()=>{render();renderPost()});$('#setor').addEventListener('change',()=>{render();renderPost()});$('#perfil').addEventListener('change',()=>{render();renderPost()});
+if(CLIENTE){$('#areaTabs').hidden=false;$('#areaTabs').addEventListener('click',e=>{const b=e.target.closest('button[data-area]');if(!b)return;$('#setor').value=b.dataset.area;document.querySelectorAll('#areaTabs button').forEach(x=>x.setAttribute('aria-selected',x===b));render();renderPost()})}
 if(CLIENTE){$('#eyebrow').textContent='Moreira Contabilidade · para você, cliente';$('#h1').textContent='Novidades e prazos para a sua empresa';$('#lede').textContent='O que mudou nos impostos, na folha de pagamento e nas obrigações da sua empresa, explicado de forma simples. Tudo com base em fontes oficiais do governo. Em caso de dúvida, fale com a nossa equipe.';$('#heroLinks').innerHTML='<a class="btn-gold" href="https://wa.me/'+WA+'" target="_blank" rel="noopener">Falar com a Moreira no WhatsApp</a>';document.title='Novidades e prazos · Moreira Contabilidade';}
 
 function status(){
