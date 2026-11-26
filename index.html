@@ -137,7 +137,8 @@ const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const safeUrl=u=>/^https:\/\//.test(String(u||''))?String(u):'';
 const fmt=d=>{const [y,m,dd]=String(d||'').split('-');return dd?`${dd}/${m}/${y}`:esc(d)};
 const IMP={alto:'Impacto alto',medio:'Impacto médio',baixo:'Impacto baixo'};
-let items=[],prazos=[],meta={};
+let items=[],prazos=[],base=[],meta={};
+fetch('prazos_base.json?v=2',{cache:'no-store'}).then(r=>r.json()).then(b=>{base=b;renderTrack()}).catch(()=>{});
 
 function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),1800)}
 async function copy(text){try{await navigator.clipboard.writeText(text);toast('Comunicado copiado')}catch(e){toast('Não foi possível copiar — selecione o texto manualmente')}}
@@ -146,7 +147,8 @@ const TIPO={imposto:'Guia / imposto',declaracao:'Declaração',trabalhista:'Trab
 const DSEM=['dom','seg','ter','qua','qui','sex','sáb'];
 function renderTrack(){
   const today=new Date().toISOString().slice(0,10);
-  const all=[...prazos].sort((a,b)=>a.data.localeCompare(b.data)||String(a.titulo).localeCompare(String(b.titulo)));
+  const key=p=>p.data+'|'+String(p.titulo).toLowerCase().slice(0,22);const ks=new Set(prazos.map(key)),ids=new Set(prazos.map(p=>p.id));
+  const all=[...prazos,...base.filter(b=>!ids.has(b.id)&&!ks.has(key(b)))].sort((a,b)=>a.data.localeCompare(b.data)||String(a.titulo).localeCompare(String(b.titulo)));
   const up=all.filter(p=>p.data>=today).slice(0,5);
   $('#track').innerHTML=up.length?up.map((p,i)=>{
     const [y,m,d]=p.data.split('-');const days=Math.round((new Date(p.data)-new Date(today))/864e5);
@@ -243,7 +245,7 @@ function status(){
   const has=d=>d&&(typeof d.exists==='function'?d.exists():d.exists!==false);
   const docs=s=>(s&&(s.docs||s))||[];
   db.collection('atualizacoes').onSnapshot(s=>{clearTimeout(timer);items=docs(s).map(d=>({...dat(d),id:d.id}));render();status();renderPost()},()=>{clearTimeout(timer);$('#list').innerHTML='<p class="empty">Erro ao carregar as atualizações.</p>'});
-  db.collection('prazos').onSnapshot(s=>{prazos=docs(s).map(dat).filter(p=>p.data);renderTrack()});
+  db.collection('prazos').onSnapshot(s=>{prazos=docs(s).map(d=>({...dat(d),id:d.id})).filter(p=>p.data);renderTrack()});
   db.doc('config/status').onSnapshot(d=>{meta=has(d)?dat(d):{};status()});
 })();
 }
