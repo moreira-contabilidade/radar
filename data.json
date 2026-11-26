@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-26T20:50:00Z",
+ "gerado_em": "2026-11-26T21:00:00Z",
  "prazos": [
   {
    "data": "2026-11-30",
@@ -588,6 +588,110 @@
    "card_quando": "Valor oficial após o INPC de novembro",
    "card_acao": "Tem funcionários no piso? **Vamos simular o custo da folha** com o novo valor assim que ele for confirmado.",
    "fonte_card": "Câmara dos Deputados · PLOA 2027"
+  },
+  {
+   "id": "2025-12-29-lc224-lucro-presumido",
+   "setor": "fiscal",
+   "data": "2025-12-29",
+   "impacto": "alto",
+   "titulo": "Lucro Presumido: IRPJ e CSLL mais altos para receita acima de R$ 5 milhões e corte de 10% nos benefícios fiscais (LC nº 224/2025)",
+   "orgao": "Congresso Nacional · Receita Federal",
+   "resumo": "A Lei Complementar nº 224/2025 reduziu em 10% diversos benefícios fiscais federais (PIS/Cofins, IRPJ, CSLL, IPI e outros). No Lucro Presumido, os percentuais de presunção do IRPJ e da CSLL têm acréscimo de 10%, aplicado apenas sobre a parcela da receita anual que ultrapassar R$ 5 milhões. A lei também elevou a tributação de fintechs, dos juros sobre capital próprio e das bets.",
+   "quem": "Empresas do Lucro Presumido com receita acima de R$ 5 milhões por ano e empresas com benefícios fiscais federais",
+   "acao": "Revisar o planejamento tributário de 2027 dos clientes do Lucro Presumido e dos que usam benefícios fiscais.",
+   "fonte_nome": "Câmara dos Deputados (camara.leg.br)",
+   "fonte_url": "https://www.camara.leg.br/noticias/1236146-nova-lei-corta-incentivos-eleva-impostos-sobre-bets-e-impoe-teto-fiscal/",
+   "comunicado": "Prezado(a) cliente,\n\nA Lei Complementar nº 224/2025 aumentou impostos para parte das empresas. No Lucro Presumido, a base de cálculo do IRPJ e da CSLL ficou 10% maior, mas apenas sobre a parte do faturamento anual que passar de R$ 5 milhões.\n\nA lei também reduziu em 10% vários benefícios fiscais federais (como alíquota zero e isenções de PIS/Cofins) e aumentou a tributação de fintechs, dos juros sobre capital próprio e das apostas on-line.\n\nSe a sua empresa está no Lucro Presumido ou usa algum benefício fiscal, vamos revisar o planejamento tributário de 2027 com você.\n\nAtenciosamente,",
+   "card_tema": "IRPJ e CSLL",
+   "card_titulo": "Lucro Presumido:",
+   "card_destaque": "IRPJ e CSLL subiram",
+   "card_sub": "Uma nova lei aumentou os impostos sobre o lucro de parte das empresas. No Lucro Presumido, a base do **IRPJ e da CSLL ficou 10% maior** na parte do faturamento que passar de **R$ 5 milhões por ano**.",
+   "card_pontos": [
+    "Quem fatura **até R$ 5 milhões por ano** não é afetado por esse aumento",
+    "Benefícios fiscais federais (como **isenções de PIS/Cofins**) foram **reduzidos em 10%**",
+    "Também subiu a tributação de **fintechs, juros sobre capital próprio e bets**"
+   ],
+   "card_quando": "Em vigor desde 2026",
+   "card_acao": "Fatura mais de R$ 5 milhões? **Vamos revisar o seu planejamento tributário de 2027.**",
+   "fonte_card": "Lei Complementar nº 224/2025"
+  },
+  {
+   "id": "2025-11-26-lei15270-dividendos",
+   "setor": "fiscal",
+   "data": "2025-11-26",
+   "impacto": "alto",
+   "titulo": "Dividendos: IR de 10% na fonte sobre lucros acima de R$ 50 mil por mês, inclusive no Simples (Lei nº 15.270/2025)",
+   "orgao": "Presidência da República · Receita Federal",
+   "resumo": "Desde janeiro de 2026, lucros e dividendos pagos por uma mesma empresa a uma mesma pessoa física residente no Brasil acima de R$ 50 mil em um mês sofrem retenção de 10% de IR sobre o total pago, sem deduções. A regra vale também para empresas do Simples Nacional. A lei criou ainda a tributação mínima anual para rendas acima de R$ 600 mil.",
+   "quem": "Sócios que recebem lucros e dividendos e as empresas que os distribuem, inclusive do Simples Nacional",
+   "acao": "Planejar com cada cliente a distribuição de lucros mensal e a retenção do IRRF quando passar de R$ 50 mil.",
+   "fonte_nome": "Receita Federal (gov.br)",
+   "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/dezembro/receita-federal-atualiza-normas-relativas-ao-imposto-sobre-a-renda-das-pessoas-fisicas",
+   "comunicado": "Prezado(a) cliente,\n\nDesde janeiro de 2026, a distribuição de lucros e dividendos acima de R$ 50 mil por mês, de uma mesma empresa para um mesmo sócio, tem retenção de 10% de Imposto de Renda sobre o valor total pago. A regra vale também para empresas do Simples Nacional.\n\nAbaixo de R$ 50 mil por mês, por empresa, não há retenção. Além disso, quem tiver renda anual acima de R$ 600 mil passa a ter uma tributação mínima na declaração.\n\nAntes de distribuir lucros, fale com a nossa equipe para planejarmos os valores e evitar surpresas.\n\nAtenciosamente,",
+   "card_tema": "Imposto de Renda",
+   "card_titulo": "Lucros e dividendos:",
+   "card_destaque": "10% acima de R$ 50 mil",
+   "card_sub": "Desde janeiro de 2026, quando uma empresa paga **mais de R$ 50 mil por mês** em lucros a um mesmo sócio, ela precisa **reter 10% de Imposto de Renda** sobre o valor total.",
+   "card_pontos": [
+    "Vale também para empresas do **Simples Nacional**",
+    "Até **R$ 50 mil por mês**, por empresa, **não há retenção**",
+    "Renda anual **acima de R$ 600 mil** passa a ter tributação mínima"
+   ],
+   "card_quando": "Em vigor desde janeiro de 2026",
+   "card_acao": "**Fale com a gente antes de distribuir lucros** para planejar os valores do mês.",
+   "fonte_card": "Lei nº 15.270/2025"
+  },
+  {
+   "id": "2026-01-02-irpf-tabela-5mil",
+   "setor": "fiscal",
+   "data": "2026-01-02",
+   "impacto": "medio",
+   "titulo": "Nova tabela do IR: isenção para quem ganha até R$ 5 mil por mês e redução até R$ 7.350",
+   "orgao": "Receita Federal · Ministério da Fazenda",
+   "resumo": "Desde 1º de janeiro de 2026, quem ganha até R$ 5 mil por mês está isento do Imposto de Renda, e quem ganha até R$ 7.350 tem redução gradual. A mudança vale para salários pagos a partir de janeiro e se reflete na declaração do IRPF de 2027 (ano-base 2026).",
+   "quem": "Empregados, servidores, aposentados e as empresas que retêm IR na folha",
+   "acao": "Conferir a retenção de IRRF na folha dos clientes e orientar sobre a declaração de 2027.",
+   "fonte_nome": "Ministério da Fazenda (gov.br)",
+   "fonte_url": "https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/janeiro/receita-divulga-nova-tabela-do-irpf-com-as-mudancas-apos-isencao-para-quem-ganha-ate-r-5-mil",
+   "comunicado": "Prezado(a) cliente,\n\nDesde 1º de janeiro de 2026, quem ganha até R$ 5 mil por mês está isento do Imposto de Renda, e quem ganha até R$ 7.350 paga menos imposto. A mudança vale para os salários pagos a partir de janeiro e vai aparecer na declaração do Imposto de Renda de 2027.\n\nQuem tem mais de uma fonte de renda pode precisar complementar o imposto na declaração.\n\nNossa equipe já aplica a nova tabela na folha de pagamento e está à disposição para tirar dúvidas.\n\nAtenciosamente,",
+   "card_tema": "Imposto de Renda",
+   "card_titulo": "Ganha até R$ 5 mil?",
+   "card_destaque": "Não paga Imposto de Renda",
+   "card_sub": "A tabela do Imposto de Renda mudou. Desde **1º de janeiro de 2026**, quem ganha **até R$ 5 mil por mês** está isento, e quem ganha **até R$ 7.350** paga menos.",
+   "card_pontos": [
+    "Vale para **salários, aposentadorias e pensões**",
+    "A mudança aparece na **declaração do IR de 2027**",
+    "Quem tem **mais de uma renda** pode ter imposto a complementar"
+   ],
+   "card_quando": "Em vigor desde 1º/01/2026",
+   "card_acao": "Tem mais de uma fonte de renda? **Fale com a gente** para evitar imposto a pagar na declaração.",
+   "fonte_card": "Lei nº 15.270/2025"
+  },
+  {
+   "id": "2026-11-03-transacao-prorrogada",
+   "setor": "fiscal",
+   "data": "2026-11-03",
+   "impacto": "medio",
+   "titulo": "Receita prorroga até 30/12/2026 a adesão aos Editais de Transação RFB nº 9 e nº 10/2026",
+   "orgao": "Receita Federal",
+   "resumo": "A Receita Federal prorrogou até 30 de dezembro de 2026 o prazo de adesão às modalidades de transação tributária dos Editais RFB nº 9 e nº 10, de 2026, voltados a débitos em discussão administrativa, com condições diferenciadas e descontos previstos nos editais.",
+   "quem": "Pessoas físicas e empresas com débitos federais em contencioso administrativo",
+   "acao": "Levantar clientes com débitos em discussão administrativa e avaliar a adesão até 30/12/2026.",
+   "fonte_nome": "Receita Federal (gov.br)",
+   "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-prorroga-prazo-para-adesao-a-editais-de-transacao-tributaria-ate-30-de-dezembro",
+   "comunicado": "Prezado(a) cliente,\n\nA Receita Federal prorrogou até 30 de dezembro de 2026 o prazo para aderir às transações tributárias dos Editais nº 9 e nº 10/2026. Elas permitem regularizar débitos federais que estão em discussão administrativa, com condições diferenciadas e descontos.\n\nSe a sua empresa tem algum débito em discussão com a Receita, fale com a nossa equipe para avaliarmos se vale a pena aderir antes do prazo.\n\nAtenciosamente,",
+   "card_tema": "Regularização de débitos",
+   "card_titulo": "Débito com a Receita?",
+   "card_destaque": "Prazo até 30/12",
+   "card_sub": "A Receita Federal **prorrogou até 30 de dezembro de 2026** o prazo para negociar débitos federais que estão em discussão, com **condições diferenciadas e descontos**.",
+   "card_pontos": [
+    "Vale para **empresas e pessoas físicas**",
+    "É para débitos em **discussão administrativa** com a Receita",
+    "Depois de **30/12/2026**, o prazo se encerra"
+   ],
+   "card_quando": "Adesão até 30/12/2026",
+   "card_acao": "Tem débito em discussão com a Receita? **Fale com a gente** para avaliar a adesão.",
+   "fonte_card": "Receita Federal"
   }
  ]
 }
