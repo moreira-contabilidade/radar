@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Radar da Reforma Tributária · Moreira Contabilidade</title>
+<title>Radar Fiscal e Trabalhista · Moreira Contabilidade</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* VOICE: escritório de planejamento fiscal — sóbrio, direto, cada item acionável
    IDEA: o mural de prazos e o livro de registro de normas de um escritório contábil
@@ -68,6 +68,7 @@ a{color:var(--brick)}
 .week{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:24px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:10px}.week img{width:100%;display:block;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.16)}@media(max-width:640px){.cal{margin-bottom:14px}.calhead{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-bottom:10px}.weeks{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory}.wk{flex:none;scroll-snap-align:start;min-width:150px;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 14px;line-height:1.3}.wk b{display:block;font-size:15px}.wk span{font-size:13px;color:var(--mute)}.wk[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}.wk[aria-selected=true] span{color:inherit;opacity:.8}.wk.all{min-width:120px}
 .week{grid-template-columns:1fr}}
 .thumbs{display:grid;grid-template-columns:1fr 1fr;gap:12px}.thumbs figure{margin:0}.thumbs figcaption{font-size:13px;color:var(--mute);margin:6px 0}.thumbs button{width:100%;font-size:14px;padding:0 8px}
+.area{font-weight:700;color:var(--ink)}.area.dp{color:var(--brick)}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}.gal figure{margin:0}.gal canvas{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.16)}.gal figcaption{font-size:14px;margin:8px 0}.gal button{width:100%}
 .cardbox canvas{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
 @media(max-width:760px){.post{grid-template-columns:1fr}}
@@ -77,8 +78,8 @@ a{color:var(--brick)}
 </head>
 <body>
 <header class="band"><div class="wrap">
-  <h1>Radar da Reforma Tributária</h1>
-  <p class="lede">Somente fontes oficiais (Receita Federal, Ministério da Fazenda, Comitê Gestor do IBS, CGSN, Portal da NFS-e, TCU, Senado e Diário Oficial). Cada atualização traz o comunicado e o post no padrão Moreira, prontos para baixar.</p>
+  <h1>Radar Fiscal e Trabalhista</h1>
+  <p class="lede">Reforma Tributária, setor fiscal e Departamento Pessoal (folha, jornada, hora extra, FGTS, eSocial). Somente fontes oficiais: Receita Federal, Fazenda, Comitê Gestor do IBS, Ministério do Trabalho, FGTS Digital, eSocial, Planalto, TCU, Câmara, Senado e Diário Oficial. Cada atualização traz o comunicado e o post no padrão Moreira, prontos para baixar.</p>
   <div class="status" id="status"><span><span class="dot"></span>Carregando…</span></div>
 </div></header>
 
@@ -90,6 +91,7 @@ a{color:var(--brick)}
 <main class="band"><div class="wrap">
   <div class="tools">
     <input type="search" id="q" placeholder="Buscar: CBS, Simples, DeRE, Imposto Seletivo…" aria-label="Buscar atualizações">
+    <select id="setor" aria-label="Filtrar por área"><option value="">Fiscal e DP</option><option value="fiscal">Só fiscal</option><option value="dp">Só Departamento Pessoal</option></select>
     <select id="imp" aria-label="Filtrar por impacto">
       <option value="">Todos os impactos</option><option value="alto">Impacto alto</option><option value="medio">Impacto médio</option><option value="baixo">Impacto baixo</option>
     </select>
@@ -140,8 +142,8 @@ function renderTrack(){
 }
 
 function render(){
-  const q=$('#q').value.trim().toLowerCase(),imp=$('#imp').value;
-  const W=(selWeek&&selWeek!=='todas')?semana():(selWeek==='todas'?null:semana());const f=items.filter(i=>(!W||(i.data>=W.ini&&i.data<=W.fim))&&(!imp||i.impacto===imp)&&(!q||[i.titulo,i.orgao,i.resumo,i.quem,i.acao].join(' ').toLowerCase().includes(q)))
+  const q=$('#q').value.trim().toLowerCase(),imp=$('#imp').value,st=$('#setor').value;
+  const W=(selWeek&&selWeek!=='todas')?semana():(selWeek==='todas'?null:semana());const f=items.filter(i=>(!W||(i.data>=W.ini&&i.data<=W.fim))&&(!imp||i.impacto===imp)&&(!st||(i.setor||'fiscal')===st)&&(!q||[i.titulo,i.orgao,i.resumo,i.quem,i.acao].join(' ').toLowerCase().includes(q)))
     .sort((a,b)=>String(b.data).localeCompare(String(a.data)));
   if(!f.length){$('#list').innerHTML=`<p class="empty">${items.length?'Nada encontrado com esses filtros.':'Ainda não há atualizações registradas.'}</p>`;return}
   const days=[...new Set(f.map(i=>i.data))];
@@ -149,7 +151,7 @@ function render(){
     const g=f.filter(i=>i.data===d);
     return `<div class="day"><span>${fmt(d)} · ${g.length} atualizaç${g.length>1?'ões':'ão'}</span><span class="row"><button class="pri" data-dlday="${esc(d)}">Baixar comunicado do dia (imagem Moreira)</button><button data-day="${esc(d)}">Copiar texto</button></span></div>`+
     g.map(i=>{const u=safeUrl(i.fonte_url);return `<article class="item">
-      <div class="head"><div><h3>${esc(i.titulo)}</h3><div class="org">${esc(i.orgao)}</div></div><span class="tag ${esc(i.impacto)}">${esc(IMP[i.impacto]||i.impacto)}</span></div>
+      <div class="head"><div><h3>${esc(i.titulo)}</h3><div class="org"><b class="area ${i.setor==='dp'?'dp':''}">${i.setor==='dp'?'Departamento Pessoal':'Fiscal'}</b> · ${esc(i.orgao)}</div></div><span class="tag ${esc(i.impacto)}">${esc(IMP[i.impacto]||i.impacto)}</span></div>
       <p>${esc(i.resumo)}</p>
       <div class="meta"><div><span>Quem é afetado</span>${esc(i.quem)}</div><div><span>O que fazer</span>${esc(i.acao)}</div><div><span>Fonte</span>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(i.fonte_nome||'Abrir fonte')}</a>`:esc(i.fonte_nome)}</div></div>
       <details open><summary>Comunicado para o cliente · padrão Moreira</summary><div class="prev"><div><div class="thumbs"><figure><img data-img="${esc(i.id)}" alt="Comunicado no padrão Moreira"><figcaption>Comunicado (WhatsApp)</figcaption><button class="pri" data-dl="${esc(i.id)}">Baixar comunicado</button></figure><figure><img data-post="${esc(i.id)}" alt="Post da notícia no padrão Moreira"><figcaption>Post da notícia (Instagram)</figcaption><button class="pri" data-dlpost="${esc(i.id)}">Baixar post</button></figure></div><div class="row"><button data-id="${esc(i.id)}">Copiar texto do comunicado</button></div></div><div class="msg" style="margin:0">${esc(i.comunicado)}</div></div></details>
@@ -172,15 +174,18 @@ let dl=null;
 async function savePng(c,name){if(!dl){toast('Clique com o botão direito (ou segure) na imagem e escolha Salvar imagem');return}
   c.toBlob(async b=>{try{await dl.save({filename:name,data:b});toast('Card salvo')}catch(e){toast('Download cancelado')}},'image/png')}
 const cache={};
-function cvItem(i){const c=document.createElement('canvas');MoreiraCards.comunicado(c,{data:i.data,titulo:i.card_titulo||i.titulo,destaque:i.card_destaque||'',texto:i.comunicado,acao:i.card_acao||i.acao,fonte:i.fonte_card||i.orgao});return c}
-function cvDay(d){const g=items.filter(x=>x.data===d);const c=document.createElement('canvas');
-  MoreiraCards.comunicado(c,{data:d,titulo:'Atualizações fiscais',destaque:g.length>1?`${g.length} novidades para você`:'Novidade para você',texto:dayClient(g,d),acao:'',fonte:[...new Set(g.map(x=>x.fonte_card||x.orgao))].slice(0,3).join(', ')});return c}
-function dayClient(g,d){return `Prezado(a) cliente,\nSeguem as principais atualizações fiscais de ${fmt(d)}, explicadas de forma simples:\n`+g.map((x,n)=>`${n+1}. ${(x.card_titulo||x.titulo)}${x.card_destaque?' '+x.card_destaque:''}\n${x.card_sub||x.resumo} O que fazer: ${x.card_acao||x.acao}`).join('\n')+`\nNossa equipe acompanha cada etapa e está à disposição para avaliar os impactos no seu negócio.\nAtenciosamente,`}
+const P=t=>MoreiraCards.plain(t);
+function blk(i){return {titulo:i.card_titulo||i.titulo,destaque:i.card_destaque||'',sub:i.card_sub||i.resumo,pontos:i.card_pontos||[],quando:i.card_quando||'',acao:i.card_acao||i.acao}}
+function cvItem(i){const c=document.createElement('canvas');MoreiraCards.comunicado(c,{data:i.data,...blk(i),fonte:i.fonte_card||i.orgao});return c}
+function cvDay(d){const g=items.filter(x=>x.data===d).sort((a,b)=>(PESO[a.impacto]??3)-(PESO[b.impacto]??3));const c=document.createElement('canvas');
+  if(g.length===1)return cvItem(g[0]);
+  MoreiraCards.comunicado(c,{data:d,titulo:'Atualizações do dia',destaque:`${g.length} novidades para você`,itens:g.map(blk),fonte:[...new Set(g.map(x=>x.fonte_card||x.orgao))].slice(0,3).join(', ')});return c}
+function dayClient(g,d){return `Prezado(a) cliente,\nSeguem as principais atualizações fiscais de ${fmt(d)}, explicadas de forma simples:\n`+g.map((x,n)=>`${n+1}. ${P(x.card_titulo||x.titulo)}${x.card_destaque?' '+P(x.card_destaque):''}\n${P(x.card_sub||x.resumo)}${x.card_quando?'\nQuando: '+P(x.card_quando):''}\nO que fazer: ${P(x.card_acao||x.acao)}`).join('\n')+`\nNossa equipe acompanha cada etapa e está à disposição para avaliar os impactos no seu negócio.\nAtenciosamente,`}
 const PESO={alto:0,medio:1,baixo:2};
 let selWeek=null;
 const iso=d=>d.toISOString().slice(0,10);
 function segunda(ds){const d=new Date(ds+'T12:00:00');const k=(d.getDay()+6)%7;d.setDate(d.getDate()-k);return iso(d)}
-function semanas(){const m={};items.forEach(i=>{if(!i.data)return;const k=segunda(i.data);(m[k]=m[k]||[]).push(i)});
+function semanas(){const m={};const st=$('#setor').value;items.filter(i=>!st||(i.setor||'fiscal')===st).forEach(i=>{if(!i.data)return;const k=segunda(i.data);(m[k]=m[k]||[]).push(i)});
   return Object.keys(m).sort().reverse().map(k=>{const f=new Date(k+'T12:00:00');f.setDate(f.getDate()+6);
     const g=m[k].sort((a,b)=>(PESO[a.impacto]??3)-(PESO[b.impacto]??3)||String(b.data).localeCompare(String(a.data)));return {ini:k,fim:iso(f),g}})}
 function semana(){const ws=semanas();if(!ws.length)return null;return ws.find(w=>w.ini===selWeek)||ws[0]}
@@ -188,13 +193,13 @@ function curto(d){const [y,m,dd]=d.split('-');return `${dd}/${m}`}
 function renderCal(){const ws=semanas();if(!ws.length){$('#cal').hidden=true;return}$('#cal').hidden=false;
   const cur=semana();
   $('#weeks').innerHTML=ws.map(w=>`<button class="wk" role="tab" data-week="${esc(w.ini)}" aria-selected="${selWeek===w.ini||(!selWeek&&w===ws[0])?'true':'false'}"><b>${esc(curto(w.ini))} a ${esc(curto(w.fim))}</b><span>${w.g.length} atualizaç${w.g.length>1?'ões':'ão'}${w===ws[0]?' · mais recente':''}</span></button>`).join('')+
-    `<button class="wk all" role="tab" data-week="todas" aria-selected="${selWeek==='todas'?'true':'false'}"><b>Todo o histórico</b><span>${items.length} atualizações</span></button>`}
+    `<button class="wk all" role="tab" data-week="todas" aria-selected="${selWeek==='todas'?'true':'false'}"><b>Todo o histórico</b><span>${items.filter(i=>!$('#setor').value||(i.setor||'fiscal')===$('#setor').value).length} atualizações</span></button>`}
 $('#weeks').addEventListener('click',e=>{const b=e.target.closest('button[data-week]');if(!b)return;selWeek=b.dataset.week;renderCal();render();renderPost()});
-function legendaSemana(w){return `Resumo fiscal da semana (${fmt(w.ini)} a ${fmt(w.fim)})\n\n`+w.g.slice(0,4).map(x=>`▸ ${(x.card_titulo||x.titulo)}${x.card_destaque?' '+x.card_destaque:''}: ${x.card_acao||x.acao}`).join('\n')+`\n\nDúvidas? Fale com a Moreira Contabilidade: (94) 99119-8085.\n#reformatributaria #contabilidade #simplesnacional #maraba`}
-function cvSemana(w){const c=document.createElement('canvas');MoreiraCards.resumo(c,w.g.slice(0,4),curto(w.ini)+' a '+fmt(w.fim),'Resumo fiscal','da semana');return c}
+function legendaSemana(w){return `Radar Moreira da semana (${fmt(w.ini)} a ${fmt(w.fim)})\n\n`+w.g.slice(0,4).map(x=>`▸ ${P(x.card_titulo||x.titulo)}${x.card_destaque?' '+P(x.card_destaque):''}: ${P(x.card_sub||x.resumo)} ${P(x.card_acao||x.acao)}`).join('\n')+`\n\nDúvidas? Fale com a Moreira Contabilidade: (94) 99119-8085.\n#reformatributaria #contabilidade #simplesnacional #maraba`}
+function cvSemana(w){const c=document.createElement('canvas');MoreiraCards.resumo(c,w.g.slice(0,3),curto(w.ini)+' a '+fmt(w.fim),'Radar Moreira','da semana');return c}
 function renderPost(){if(!window.MoreiraCards||!MoreiraCards.ready())return;
   renderCal();const w=selWeek==='todas'?null:semana();$('#week').hidden=!w;if(w&&w.g.length){$('#weekTitle').textContent=`Resumo da semana ${curto(w.ini)} a ${curto(w.fim)} · post para Instagram`;$('#weekImg').src=cvSemana(w).toDataURL('image/png');
-    $('#weekInfo').textContent=`${w.g.length} atualizaç${w.g.length>1?'ões':'ão'} entre ${fmt(w.ini)} e ${fmt(w.fim)}. O card mostra as ${Math.min(4,w.g.length)} de maior impacto.`.replace(/&[^;]+;/g,'');
+    $('#weekInfo').textContent=`${w.g.length} atualizaç${w.g.length>1?'ões':'ão'} entre ${fmt(w.ini)} e ${fmt(w.fim)}. O card mostra as ${Math.min(3,w.g.length)} de maior impacto.`.replace(/&[^;]+;/g,'');
     $('#weekCap').textContent=legendaSemana(w)}
   document.querySelectorAll('img[data-post]').forEach(im=>{const i=items.find(x=>x.id===im.dataset.post);if(!i)return;const key='p|'+i.id+'|'+(i.card_titulo||'')+(i.card_destaque||'')+(i.card_sub||'')+JSON.stringify(i.card_pontos||[])+(i.card_acao||'');
     if(!cache[key]){const c=document.createElement('canvas');MoreiraCards.noticia(c,i);cache[key]=c.toDataURL('image/png')}im.src=cache[key]});
@@ -202,7 +207,7 @@ function renderPost(){if(!window.MoreiraCards||!MoreiraCards.ready())return;
     if(!cache[key])cache[key]=cvItem(i).toDataURL('image/png');im.src=cache[key]})}
 $('#dlWeek').addEventListener('click',()=>{const w=semana();if(w)savePng(cvSemana(w),`resumo-semanal-moreira-${w.ini}-a-${w.fim}.png`)});
 $('#copyWeek').addEventListener('click',()=>{const w=semana();if(w)copy(legendaSemana(w))});
-$('#q').addEventListener('input',()=>{render();renderPost()});$('#imp').addEventListener('change',()=>{render();renderPost()});
+$('#q').addEventListener('input',()=>{render();renderPost()});$('#imp').addEventListener('change',()=>{render();renderPost()});$('#setor').addEventListener('change',()=>{render();renderPost()});
 
 function status(){
   const last=meta.ultima_verificacao?new Date(meta.ultima_verificacao).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'}):'—';
@@ -214,7 +219,7 @@ function status(){
   MoreiraCards.load('').then(renderPost);
   claude.use('downloads').then(d=>{dl=d});
   const db=await claude.use('db');
-  if(!db){clearTimeout(timer);$('#list').innerHTML='<p class="empty">Não foi possível carregar.</p>';$('#status').textContent='';return}
+  if(!db){clearTimeout(timer);$('#list').innerHTML='<p class="empty">Entre na sua conta Claude para ver as atualizações.</p>';$('#status').textContent='';return}
   const dat=d=>(typeof d.data==='function'?d.data():d.data)||{};
   const has=d=>d&&(typeof d.exists==='function'?d.exists():d.exists!==false);
   const docs=s=>(s&&(s.docs||s))||[];

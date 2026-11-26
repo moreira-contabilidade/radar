@@ -1,6 +1,10 @@
 {
- "gerado_em": "2026-11-26T20:30:00Z",
+ "gerado_em": "2026-11-26T20:50:00Z",
  "prazos": [
+  {
+   "data": "2026-11-30",
+   "titulo": "13º salário: prazo da 1ª parcela"
+  },
   {
    "data": "2026-12-15",
    "titulo": "DeRE: 1ª entrega mensal da 2ª fase (competência nov.)"
@@ -8,6 +12,14 @@
   {
    "data": "2026-12-15",
    "titulo": "Prazo do Senado para fixar a alíquota de referência da CBS"
+  },
+  {
+   "data": "2026-12-16",
+   "titulo": "Jornada máxima de 42h e duas folgas semanais (fim da escala 6x1)"
+  },
+  {
+   "data": "2026-12-20",
+   "titulo": "13º salário: prazo da 2ª parcela"
   },
   {
    "data": "2027-01-01",
@@ -42,15 +54,16 @@
    "card_tema": "Nota fiscal de serviço",
    "card_titulo": "Presta serviço no Simples?",
    "card_destaque": "A nota agora é nacional",
-   "card_sub": "Desde 1º de novembro de 2026, as micro e pequenas empresas do Simples Nacional que prestam serviços não emitem mais a nota pelo sistema da prefeitura. A emissão passou para o Emissor Nacional da NFS-e, do governo federal.",
+   "card_sub": "Desde **1º de novembro de 2026**, as micro e pequenas empresas do Simples Nacional que prestam serviços não emitem mais a nota pelo sistema da prefeitura. A emissão passou para o **Emissor Nacional da NFS-e**, do governo federal.",
    "card_pontos": [
-    "O sistema da prefeitura não vale para notas de serviços feitos a partir de novembro",
-    "Dá para emitir pelo site do Emissor Nacional ou pelo seu sistema integrado",
-    "Os novos impostos da Reforma ainda não aparecem na nota em 2026"
+    "O **sistema da prefeitura não vale mais** para notas de serviços feitos a partir de novembro",
+    "Dá para emitir pelo **site do Emissor Nacional** ou pelo seu sistema integrado",
+    "Os novos impostos da Reforma **ainda não aparecem na nota em 2026**"
    ],
-   "card_acao": "Ainda emite pela prefeitura? Fale com a gente hoje para configurarmos o Emissor Nacional.",
+   "card_acao": "Ainda emite pela prefeitura? **Fale com a gente hoje** para configurarmos o Emissor Nacional.",
    "fonte_card": "Resolução CGSN nº 191/2026",
-   "card_quando": "Obrigatório desde 1º/11/2026"
+   "card_quando": "Obrigatório desde 1º/11/2026",
+   "setor": "fiscal"
   },
   {
    "id": "2026-11-05-mp-1399-seletivo",
@@ -67,15 +80,16 @@
    "card_tema": "Imposto Seletivo",
    "card_titulo": "Imposto Seletivo",
    "card_destaque": "começa em fevereiro de 2027",
-   "card_sub": "É um novo imposto federal cobrado sobre produtos considerados prejudiciais à saúde ou ao meio ambiente. A Medida Provisória nº 1.399/2026 definiu como ele será cobrado em 2027.",
+   "card_sub": "É um **novo imposto federal** cobrado sobre produtos considerados prejudiciais à saúde ou ao meio ambiente. A Medida Provisória nº 1.399/2026 definiu como ele será cobrado **em 2027**.",
    "card_pontos": [
-    "Atinge veículos, barcos, aviões, cigarros e bebidas alcoólicas e açucaradas",
-    "Em 2027, o valor acompanha o IPI que já é cobrado hoje sobre esses produtos",
-    "Quem fabrica ou importa esses produtos é quem recolhe o imposto"
+    "Atinge **veículos, barcos, aviões, cigarros e bebidas alcoólicas e açucaradas**",
+    "Em 2027, o valor acompanha o **IPI que já é cobrado hoje** sobre esses produtos",
+    "**Quem fabrica ou importa** esses produtos é quem recolhe o imposto"
    ],
-   "card_acao": "Fabrica, importa ou revende esses produtos? Vamos calcular o impacto nos seus preços antes de fevereiro.",
+   "card_acao": "Fabrica, importa ou revende esses produtos? Vamos calcular o impacto nos seus preços **antes de fevereiro**.",
    "fonte_card": "Medida Provisória nº 1.399/2026",
-   "card_quando": "Cobrança prevista a partir de 2/02/2027"
+   "card_quando": "Cobrança prevista a partir de 2/02/2027",
+   "setor": "fiscal"
   },
   {
    "id": "2026-11-10-cgibs-cnpj-rural",
@@ -92,15 +106,16 @@
    "card_tema": "Produtor rural",
    "card_titulo": "Produtor rural",
    "card_destaque": "não precisa de CNPJ até 2028",
-   "card_sub": "Com a Reforma Tributária, produtores rurais e caminhoneiros autônomos passariam a precisar de CNPJ. Um ato oficial adiou essa exigência: até o fim de 2028, quem se enquadra continua usando o CPF.",
+   "card_sub": "Com a Reforma Tributária, produtores rurais e caminhoneiros autônomos passariam a precisar de CNPJ. Um ato oficial adiou essa exigência: **até o fim de 2028**, quem se enquadra **continua usando o CPF**.",
    "card_pontos": [
-    "Vale para produtor rural pessoa física com faturamento abaixo de R$ 3,6 milhões por ano",
-    "Vale também para o transportador autônomo de cargas (caminhoneiro)",
-    "Não vale para quem escolher o regime regular do IBS e da CBS"
+    "Vale para produtor rural pessoa física com faturamento **abaixo de R$ 3,6 milhões por ano**",
+    "Vale também para o **transportador autônomo de cargas** (caminhoneiro)",
+    "**Não vale** para quem escolher o regime regular do IBS e da CBS"
    ],
-   "card_acao": "Se você se enquadra, não precisa abrir CNPJ agora. Fale com a gente para confirmar o seu caso.",
+   "card_acao": "Se você se enquadra, **não precisa abrir CNPJ agora**. Fale com a gente para confirmar o seu caso.",
    "fonte_card": "Ato Conjunto RFB/CGIBS nº 8/2026",
-   "card_quando": "De 1º/01/2027 a 31/12/2028"
+   "card_quando": "De 1º/01/2027 a 31/12/2028",
+   "setor": "fiscal"
   },
   {
    "id": "2026-11-10-tcu-aliquota",
@@ -117,15 +132,16 @@
    "card_tema": "Reforma Tributária",
    "card_titulo": "Novo imposto federal:",
    "card_destaque": "proposta de 11,3%",
-   "card_sub": "A CBS é o imposto federal que vai substituir o PIS e a Cofins em 2027. O Tribunal de Contas da União calculou 11,3% como alíquota de referência, mas quem decide o número final é o Senado.",
+   "card_sub": "A CBS é o imposto federal que vai substituir o PIS e a Cofins em 2027. O Tribunal de Contas da União calculou **11,3%** como alíquota de referência, mas quem decide o número final é o **Senado**.",
    "card_pontos": [
-    "O Senado tem até 15 de dezembro de 2026 para definir a alíquota",
-    "Os 11,3% ainda são uma proposta, não o valor final",
-    "Não significa preços 11,3% mais altos: a CBS substitui impostos que já existem"
+    "O Senado tem até **15 de dezembro de 2026** para definir a alíquota",
+    "Os 11,3% **ainda são uma proposta**, não o valor final",
+    "**Não significa preços 11,3% mais altos**: a CBS substitui impostos que já existem"
    ],
-   "card_acao": "Aguarde a definição. Assim que sair, simulamos o impacto nos seus preços e margens.",
+   "card_acao": "Aguarde a definição. Assim que sair, simulamos o **impacto nos seus preços e margens**.",
    "fonte_card": "TCU",
-   "card_quando": "Definição até 15/12/2026 · vale a partir de 2027"
+   "card_quando": "Definição até 15/12/2026 · vale a partir de 2027",
+   "setor": "fiscal"
   },
   {
    "id": "2026-11-11-ato-conjunto-7-dere",
@@ -142,15 +158,16 @@
    "card_tema": "Setores específicos",
    "card_titulo": "Bancos, planos de saúde",
    "card_destaque": "e loterias: prazo adiado",
-   "card_sub": "A DeRE é uma nova declaração da Reforma Tributária para serviços financeiros, planos de saúde e loterias. O Comitê Gestor do IBS adiou em um mês a 2ª fase dessa declaração.",
+   "card_sub": "A DeRE é uma nova declaração da Reforma Tributária para **serviços financeiros, planos de saúde e loterias**. O Comitê Gestor do IBS **adiou em um mês** a 2ª fase dessa declaração.",
    "card_pontos": [
-    "A primeira entrega da 2ª fase passou para 15 de dezembro de 2026",
-    "A 3ª fase continua prevista para 1º de janeiro de 2027",
-    "Empresas de outros setores não são afetadas"
+    "A primeira entrega da 2ª fase passou para **15 de dezembro de 2026**",
+    "A 3ª fase continua prevista para **1º de janeiro de 2027**",
+    "Empresas de outros setores **não são afetadas**"
    ],
-   "card_acao": "Atua nesses setores? Seu calendário de obrigações já foi atualizado pela nossa equipe.",
+   "card_acao": "Atua nesses setores? Seu **calendário de obrigações já foi atualizado** pela nossa equipe.",
    "fonte_card": "Comitê Gestor do IBS",
-   "card_quando": "Primeira entrega em 15/12/2026"
+   "card_quando": "Primeira entrega em 15/12/2026",
+   "setor": "fiscal"
   },
   {
    "id": "2026-11-11-programa-conformidade",
@@ -167,15 +184,16 @@
    "card_tema": "Reforma Tributária",
    "card_titulo": "Errou por dúvida?",
    "card_destaque": "Sem multa",
-   "card_sub": "A Receita Federal e o Comitê Gestor do IBS anunciaram que empresas de boa-fé não serão multadas quando errarem por dúvida razoável sobre as novas regras da Reforma Tributária.",
+   "card_sub": "A Receita Federal e o Comitê Gestor do IBS anunciaram que empresas de boa-fé **não serão multadas** quando errarem por **dúvida razoável** sobre as novas regras da Reforma Tributária.",
    "card_pontos": [
-    "Vale para quem informa tudo, sem esconder dados",
-    "A empresa precisa seguir boas práticas de contabilidade",
-    "Também vão sair novas orientações e um regulamento revisado"
+    "Vale para quem **informa tudo**, sem esconder dados",
+    "A empresa precisa seguir **boas práticas de contabilidade**",
+    "Também vão sair **novas orientações** e um regulamento revisado"
    ],
-   "card_acao": "Mantenha seus documentos em dia com a contabilidade. É isso que garante a proteção.",
+   "card_acao": "**Mantenha seus documentos em dia** com a contabilidade. É isso que garante a proteção.",
    "fonte_card": "Ministério da Fazenda",
-   "card_quando": "Anunciado em 11/11/2026"
+   "card_quando": "Anunciado em 11/11/2026",
+   "setor": "fiscal"
   },
   {
    "id": "2026-11-13-ato-conjunto-7-dfe",
@@ -192,15 +210,16 @@
    "card_tema": "Nota fiscal",
    "card_titulo": "Novos impostos na nota:",
    "card_destaque": "prazo adiado para 2027",
-   "card_sub": "A partir de dezembro, as notas fiscais teriam que mostrar o IBS e a CBS, os novos impostos da Reforma. Um ato oficial adiou essa exigência para janeiro ou março de 2027, conforme a atividade.",
+   "card_sub": "A partir de dezembro, as notas fiscais teriam que mostrar o IBS e a CBS, os novos impostos da Reforma. Um ato oficial **adiou essa exigência** para **janeiro ou março de 2027**, conforme a atividade.",
    "card_pontos": [
-    "Condomínios e locações: a partir de 1º/01/2027",
-    "Plataformas digitais, TI e streaming: a partir de 1º/03/2027",
-    "Simples: janeiro ou março de 2027, conforme a atividade (o Emissor Nacional da NFS-e segue obrigatório)"
+    "Condomínios e locações: a partir de **1º/01/2027**",
+    "Plataformas digitais, TI e streaming: a partir de **1º/03/2027**",
+    "Simples: **janeiro ou março de 2027**, conforme a atividade (o **Emissor Nacional da NFS-e segue obrigatório**)"
    ],
-   "card_acao": "Continue emitindo normalmente. Vamos avisar antes de qualquer mudança na sua nota.",
+   "card_acao": "**Continue emitindo normalmente.** Vamos avisar antes de qualquer mudança na sua nota.",
    "fonte_card": "Ato Conjunto RFB/CGIBS nº 7/2026",
-   "card_quando": "Novas datas: 1º/01/2027 ou 1º/03/2027"
+   "card_quando": "Novas datas: 1º/01/2027 ou 1º/03/2027",
+   "setor": "fiscal"
   },
   {
    "id": "2026-11-13-pgdas-fs12",
@@ -217,15 +236,16 @@
    "card_tema": "Simples Nacional",
    "card_titulo": "Simples Nacional:",
    "card_destaque": "informe a folha de 12 meses",
-   "card_sub": "O sistema que calcula o imposto do Simples (PGDAS-D) foi atualizado. No cálculo de novembro e dezembro de 2026, será obrigatório informar a folha de salários dos últimos 12 meses.",
+   "card_sub": "O sistema que calcula o imposto do Simples (PGDAS-D) foi atualizado. No cálculo de **novembro e dezembro de 2026**, será obrigatório informar a **folha de salários dos últimos 12 meses**.",
    "card_pontos": [
-    "Vale para todas as empresas do Simples, de qualquer atividade",
-    "A exigência vale só para novembro e dezembro de 2026",
-    "A partir de 2027, o imposto será calculado pela data da venda, e não do recebimento"
+    "Vale para **todas as empresas do Simples**, de qualquer atividade",
+    "A exigência vale **só para novembro e dezembro de 2026**",
+    "A partir de **2027**, o imposto será calculado pela **data da venda**, e não do recebimento"
    ],
-   "card_acao": "Envie para nós as informações de folha que ainda estiverem pendentes, para não atrasar a guia.",
+   "card_acao": "**Envie para nós as informações de folha** que ainda estiverem pendentes, para não atrasar a guia.",
    "fonte_card": "Receita Federal",
-   "card_quando": "Apurações de novembro e dezembro de 2026"
+   "card_quando": "Apurações de novembro e dezembro de 2026",
+   "setor": "fiscal"
   },
   {
    "id": "2026-11-23-portaria-rfb-763",
@@ -242,15 +262,16 @@
    "card_tema": "Reforma Tributária",
    "card_titulo": "Sua empresa já pode",
    "card_destaque": "testar o novo imposto",
-   "card_sub": "A Receita Federal abriu para todas as empresas o ambiente de testes da CBS, o imposto federal que substitui o PIS e a Cofins em 2027. Antes, só empresas convidadas podiam participar.",
+   "card_sub": "A Receita Federal abriu para **todas as empresas** o ambiente de testes da CBS, o imposto federal que substitui o PIS e a Cofins em 2027. Antes, só empresas convidadas podiam participar.",
    "card_pontos": [
-    "Não precisa mais de convite para participar",
-    "Os testes não geram imposto, multa nem cobrança",
-    "Ajuda a ajustar o sistema de notas antes de 2027"
+    "**Não precisa mais de convite** para participar",
+    "Os testes **não geram imposto, multa nem cobrança**",
+    "Ajuda a ajustar o sistema de notas **antes de 2027**"
    ],
-   "card_acao": "Quer testar o seu sistema de notas? Fale com a gente para avaliarmos juntos.",
+   "card_acao": "Quer testar o seu sistema de notas? **Fale com a gente** para avaliarmos juntos.",
    "fonte_card": "Receita Federal",
-   "card_quando": "Liberado em novembro de 2026"
+   "card_quando": "Liberado em novembro de 2026",
+   "setor": "fiscal"
   },
   {
    "id": "2026-11-24-cgsn-196",
@@ -267,15 +288,16 @@
    "card_tema": "Simples Nacional",
    "card_titulo": "Simples Nacional",
    "card_destaque": "tem novas regras para 2027",
-   "card_sub": "Saíram as regras que adaptam o Simples aos novos impostos da Reforma Tributária (CBS e IBS), que entram aos poucos a partir de 2027. Você continua pagando os impostos pelo Simples Nacional.",
+   "card_sub": "Saíram as regras que adaptam o Simples aos novos impostos da Reforma Tributária (CBS e IBS), que entram aos poucos a partir de **2027**. Você **continua pagando os impostos pelo Simples Nacional**.",
    "card_pontos": [
-    "Muda a forma de declarar o faturamento e de dividir os impostos dentro da guia",
-    "Vendas e serviços para órgãos públicos precisam ser informados separadamente",
-    "A declaração anual de 2026 (Defis) deve ser entregue até 31/03/2027"
+    "Muda a forma de **declarar o faturamento** e de dividir os impostos dentro da guia",
+    "Vendas e serviços para **órgãos públicos** precisam ser informados separadamente",
+    "A declaração anual de 2026 (Defis) deve ser entregue até **31/03/2027**"
    ],
-   "card_acao": "Nada muda no seu dia a dia agora. Nossa equipe já está adaptando a sua apuração às novas regras.",
+   "card_acao": "**Nada muda no seu dia a dia agora.** Nossa equipe já está adaptando a sua apuração às novas regras.",
    "fonte_card": "Comitê Gestor do Simples Nacional",
-   "card_quando": "Transição de 2027 a 2033"
+   "card_quando": "Transição de 2027 a 2033",
+   "setor": "fiscal"
   },
   {
    "id": "2026-11-26-nfse-nt009",
@@ -292,15 +314,172 @@
    "card_tema": "Nota fiscal de serviço",
    "card_titulo": "Nota fiscal de serviço",
    "card_destaque": "vai mudar de formato",
-   "card_sub": "O governo liberou para testes uma nova versão da nota fiscal de serviço (NFS-e), com campos para os novos impostos da Reforma Tributária. Por enquanto, é só ambiente de testes.",
+   "card_sub": "O governo liberou para testes uma nova versão da nota fiscal de serviço (NFS-e), com campos para os novos impostos da Reforma Tributária. Por enquanto, é **só ambiente de testes**.",
    "card_pontos": [
-    "A nota ganha novos campos e novas regras de preenchimento",
-    "Por enquanto, nada muda nas notas que você emite hoje",
-    "Quem usa sistema próprio ou integrado precisa se adaptar antes"
+    "A nota ganha **novos campos e novas regras de preenchimento**",
+    "Por enquanto, **nada muda nas notas que você emite hoje**",
+    "Quem usa **sistema próprio ou integrado** precisa se adaptar antes"
    ],
-   "card_acao": "Pergunte ao fornecedor do seu sistema de notas se ele já está acompanhando essas mudanças.",
+   "card_acao": "Pergunte ao **fornecedor do seu sistema de notas** se ele já está acompanhando essas mudanças.",
    "fonte_card": "Portal Nacional da NFS-e",
-   "card_quando": "Em fase de testes"
+   "card_quando": "Em fase de testes",
+   "setor": "fiscal"
+  },
+  {
+   "id": "2026-11-19-decreto-13173-jornada",
+   "setor": "dp",
+   "data": "2026-11-19",
+   "impacto": "alto",
+   "titulo": "Fim da escala 6x1: jornada de 42 horas e duas folgas semanais a partir de 16/12/2026 (Decreto nº 13.173/2026)",
+   "orgao": "Presidência da República · Ministério do Trabalho e Emprego",
+   "resumo": "O Decreto nº 13.173/2026 regulamentou a Emenda Constitucional nº 141, que acabou com a escala 6x1. A partir de 16/12/2026, a jornada máxima passa a 42 horas semanais, com dois dias de repouso remunerado; em 16/12/2027, cai para 40 horas. A mudança não pode reduzir salários.",
+   "quem": "Empresas com empregados urbanos, rurais e domésticos",
+   "acao": "Revisar escalas, contratos e convenções coletivas de cada cliente antes de 16/12/2026.",
+   "fonte_nome": "Planalto (gov.br)",
+   "fonte_url": "https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/noticias/2026/11/201co-que-estamos-fazendo-e-humanizar-o-mundo-do-trabalho201d-diz-lula-ao-assinar-decreto-que-regulamenta-o-fim-da-escala-6x1",
+   "comunicado": "Prezado(a) cliente,\n\nA escala 6x1 acabou. Com a Emenda Constitucional nº 141 e o Decreto nº 13.173/2026, a partir de 16 de dezembro de 2026 a jornada máxima passa a ser de 42 horas por semana, com duas folgas semanais remuneradas. Em 16 de dezembro de 2027, o limite cai para 40 horas.\n\nO salário dos empregados não pode ser reduzido por causa dessa mudança. A regra vale para trabalhadores urbanos, rurais e domésticos.\n\nNossa equipe de Departamento Pessoal vai revisar com você as escalas, os contratos e a convenção coletiva da sua categoria antes do prazo.\n\nAtenciosamente,",
+   "card_tema": "Departamento Pessoal",
+   "card_titulo": "Fim da escala 6x1:",
+   "card_destaque": "42 horas a partir de 16/12",
+   "card_sub": "A Constituição mudou e acabou com a escala de 6 dias de trabalho para 1 de folga. A partir de **16 de dezembro de 2026**, a jornada máxima passa a ser de **42 horas por semana**, com **duas folgas semanais remuneradas**.",
+   "card_pontos": [
+    "Em **16/12/2027**, o limite cai para **40 horas por semana**",
+    "O salário **não pode ser reduzido** por causa da jornada menor",
+    "Vale para empregados **urbanos, rurais e domésticos**"
+   ],
+   "card_quando": "Primeira etapa em 16/12/2026",
+   "card_acao": "**Revise as escalas da sua equipe agora.** Nossa equipe de DP ajuda a adaptar contratos e jornadas.",
+   "fonte_card": "Decreto nº 13.173/2026"
+  },
+  {
+   "id": "2026-11-23-portaria-mte-2041",
+   "setor": "dp",
+   "data": "2026-11-23",
+   "impacto": "alto",
+   "titulo": "Portaria MTE nº 2.041/2026: novo divisor do salário-hora, folgas, hora extra e banco de horas na escala 5x2",
+   "orgao": "Ministério do Trabalho e Emprego · DOU de 23/11/2026",
+   "resumo": "A portaria detalha a nova jornada: divisor do salário-hora 210 (42h) a partir de 16/12/2026 e 200 (40h) a partir de 16/12/2027; dois repousos de 24h por semana; no comércio, folga no domingo ao menos uma vez a cada três semanas; horistas com acréscimo de 16,667% para pagar os dois repousos; banco de horas acumulado até 15/12/2026 compensado ou pago conforme o acordo.",
+   "quem": "Empregadores e departamentos pessoais",
+   "acao": "Atualizar o divisor na folha a partir de 16/12/2026 e revisar banco de horas, horistas e escalas de domingo.",
+   "fonte_nome": "Ministério do Trabalho e Emprego (gov.br)",
+   "fonte_url": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/novembro/governo-federal-publica-portaria-com-regras-complementares-para-aplicacao-da-escala-5x2",
+   "comunicado": "Prezado(a) cliente,\n\nO Ministério do Trabalho publicou a Portaria nº 2.041/2026, com as regras práticas da nova jornada. A partir de 16 de dezembro de 2026, o salário mensal passa a ser dividido por 210 (antes 220) para calcular hora extra, adicional noturno e demais valores por hora. Em 16/12/2027, o divisor passa a 200.\n\nO salário mensal não muda: apenas o valor da hora aumenta, porque a jornada diminui. O banco de horas acumulado até 15/12/2026 deve ser compensado ou pago conforme o acordo. No comércio, a folga deve coincidir com o domingo pelo menos uma vez a cada três semanas.\n\nVamos revisar a folha de dezembro, o banco de horas e as escalas da sua empresa.\n\nAtenciosamente,",
+   "card_tema": "Departamento Pessoal",
+   "card_titulo": "Hora extra e folha:",
+   "card_destaque": "muda o cálculo da hora",
+   "card_sub": "Com a jornada menor, o valor da hora de trabalho muda. A partir de **16/12/2026**, o salário mensal passa a ser dividido por **210** (antes era 220) para calcular **hora extra** e **adicional noturno**.",
+   "card_pontos": [
+    "O **salário mensal continua o mesmo**: só o valor da hora aumenta",
+    "**Banco de horas até 15/12/2026** deve ser compensado ou pago conforme o acordo",
+    "No comércio, a folga deve cair **no domingo ao menos 1 vez a cada 3 semanas**"
+   ],
+   "card_quando": "Novo cálculo a partir de 16/12/2026",
+   "card_acao": "**Não feche a folha de dezembro sem revisar.** Vamos ajustar o cálculo da hora e o banco de horas com você.",
+   "fonte_card": "Portaria MTE nº 2.041/2026"
+  },
+  {
+   "id": "2026-11-26-13o-prazos",
+   "setor": "dp",
+   "data": "2026-11-26",
+   "impacto": "alto",
+   "titulo": "13º salário: 1ª parcela até 30/11 e 2ª parcela até 20/12",
+   "orgao": "Ministério do Trabalho e Emprego",
+   "resumo": "Pela legislação, a 1ª parcela do 13º salário deve ser paga até 30 de novembro e corresponde à metade da remuneração do mês anterior. A 2ª parcela deve ser paga até 20 de dezembro. Para remuneração variável, o ajuste final ocorre até 10 de janeiro.",
+   "quem": "Todos os empregadores com empregados registrados",
+   "acao": "Conferir com cada cliente o pagamento da 1ª parcela até 30/11 e programar a 2ª até 20/12.",
+   "fonte_nome": "Ministério do Trabalho e Emprego (gov.br)",
+   "fonte_url": "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2025/novembro/decimo-terceiro-salario-entenda-o-direito-regras-e-prazos-de-pagamento",
+   "comunicado": "Prezado(a) cliente,\n\nLembramos os prazos legais do 13º salário: a 1ª parcela deve ser paga até 30 de novembro e corresponde à metade da remuneração do mês anterior. A 2ª parcela deve ser paga até 20 de dezembro.\n\nPara quem tem remuneração variável (comissões, horas extras), o ajuste final ocorre até 10 de janeiro.\n\nSe ainda não recebeu os valores calculados, fale com a nossa equipe para não perder o prazo.\n\nAtenciosamente,",
+   "card_tema": "Departamento Pessoal",
+   "card_titulo": "13º salário:",
+   "card_destaque": "fique atento aos prazos",
+   "card_sub": "Todo empregado registrado tem direito ao 13º salário, pago em duas parcelas. A **1ª parcela vence em 30 de novembro** e a **2ª parcela vence em 20 de dezembro**.",
+   "card_pontos": [
+    "A 1ª parcela é **metade da remuneração** do mês anterior",
+    "A 2ª parcela **completa o valor total** devido",
+    "Com comissões ou horas extras, o **ajuste final vai até 10 de janeiro**"
+   ],
+   "card_quando": "1ª parcela até 30/11 · 2ª até 20/12",
+   "card_acao": "**Confira se a 1ª parcela já foi paga.** Se precisar dos cálculos, fale com a nossa equipe hoje.",
+   "fonte_card": "Ministério do Trabalho e Emprego"
+  },
+  {
+   "id": "2026-11-19-fgts-no13-13o",
+   "setor": "dp",
+   "data": "2026-11-19",
+   "impacto": "medio",
+   "titulo": "FGTS Digital: FGTS sobre o 13º nas rescisões de dezembro e janeiro fica mais simples (Nota Orientativa nº 13/2026)",
+   "orgao": "Ministério do Trabalho e Emprego · FGTS Digital",
+   "resumo": "A NO 13/2026 dispensa a rubrica informativa dedutora na folha anual do eSocial: desde a atualização de 28/10/2026, o FGTS Digital reconhece automaticamente o FGTS do 13º já recolhido na rescisão. Quando o prazo das verbas rescisórias for anterior a 20 de janeiro, o FGTS do 13º deve ser recolhido junto com elas. Três situações ainda exigem ajustes.",
+   "quem": "Empregadores com rescisões em dezembro e janeiro",
+   "acao": "Ajustar a rotina de rescisões de dezembro/janeiro e manter os ajustes nas três exceções previstas.",
+   "fonte_nome": "Ministério do Trabalho e Emprego (gov.br)",
+   "fonte_url": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/empregador/fgtsdigital/comunicados/nota-orientativa-simplifica-recolhimento-do-fgts-sobre-o-13o-salario-nas-rescisoes",
+   "comunicado": "Prezado(a) cliente,\n\nO Ministério do Trabalho publicou a Nota Orientativa FGTS Digital nº 13/2026. Nas rescisões de dezembro e janeiro, o FGTS sobre o 13º salário é recolhido junto com as verbas rescisórias, e agora o sistema reconhece esse pagamento automaticamente, evitando cobrança em dobro.\n\nCom isso, não é mais necessário fazer um ajuste extra na folha anual do eSocial, exceto em casos específicos, como 13º adiantado acima do valor devido.\n\nSe for desligar algum empregado no fim do ano, avise a nossa equipe com antecedência.\n\nAtenciosamente,",
+   "card_tema": "FGTS",
+   "card_titulo": "Demissão em dezembro?",
+   "card_destaque": "FGTS do 13º ficou simples",
+   "card_sub": "Nas rescisões de **dezembro e janeiro**, o FGTS sobre o 13º é pago junto com as verbas da rescisão. Agora o FGTS Digital **reconhece esse pagamento sozinho** e **evita cobrança em dobro**.",
+   "card_pontos": [
+    "Não é mais preciso lançar um **ajuste extra na folha anual do eSocial**",
+    "Se o prazo da rescisão for **antes de 20 de janeiro**, o FGTS do 13º vai junto",
+    "Casos de **13º adiantado a mais** ainda precisam de ajuste"
+   ],
+   "card_quando": "Rescisões de dezembro e janeiro",
+   "card_acao": "Vai desligar alguém no fim do ano? **Avise a nossa equipe com antecedência** para calcular tudo certo.",
+   "fonte_card": "Nota Orientativa FGTS Digital nº 13/2026"
+  },
+  {
+   "id": "2026-11-17-fgts-no12-processos",
+   "setor": "dp",
+   "data": "2026-11-17",
+   "impacto": "baixo",
+   "titulo": "FGTS de processos trabalhistas deve ser recolhido pelo FGTS Digital (Nota Orientativa nº 12/2026)",
+   "orgao": "Ministério do Trabalho e Emprego · FGTS Digital",
+   "resumo": "A NO 12/2026 esclarece que o FGTS decorrente de processos trabalhistas, inclusive acordos em Ninter e Comissões de Conciliação Prévia, abrangido pelas regras vigentes a partir de 1º/05/2026, deve ser recolhido pelo FGTS Digital, após declaração no evento S-2500 do eSocial. Substitui a NO 08/2025. Reclamatórias com sentença até 30/04/2026 continuam via SEFIP/GFIP 660.",
+   "quem": "Empresas com processos ou acordos trabalhistas",
+   "acao": "Declarar o processo no S-2500 do eSocial e recolher o FGTS pelo FGTS Digital.",
+   "fonte_nome": "Ministério do Trabalho e Emprego (gov.br)",
+   "fonte_url": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/empregador/fgtsdigital/comunicados/nova-nota-orientativa-esclarece-recolhimento-do-fgts-em-processos-trabalhistas",
+   "comunicado": "Prezado(a) cliente,\n\nO Ministério do Trabalho publicou a Nota Orientativa FGTS Digital nº 12/2026. O FGTS devido em processos trabalhistas, inclusive acordos feitos em comissões de conciliação, deve ser recolhido pelo FGTS Digital, depois de informado no eSocial. A regra vale para os casos abrangidos a partir de 1º de maio de 2026.\n\nSe a sua empresa recebeu uma sentença ou fechou um acordo trabalhista, envie os documentos para a nossa equipe para fazermos o recolhimento correto.\n\nAtenciosamente,",
+   "card_tema": "FGTS",
+   "card_titulo": "Processo trabalhista:",
+   "card_destaque": "FGTS pelo FGTS Digital",
+   "card_sub": "Quando a empresa tem um **processo ou acordo trabalhista**, o FGTS devido deve ser pago pelo **FGTS Digital**, depois de informado no **eSocial**. A regra vale para casos abrangidos a partir de **1º/05/2026**.",
+   "card_pontos": [
+    "Vale também para acordos feitos em **comissões de conciliação**",
+    "Antes do pagamento, o processo precisa ser **informado no eSocial**",
+    "Casos com sentença **até 30/04/2026** seguem pela guia antiga (GFIP)"
+   ],
+   "card_quando": "Casos a partir de 1º/05/2026",
+   "card_acao": "Recebeu sentença ou fechou acordo trabalhista? **Envie os documentos para nós** para recolher o FGTS corretamente.",
+   "fonte_card": "Nota Orientativa FGTS Digital nº 12/2026"
+  },
+  {
+   "id": "2026-08-31-salario-minimo-2027",
+   "setor": "dp",
+   "data": "2026-08-31",
+   "impacto": "medio",
+   "titulo": "Salário mínimo de 2027: proposta de R$ 1.741 no Orçamento; valor final depende do INPC de novembro",
+   "orgao": "Congresso Nacional (Câmara e Senado)",
+   "resumo": "O projeto do Orçamento de 2027 (PLN 24/2026) prevê salário mínimo de R$ 1.741, aumento de 7,4% sobre os R$ 1.621 atuais. O valor final só será confirmado após a divulgação do INPC de novembro.",
+   "quem": "Empresas com empregados no piso e beneficiários vinculados ao mínimo",
+   "acao": "Simular o custo da folha com o novo mínimo e atualizar assim que o valor oficial for publicado.",
+   "fonte_nome": "Câmara dos Deputados (camara.leg.br)",
+   "fonte_url": "https://www.camara.leg.br/noticias/1301496-orcamento-de-2027-tem-salario-minimo-de-r-1-741-e-reducao-de-despesas-com-pessoal",
+   "comunicado": "Prezado(a) cliente,\n\nO projeto do Orçamento de 2027 prevê que o salário mínimo passe de R$ 1.621 para R$ 1.741, um aumento de 7,4%. O valor ainda não é definitivo: ele só será confirmado depois da divulgação da inflação (INPC) de novembro.\n\nSe a sua empresa tem empregados que recebem o piso, vamos simular o impacto na folha assim que o valor oficial for publicado.\n\nAtenciosamente,",
+   "card_tema": "Salário mínimo",
+   "card_titulo": "Salário mínimo 2027:",
+   "card_destaque": "proposta de R$ 1.741",
+   "card_sub": "O projeto do Orçamento de 2027 prevê que o salário mínimo passe de **R$ 1.621 para R$ 1.741**, um aumento de **7,4%**. O valor ainda **não é definitivo**.",
+   "card_pontos": [
+    "O valor final depende da **inflação (INPC) de novembro**",
+    "Impacta quem recebe o **salário mínimo** e benefícios como **aposentadorias e abono salarial**",
+    "Ainda precisa ser **confirmado oficialmente** pelo governo"
+   ],
+   "card_quando": "Valor oficial após o INPC de novembro",
+   "card_acao": "Tem funcionários no piso? **Vamos simular o custo da folha** com o novo valor assim que ele for confirmado.",
+   "fonte_card": "Câmara dos Deputados · PLOA 2027"
   }
  ]
 }
