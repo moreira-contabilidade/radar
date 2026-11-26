@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-26T21:30:00Z",
+ "gerado_em": "2026-11-26T21:10:00Z",
  "prazos": [
   {
    "data": "2026-11-30",
@@ -1610,6 +1610,32 @@
    "card_quando": "Adesão até 30/12/2026",
    "card_acao": "Tem débito em discussão com a Receita? **Fale com a gente** para avaliar a adesão.",
    "fonte_card": "Receita Federal"
+  },
+  {
+   "id": "2026-11-26-inventario-31-12",
+   "setor": "fiscal",
+   "data": "2026-11-26",
+   "impacto": "alto",
+   "titulo": "Inventário de estoques em 31/12/2026: contagem obrigatória e envio no Bloco H da EFD ICMS/IPI de fevereiro",
+   "orgao": "Comitê Gestor do Simples Nacional · Receita Federal (Sped)",
+   "resumo": "Toda empresa contribuinte do ICMS (comércio e indústria), inclusive do Simples Nacional, deve registrar no Livro Registro de Inventário os estoques existentes no fim do ano (Resolução CGSN nº 140/2018, art. 63, II). Quem entrega a EFD ICMS/IPI informa esse inventário de 31/12 no Bloco H da escrituração de fevereiro, entregue em março; quem já informou em dezembro ou janeiro deve repetir em fevereiro (orientação oficial do Sped).",
+   "quem": "Empresas do comércio e da indústria contribuintes do ICMS, inclusive do Simples Nacional",
+   "acao": "Orientar os clientes a fazer a contagem física em 31/12/2026, enviar a relação de estoque ao escritório e conferir o Bloco H na EFD de fevereiro/2027.",
+   "fonte_nome": "Receita Federal · Normas (normas.receita.fazenda.gov.br) e Sped (sped.rfb.gov.br)",
+   "fonte_url": "https://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=92278",
+   "comunicado": "Prezado(a) cliente,\n\nNo dia 31 de dezembro de 2026, toda empresa do comércio ou da indústria, inclusive do Simples Nacional, precisa fazer o inventário do estoque: contar todas as mercadorias, matérias-primas e embalagens que estão na empresa e informar a quantidade e o valor de cada item.\n\nEsse inventário é registrado no Livro Registro de Inventário. Para as empresas que entregam a EFD ICMS/IPI, ele também precisa ser informado na escrituração de fevereiro, entregue em março de 2027.\n\nO que fazer: faça a contagem física no último dia do ano e envie a relação do estoque (produto, quantidade e valor) para a nossa equipe até o início de janeiro. Um estoque informado errado pode gerar multa e problemas na fiscalização.\n\nAtenciosamente,",
+   "card_tema": "Inventário de estoque",
+   "card_titulo": "Inventário de estoque:",
+   "card_destaque": "conte tudo em 31/12",
+   "card_sub": "Toda empresa do comércio ou da indústria, **inclusive do Simples Nacional**, precisa contar o estoque no último dia do ano: **31 de dezembro de 2026**.",
+   "card_pontos": [
+    "Conte **mercadorias, matérias-primas e embalagens** que estão na empresa",
+    "Informe **quantidade e valor** de cada item no Livro de Inventário",
+    "Quem entrega a EFD envia o inventário na **escrituração de fevereiro**, em **março**"
+   ],
+   "card_quando": "Contagem em 31/12/2026",
+   "card_acao": "**Faça a contagem em 31/12 e envie a relação do estoque à nossa equipe** no início de janeiro.",
+   "fonte_card": "Resolução CGSN nº 140/2018 e Sped"
   }
  ]
 }
