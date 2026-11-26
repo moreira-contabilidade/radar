@@ -31,7 +31,7 @@ document.addEventListener('click',async e=>{
   if(e.target.id==='appClose'){LS.set('radar_app_fechado','1');box.hidden=true}
 });
 /* novidades desde a última visita */
-Promise.all([fetch('data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()),fetch('visibilidade.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([d,vj])=>{const vis=(vj&&vj.itens)||{};const ids=(d.atualizacoes||[]).filter(a=>{const x=vis[a.id];return x&&typeof x.cliente==='boolean'?x.cliente:a.cliente!==false}).map(x=>x.id);const old=LS.get('radar_vistos');
+Promise.all([fetch('data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()),(async()=>{try{const cfg=await fetch('vis-config.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({}));const vj=cfg.blob?await fetch('https://jsonblob.com/api/jsonBlob/'+cfg.blob,{headers:{Accept:'application/json'},cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({})):{};return vj}catch(e){return {}}})()]).then(([d,vj])=>{const vis=(vj&&vj.itens)||{};const ids=(d.atualizacoes||[]).filter(a=>{const x=vis[a.id];return x&&typeof x.cliente==='boolean'?x.cliente:a.cliente!==false}).map(x=>x.id);const old=LS.get('radar_vistos');
   if(old){const v=JSON.parse(old);const n=ids.filter(i=>!v.includes(i)).length;if(n){const c=document.createElement('div');c.className='novas';c.innerHTML=`<b>${n} ${n>1?'novidades':'novidade'}</b> desde a sua última visita`;const h=document.querySelector('.hero .wrap');h&&h.insertBefore(c,document.getElementById('status'))}}
   LS.set('radar_vistos',JSON.stringify(ids));if(navigator.clearAppBadge)navigator.clearAppBadge().catch(()=>{})}).catch(()=>{});
 montar();
