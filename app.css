@@ -1,0 +1,10 @@
+.appbox{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-left:4px solid var(--ouro);border-radius:14px;padding:16px 18px;margin:4px 0 18px;box-shadow:0 2px 10px rgba(29,46,70,.06)}
+.appbox[hidden]{display:none}
+.appico img{width:56px;height:56px;border-radius:14px;display:block}
+.apptxt b{font-size:17px;color:var(--navy)}.apptxt p{margin:4px 0 0;color:var(--mute);font-size:15px;max-width:70ch}
+.appbtns{margin-top:12px}
+button.lnk2{border:0;background:none;color:var(--mute);font-weight:500;text-decoration:underline}
+.appios{background:var(--soft);border-radius:8px;padding:10px 12px;color:var(--navy)!important}
+.appmsg{color:#1F8F55!important;font-weight:700}
+.novas{display:inline-block;background:var(--ouroL);color:var(--navy);border-radius:999px;padding:6px 14px;font-size:14px;margin-top:16px}
+@media(max-width:600px){.appbox{flex-direction:column}}
