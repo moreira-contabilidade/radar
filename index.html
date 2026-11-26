@@ -244,7 +244,7 @@ a.btn.pri{background:var(--azul);color:#fff}
 .cherr{color:#B42318!important;font-weight:600}.chbtns{display:flex;gap:10px;justify-content:flex-end}
 .chbtns button{border-radius:10px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;border:1px solid #C9D3E0;background:#fff;color:#1D2E46}.chbtns .chok{background:#1D2E46;color:#fff;border-color:#1D2E46}
 @media print{#chavechip{display:none}}
-.visbtn{cursor:pointer}.visbtn:hover{filter:brightness(.96);box-shadow:0 0 0 3px rgba(31,143,85,.15)}.vis small a{color:var(--azul);font-weight:600}
+.vischk{display:flex;align-items:center;gap:10px;font-weight:700;color:#1D2E46;cursor:pointer;font-size:15px}.vischk input{width:22px;height:22px;accent-color:#1F8F55;cursor:pointer}.visst{font-weight:700;color:#1D2E46}.visbtn{cursor:pointer}.visbtn:hover{filter:brightness(.96);box-shadow:0 0 0 3px rgba(31,143,85,.15)}.vis small a{color:var(--azul);font-weight:600}
 .vis small{color:var(--mute);font-size:13px}
 .eye{font-size:16px}
 .cliente .rule,.cliente .tools,.cliente #status,.cliente #alerta,.cliente #list,.cliente #areaTabs{display:none!important}
@@ -527,7 +527,7 @@ function render(){
       <div class="head"><div><div class="org"><b class="area ${i.setor==='dp'?'dp':''}">${i.setor==='dp'?'Departamento Pessoal':'Fiscal'}</b> · ${esc(i.orgao)}</div><h3>${esc(i.titulo)}</h3></div><span class="tag ${esc(i.impacto)}">${esc(IMP[i.impacto]||i.impacto)}</span></div>
       <p>${esc(i.resumo)}</p>
       <div class="meta"><div><span>Quem é afetado</span>${esc(i.quem)}</div><div><span>O que fazer</span>${esc(i.acao)}</div><div><span>Fonte oficial</span>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(i.fonte_nome||'Abrir fonte')}</a>`:esc(i.fonte_nome)}</div></div>
-      ${DB&&DB.__site?`<div class="vis ${i.cliente===false?'off':'on'}"><button class="visbtn" data-vis="${esc(i.id)}" aria-pressed="${i.cliente!==false}" title="Clique no olho para ${i.cliente===false?'mostrar ao':'esconder do'} cliente">${i.cliente===false?OLHO_F:OLHO_A} ${i.cliente===false?'Oculto para o cliente':'Visível para o cliente'}</button><small>${i.cliente===false?(i.aguardando?'Nova notícia aguardando aprovação. ':'')+'Não aparece no aplicativo nem na página do cliente.':'Aparece no aplicativo e na página do cliente.'}${i.vis_em?' Alterado em '+esc(dh(i.vis_em))+'.':''}</small></div>`:`<div class="vis note"><small>Para mostrar ou esconder esta notícia do cliente, use o olho no <a href="https://moreira-contabilidade.github.io/radar/" target="_blank" rel="noopener">site da equipe ↗</a>.</small></div>`}
+      ${DB&&!DB.__ro?`<div class="vis ${i.cliente===false?'off':'on'}"><label class="vischk"><input type="checkbox" data-visck="${esc(i.id)}" ${i.cliente!==false?'checked':''}> <span>${i.cliente!==false?'Cliente vê esta notícia':'Cliente não vê esta notícia'}</span></label><small>${i.cliente===false&&i.aguardando?'Nova notícia: marque o quadradinho para o cliente ver. ':''}Marcado = aparece para o cliente. Desmarcado = não aparece.</small></div>`:`<div class="vis ${i.cliente===false?'off':'on'}"><span class="visst">${i.cliente!==false?'☑ Cliente vê esta notícia':'☐ Cliente não vê esta notícia'}</span><small>Para marcar ou desmarcar, use o quadradinho no <a href="https://claude.ai/artifact/1HVLhmYUjWUrmbh22fjHD5" target="_blank" rel="noopener">Radar do Claude ↗</a>.</small></div>`}
       <div class="perf">${perfis(i).filter(x=>x!=='todos').map(x=>`<span>${esc(PERFIS[x])}</span>`).join('')||'<span>Todos os clientes</span>'}</div>
       <div class="row acts"><a class="btn wa" href="${esc(waLink(waText(i)))}" target="_blank" rel="noopener">Enviar no WhatsApp</a><button data-leg="${esc(i.id)}">Copiar legenda do Instagram</button><button data-id="${esc(i.id)}">Copiar comunicado</button></div>
       <details><summary>Ver texto do comunicado</summary><div class="msg">${esc(i.comunicado)}</div></details>
@@ -628,6 +628,9 @@ if(CLIENTE){
     const ic=e.target.closest('button[data-icsarea]');if(ic){const t=hoje();saveBlob(ics(allP().filter(p=>p.data>=t&&prazoArea(p)===cArea&&(!p.cidade||!cCidade||p.cidade===cCidade))),`prazos-moreira-${cArea}.ics`);return}
     const dp=e.target.closest('button[data-dlpost]');if(dp){const i=items.find(x=>x.id===dp.dataset.dlpost);if(i){const c=document.createElement('canvas');MoreiraCards.noticia(c,i);savePng(c,`moreira-${i.id}.png`)}}});
 }
+$('#list').addEventListener('change',e=>{const c=e.target.closest('input[data-visck]');if(!c||!DB||DB.__ro)return;const i=items.find(x=>x.id===c.dataset.visck);if(!i)return;
+  const antes={cliente:i.cliente,aguardando:i.aguardando};i.cliente=c.checked;i.aguardando=false;render();status();
+  Promise.resolve(DB.doc('atualizacoes/'+i.id).update({cliente:c.checked,aguardando:false})).then(()=>toast(c.checked?'Marcado: o cliente vai ver esta notícia.':'Desmarcado: o cliente não vai ver esta notícia.',3500)).catch(()=>{Object.assign(i,antes);render();status();toast('Não foi possível salvar. Tente de novo.',4000)})});
 $('#list').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   if(b.dataset.id){const i=items.find(x=>x.id===b.dataset.id);if(i)copy(i.comunicado)}
