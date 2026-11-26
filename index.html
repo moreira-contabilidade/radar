@@ -465,17 +465,16 @@ const OLHO_A='<svg class="eye" viewBox="0 0 24 24" width="20" height="20" aria-h
 const OLHO_F='<svg class="eye" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/><path d="M3 21 21 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
 function dh(iso){try{const d=new Date(iso);return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})+' às '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}catch(e){return ''}}
 function chaveChip(){if(!DB||!DB.__site||CLIENTE)return;let c=document.getElementById('chavechip');if(!c){c=document.createElement('div');c.id='chavechip';document.body.appendChild(c)}
-  if(DB.temChave()){c.innerHTML='<span>'+OLHO_A+' Edição liberada: <b></b></span><button type="button">Sair</button>';c.querySelector('b').textContent=DB.nome()||'Equipe';c.querySelector('button').onclick=()=>{DB.sairChave();chaveChip();toast('Chave removida deste aparelho.')}}
+  if(DB.temChave()){c.innerHTML='<span>'+OLHO_A+' Olho liberado neste aparelho</span><button type="button">Sair</button>';c.querySelector('button').onclick=()=>{DB.sairChave();chaveChip();toast('Chave removida deste aparelho.')}}
   else{c.innerHTML='<span>'+OLHO_F+' Só visualização</span><button type="button">Liberar edição</button>';c.querySelector('button').onclick=()=>abrirChave()}}
-function abrirChave(depois){const o=document.createElement('div');o.className='chovl';o.innerHTML=`<form class="chbox" autocomplete="off"><h3>Liberar o olho neste aparelho</h3><p>Para mostrar ou esconder notícias do cliente, informe a <b>chave de acesso da equipe</b> (só precisa fazer uma vez neste computador ou celular).</p>
-  <label>Seu nome<input name="nome" required maxlength="40" placeholder="Ex.: Ana - Administrativo"></label>
+function abrirChave(depois){const o=document.createElement('div');o.className='chovl';o.innerHTML=`<form class="chbox" autocomplete="off"><h3>Liberar o olho neste aparelho</h3><p>Este aparelho ainda não foi liberado. Abra o <b>link de liberação</b> que a Moreira enviou para a equipe, ou cole a chave abaixo (uma única vez).</p>
   <label>Chave de acesso da equipe<span class="chpw"><input name="chave" type="password" required placeholder="Cole aqui a chave"><button type="button" class="chver" aria-label="Mostrar chave">${OLHO_A}</button></span></label>
   <p class="cherr" hidden></p><div class="chbtns"><button type="button" class="chno">Cancelar</button><button type="submit" class="chok">Salvar e liberar</button></div></form>`;
-  document.body.appendChild(o);const f=o.querySelector('form');try{f.nome.value=DB.nome()||''}catch(e){}(f.nome.value?f.chave:f.nome).focus();
+  document.body.appendChild(o);const f=o.querySelector('form');f.chave.focus();
   o.querySelector('.chver').onclick=()=>{const t=f.chave.type==='password';f.chave.type=t?'text':'password';o.querySelector('.chver').innerHTML=t?OLHO_F:OLHO_A};
   o.querySelector('.chno').onclick=()=>o.remove();o.addEventListener('click',e=>{if(e.target===o)o.remove()});
   f.onsubmit=async e=>{e.preventDefault();const er=o.querySelector('.cherr');er.hidden=true;const ok=o.querySelector('.chok');ok.disabled=true;ok.textContent='Conferindo...';
-    const r=await DB.entrar(f.chave.value.trim(),f.nome.value.trim());ok.disabled=false;ok.textContent='Salvar e liberar';
+    const r=await DB.entrar(f.chave.value.trim(),'Equipe');ok.disabled=false;ok.textContent='Salvar e liberar';
     if(r===true){o.remove();chaveChip();toast('Pronto! Agora é só clicar no olho.',3500);if(depois)depois()}else{er.textContent=r;er.hidden=false}}}
 function toast(t,ms){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),ms||1800)}
 async function copy(text){try{await navigator.clipboard.writeText(text);toast('Texto copiado')}catch(e){toast('Não foi possível copiar — selecione o texto manualmente')}}
@@ -528,7 +527,7 @@ function render(){
       <div class="head"><div><div class="org"><b class="area ${i.setor==='dp'?'dp':''}">${i.setor==='dp'?'Departamento Pessoal':'Fiscal'}</b> · ${esc(i.orgao)}</div><h3>${esc(i.titulo)}</h3></div><span class="tag ${esc(i.impacto)}">${esc(IMP[i.impacto]||i.impacto)}</span></div>
       <p>${esc(i.resumo)}</p>
       <div class="meta"><div><span>Quem é afetado</span>${esc(i.quem)}</div><div><span>O que fazer</span>${esc(i.acao)}</div><div><span>Fonte oficial</span>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(i.fonte_nome||'Abrir fonte')}</a>`:esc(i.fonte_nome)}</div></div>
-      ${DB&&DB.__site?`<div class="vis ${i.cliente===false?'off':'on'}"><button class="visbtn" data-vis="${esc(i.id)}" aria-pressed="${i.cliente!==false}" title="Clique no olho para ${i.cliente===false?'mostrar ao':'esconder do'} cliente">${i.cliente===false?OLHO_F:OLHO_A} ${i.cliente===false?'Oculto para o cliente':'Visível para o cliente'}</button><small>${i.cliente===false?(i.aguardando?'Nova notícia aguardando aprovação. ':'')+'Não aparece no aplicativo nem na página do cliente.':'Aparece no aplicativo e na página do cliente.'}${i.vis_por?' Alterado por '+esc(i.vis_por)+(i.vis_em?' em '+esc(dh(i.vis_em)):'')+'.':''}</small></div>`:`<div class="vis note"><small>Para mostrar ou esconder esta notícia do cliente, use o olho no <a href="https://moreira-contabilidade.github.io/radar/" target="_blank" rel="noopener">site da equipe ↗</a>.</small></div>`}
+      ${DB&&DB.__site?`<div class="vis ${i.cliente===false?'off':'on'}"><button class="visbtn" data-vis="${esc(i.id)}" aria-pressed="${i.cliente!==false}" title="Clique no olho para ${i.cliente===false?'mostrar ao':'esconder do'} cliente">${i.cliente===false?OLHO_F:OLHO_A} ${i.cliente===false?'Oculto para o cliente':'Visível para o cliente'}</button><small>${i.cliente===false?(i.aguardando?'Nova notícia aguardando aprovação. ':'')+'Não aparece no aplicativo nem na página do cliente.':'Aparece no aplicativo e na página do cliente.'}${i.vis_em?' Alterado em '+esc(dh(i.vis_em))+'.':''}</small></div>`:`<div class="vis note"><small>Para mostrar ou esconder esta notícia do cliente, use o olho no <a href="https://moreira-contabilidade.github.io/radar/" target="_blank" rel="noopener">site da equipe ↗</a>.</small></div>`}
       <div class="perf">${perfis(i).filter(x=>x!=='todos').map(x=>`<span>${esc(PERFIS[x])}</span>`).join('')||'<span>Todos os clientes</span>'}</div>
       <div class="row acts"><a class="btn wa" href="${esc(waLink(waText(i)))}" target="_blank" rel="noopener">Enviar no WhatsApp</a><button data-leg="${esc(i.id)}">Copiar legenda do Instagram</button><button data-id="${esc(i.id)}">Copiar comunicado</button></div>
       <details><summary>Ver texto do comunicado</summary><div class="msg">${esc(i.comunicado)}</div></details>
@@ -700,7 +699,9 @@ function status(){
   const timer=setTimeout(()=>{if(!items.length)$('#list').innerHTML='<p class="empty">Não foi possível carregar agora. Abra a página novamente em instantes.</p>'},10000);
   MoreiraCards.load('').then(renderPost);
   claude.use('downloads').then(d=>{dl=d});
-  const db=await claude.use('db');DB=db;try{chaveChip()}catch(e){}
+  const db=await claude.use('db');DB=db;
+  try{const m=location.hash.match(/chave=([^&]+)/);if(m&&db&&db.__site){history.replaceState(null,'',location.pathname+location.search);const r=await db.entrar(decodeURIComponent(m[1]),'Equipe');toast(r===true?'Aparelho liberado! Agora é só clicar no olho.':'Link de liberação inválido ou vencido.',4500)}}catch(e){}
+  try{chaveChip()}catch(e){}
   if(!db){clearTimeout(timer);$('#list').innerHTML='<p class="empty">Entre na sua conta Claude para ver as atualizações.</p>';$('#status').textContent='';return}
   const dat=d=>(typeof d.data==='function'?d.data():d.data)||{};
   const has=d=>d&&(typeof d.exists==='function'?d.exists():d.exists!==false);
