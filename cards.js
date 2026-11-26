@@ -34,38 +34,48 @@ function footer(x,fonte,dark){
 function campos(i){
   return {tit:i.card_titulo||i.titulo||'',dest:i.card_destaque||'',sub:i.card_sub||i.resumo||'',
     pontos:Array.isArray(i.card_pontos)&&i.card_pontos.length?i.card_pontos.slice(0,3):[],acao:i.card_acao||i.acao||'',
-    tema:i.card_tema||'Reforma Tributária',fonte:i.fonte_card||i.orgao||''}
+    tema:i.card_tema||'Reforma Tributária',fonte:i.fonte_card||i.orgao||'',quando:i.card_quando||''}
 }
-/* Card de uma notícia — fundo azul profundo, título branco + destaque ouro */
+/* Card de uma notícia — fundo azul profundo; o que é, o que muda, quando, o que fazer. Auto-ajusta a fonte para caber. */
 function noticia(cv,i){
-  const x=cv.getContext('2d');cv.width=W;cv.height=H;const k=campos(i);
+  const x=cv.getContext('2d');cv.width=W;cv.height=H;const k=campos(i),tw=W-2*M,footerY=H-128;
+  const head=k.tit.toUpperCase(),dest=k.dest.toUpperCase(),pts=k.pontos.slice(0,4);
+  // mede (ou desenha) o conteúdo com escala s
+  const lay=(s,draw)=>{
+    let hs=70;
+    for(;hs>=46;hs-=2){x.font=`900 ${hs}px ${F}`;const n=lines(x,head,tw).length+(dest?lines(x,dest,tw).length:0);if(n<=3&&lines(x,head,tw).every(l=>x.measureText(l).width<=tw))break}
+    const lh=hs*1.02;let y=200+hs*.8;
+    x.font=`900 ${hs}px ${F}`;const l1=lines(x,head,tw),l2=dest?lines(x,dest,tw):[];
+    if(draw){x.fillStyle=C.branco;l1.forEach((l,n)=>x.fillText(l,M,y+n*lh));x.fillStyle=C.ouroL;l2.forEach((l,n)=>x.fillText(l,M,y+(l1.length+n)*lh))}
+    const fs=Math.round(31*s),flh=Math.round(fs*1.35);
+    y+=(l1.length+l2.length-1)*lh+Math.round(hs*.6)+fs;x.font=`400 ${fs}px ${F}`;const ls=lines(x,k.sub,tw);
+    if(draw){x.fillStyle='rgba(255,255,255,.88)';ls.forEach((l,n)=>x.fillText(l,M,y+n*flh))}
+    y+=(ls.length-1)*flh+Math.round(34*s);
+    if(k.quando){const qs=Math.round(25*s);x.font=`700 ${qs}px ${F}`;const lab='QUANDO: ',lw=x.measureText(lab).width;x.font=`700 ${qs}px ${F}`;
+      const qt=k.quando,qw=Math.min(tw,lw+x.measureText(qt).width+56),qh=Math.round(qs*2.1);
+      if(draw){x.strokeStyle=C.ouroL;x.lineWidth=2;rr(x,M,y,qw,qh,qh/2);x.stroke();x.fillStyle=C.ouroL;x.fillText(lab,M+28,y+qh/2+qs*.36);x.fillStyle=C.branco;x.fillText(qt,M+28+lw,y+qh/2+qs*.36)}
+      y+=qh+Math.round(24*s)}
+    if(pts.length){const ps=Math.round(29*s),plh=Math.round(ps*1.3),pad=Math.round(30*s);x.font=`500 ${ps}px ${F}`;
+      const pl=pts.map(p=>lines(x,p,tw-2*pad-36));const inner=pl.reduce((a,l)=>a+l.length*plh+Math.round(16*s),0)-Math.round(16*s);
+      const bh=pad+Math.round(30*s)+Math.round(18*s)+inner+pad;
+      if(draw){x.fillStyle='rgba(255,255,255,.07)';rr(x,M,y,tw,bh,20);x.fill();x.strokeStyle='rgba(255,255,255,.14)';x.lineWidth=2;x.stroke();
+        x.fillStyle=C.a400;x.font=`700 ${Math.round(23*s)}px ${F}`;x.fillText('O QUE MUDA PARA VOCÊ',M+pad,y+pad+Math.round(20*s));
+        let py=y+pad+Math.round(30*s)+Math.round(18*s)+ps*.8;x.font=`500 ${ps}px ${F}`;
+        pl.forEach(ll=>{x.fillStyle=C.ouroL;x.beginPath();x.arc(M+pad+8,py-ps*.32,Math.max(5,6*s),0,7);x.fill();x.fillStyle=C.branco;x.font=`500 ${ps}px ${F}`;ll.forEach((l,n)=>x.fillText(l,M+pad+30,py+n*plh));py+=ll.length*plh+Math.round(16*s)})}
+      y+=bh+Math.round(24*s)}
+    const as=Math.round(30*s),alh=Math.round(as*1.28);x.font=`700 ${as}px ${F}`;const al=lines(x,k.acao,tw-72);const ah=Math.round(36*s)+Math.round(22*s)+Math.round(18*s)+al.length*alh+Math.round(26*s);
+    return {y,ah,al,as,alh,s}};
+  // escolhe a maior escala que cabe
   const g=x.createLinearGradient(0,0,W*.4,H);g.addColorStop(0,C.azul);g.addColorStop(.45,C.a700);g.addColorStop(1,C.a950);x.fillStyle=g;x.fillRect(0,0,W,H);
   chev(x,640,120,380,'#fff');
   logo(x,assets.logoBranco,M,84,300);
   x.textAlign='right';x.fillStyle=C.ouroL;x.font=`700 26px ${F}`;x.fillText((k.tema+' · '+brCurto(i.data)).toUpperCase(),W-M,128);x.textAlign='left';
-  // título
-  const tw=W-2*M;let y=280;
-  const head=k.tit.toUpperCase(),dest=k.dest.toUpperCase();let hs=96;for(;hs>=50;hs-=2){x.font=`900 ${hs}px ${F}`;if(lines(x,head,tw).length+(dest?lines(x,dest,tw).length:0)<=3&&lines(x,head,tw).every(l=>x.measureText(l).width<=tw))break}
-  x.font=`900 ${hs}px ${F}`;x.fillStyle=C.branco;const lh=hs*1.02;
-  const l1=lines(x,head,tw);l1.forEach((l,n)=>x.fillText(l,M,y+n*lh));y+=l1.length*lh;
-  if(dest){x.fillStyle=C.ouroL;const l2=lines(x,dest,tw);l2.forEach((l,n)=>x.fillText(l,M,y+n*lh));y+=l2.length*lh}
-  y+=4;x.fillStyle='rgba(255,255,255,.82)';x.font=`400 34px ${F}`;y=text(x,k.sub,M,y,tw,46,3)+30;
-  // caixa "o que muda"
-  const footerY=H-128,acaoH=170,limit=footerY-acaoH-36-14;
-  x.font=`500 32px ${F}`;const pts=[];let need=74;
-  for(const p of k.pontos){const h=Math.min(2,lines(x,p,tw-108).length)*40+30;if(y+need+h>limit)break;pts.push(p);need+=h}
-  if(pts.length){
-    const boxH=need+14;
-    x.fillStyle='rgba(255,255,255,.06)';rr(x,M,y,tw,boxH,22);x.fill();x.strokeStyle='rgba(255,255,255,.12)';x.lineWidth=2;x.stroke();
-    x.fillStyle=C.a400;x.font=`700 24px ${F}`;x.fillText('O QUE MUDA PARA VOCÊ',M+36,y+50);
-    let py=y+104;pts.forEach(p=>{x.fillStyle=C.ouroL;x.beginPath();x.arc(M+46,py-11,7,0,7);x.fill();x.fillStyle=C.branco;x.font=`500 32px ${F}`;py=text(x,p,M+72,py,tw-108,40,2)+30});
-    y+=boxH+28;
-  }
-  // caixa "o que fazer"
-  const ay=Math.max(y,footerY-acaoH-36);
-  x.fillStyle=C.ouro;rr(x,M,ay,tw,acaoH,22);x.fill();
-  x.fillStyle=C.a950;x.font=`900 24px ${F}`;x.fillText('O QUE VOCÊ DEVE FAZER',M+36,ay+50);
-  x.font=`700 33px ${F}`;text(x,k.acao,M+36,ay+98,tw-72,40,2);
+  let s=1.22,r=lay(s,false);while(s>.7&&r.y+r.ah>footerY-30){s-=.02;r=lay(s,false)}
+  r=lay(s,true);
+  const ay=Math.max(r.y,footerY-30-r.ah);
+  x.fillStyle=C.ouro;rr(x,M,ay,tw,r.ah,20);x.fill();
+  x.fillStyle=C.a950;x.font=`900 ${Math.round(23*s)}px ${F}`;x.fillText('O QUE VOCÊ DEVE FAZER',M+36,ay+Math.round(36*s)+Math.round(8*s));
+  x.font=`700 ${r.as}px ${F}`;r.al.forEach((l,n)=>x.fillText(l,M+36,ay+Math.round(36*s)+Math.round(22*s)+Math.round(18*s)+r.as*.8+n*r.alh));
   footer(x,k.fonte,true);
 }
 /* Resumo — vários itens, fundo claro, logo azul centralizado */
@@ -76,13 +86,15 @@ function resumo(cv,list,d,titulo,linha2){
   x.textAlign='center';x.fillStyle=C.a700;x.font=`900 74px ${F}`;x.fillText((titulo||'RADAR FISCAL').toUpperCase(),W/2,250);
   x.fillStyle=C.ouro;x.font=`900 74px ${F}`;x.fillText((linha2||'DA SEMANA').toUpperCase(),W/2,328);
   x.fillStyle=C.c700;x.font=`500 27px ${F}`;x.fillText('A Reforma Tributária explicada de forma simples · '+br(d),W/2,384);x.textAlign='left';
-  const items=list.slice(0,4),top=430,bottom=H-128-40,gap=18,h=(bottom-top-gap*(items.length-1))/items.length,tw=W-2*M;
+  const items=list.slice(0,3),top=430,bottom=H-128-40,gap=18,h=(bottom-top-gap*(items.length-1))/items.length,tw=W-2*M;
   items.forEach((i,n)=>{const k=campos(i),y=top+n*(h+gap);
     x.fillStyle='#fff';rr(x,M,y,tw,h,22);x.fill();x.fillStyle=n===0?C.ouro:C.azul;rr(x,M,y,10,h,[22,0,0,22]);x.fill();
-    x.fillStyle=n===0?C.ouro:C.azul;x.font=`900 64px ${F}`;x.fillText(String(n+1),M+40,y+h/2+22);
-    const t=(k.tit+(k.dest?' '+k.dest:''));x.fillStyle=C.a700;const s=fit(x,t,tw-160,700,38,26,1);x.font=`700 ${s}px ${F}`;
-    let yy=text(x,t,M+120,y+54,tw-160,s*1.15,1);
-    x.fillStyle=C.c700;x.font=`400 26px ${F}`;text(x,k.acao,M+120,yy+2,tw-160,32,Math.max(1,Math.floor((y+h-yy-4)/32)));
+    x.fillStyle=n===0?C.ouro:C.azul;x.font=`900 60px ${F}`;x.fillText(String(n+1),M+38,y+h/2+20);
+    const t=(k.tit+(k.dest?' '+k.dest:''));const cw=tw-150,cx=M+116;x.fillStyle=C.a700;const s=fit(x,t,cw,700,34,24,1);x.font=`700 ${s}px ${F}`;
+    let yy=text(x,t,cx,y+48,cw,s*1.15,1);
+    x.font=`700 23px ${F}`;const an=Math.min(2,lines(x,'O que fazer: '+k.acao,cw).length);const sl=Math.max(1,Math.min(3,Math.floor((y+h-yy-20-an*30)/31)));
+    x.fillStyle='#333435';x.font=`400 24px ${F}`;yy=text(x,k.sub,cx,yy+6,cw,31,sl);
+    x.fillStyle=C.azul;x.font=`700 23px ${F}`;text(x,'O que fazer: '+k.acao,cx,yy+8,cw,30,2);
   });
   footer(x,'sites oficiais do governo (gov.br)',false);
 }
