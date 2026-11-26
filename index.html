@@ -130,6 +130,45 @@ a{color:var(--azul)}
 .site-foot img{height:40px;width:auto;display:block}
 .site-foot a{color:#fff;font-weight:700;text-decoration:none}
 .site-foot .gold{height:4px;background:var(--ouro);margin:0}
+
+/* ===== Layout v2 ===== */
+.hero{padding-bottom:clamp(26px,3vw,40px)}
+.hero h1{font-size:clamp(30px,4vw,44px);margin-bottom:8px}
+.hero .lede{max-width:70ch}
+.kpis{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;background:none!important;border:0!important;padding:0!important;margin-top:24px}
+.kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.kpi span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:700}
+.kpi b{font-size:30px;font-weight:900;line-height:1.1;color:#fff}.kpi b.sm{font-size:18px;padding:6px 0 4px}
+.kpi:first-child b{color:var(--ouroL)}
+.kpi small{font-size:13px;color:rgba(255,255,255,.72)}
+@media(max-width:800px){.kpis{grid-template-columns:1fr 1fr}}
+.rule{background:var(--bg);color:var(--ink);padding-top:clamp(24px,3vw,40px);padding-bottom:10px}
+.rule h2{color:var(--navy)}
+.track{border-top:0;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.stop{background:#fff;border:1px solid var(--line)!important;border-radius:14px;margin:0!important;padding:16px;box-shadow:0 2px 10px rgba(29,46,70,.06);border-top:4px solid var(--azul)!important}
+.stop.hot{border-top-color:var(--ouro)!important}
+.stop .d{color:var(--navy)}.stop.hot .d{color:var(--ouro)}
+.stop .t{color:var(--ink)}
+.tp{background:var(--soft);color:var(--navy)}.tp.declaracao{background:#DCE5F3;color:var(--navy)}.tp.trabalhista{background:var(--navy);color:#fff}.tp.reforma{color:var(--azul);border-color:var(--azul)}
+.cal2{background:var(--navy);color:#fff;border-radius:14px;padding:6px 20px 14px;margin-top:16px;border:0}
+.cal2 summary{color:#fff}
+.tools{position:sticky;top:0;z-index:5;background:rgba(242,245,249,.94);backdrop-filter:blur(6px);padding:12px 0;margin:0 0 10px;border-bottom:1px solid var(--line)}
+main.band{padding-top:10px}
+.day{border-bottom:0;margin:30px 0 10px;align-items:center}
+.dchip{display:inline-block;background:var(--navy);color:#fff;border-radius:8px;padding:4px 10px;margin-right:8px;font-size:14px}
+.item{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;padding:22px 24px;border-left:0;border-top:4px solid var(--azul)}
+.item.is-dp{border-top-color:var(--ouro)}
+.item .org{margin-bottom:4px}
+.item h3{font-size:20px;line-height:1.3}
+.item p{color:#2E3D55}
+.meta{grid-template-columns:repeat(3,minmax(0,1fr));background:var(--soft);border-radius:10px;padding:12px 14px}
+.imedia .thumbs{grid-template-columns:1fr 1fr;gap:10px}
+.imedia img{width:100%;display:block;border-radius:8px;box-shadow:0 4px 14px rgba(29,46,70,.18);background:#e3e7ed;aspect-ratio:4/5;object-fit:cover;object-position:top}
+.imedia figcaption{font-size:12px;font-weight:700;color:var(--mute);margin:6px 0}
+.imedia button{min-height:38px;font-size:13px}
+details summary{color:var(--azul)}
+details .msg{max-width:none}
+@media(max-width:900px){.item{grid-template-columns:1fr}.meta{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -137,8 +176,8 @@ a{color:var(--azul)}
   <div class="topbar"><img src="brand/moreira_horizontal_branco_1000w.png" alt="Moreira Contabilidade"><span class="contato">Atendimento <a href="https://wa.me/5594991198085">(94) 99119-8085</a></span></div>
   <span class="eyebrow">Radar Moreira</span>
   <h1>Radar Fiscal e Trabalhista</h1>
-  <p class="lede">Reforma Tributária, setor fiscal e Departamento Pessoal (folha, jornada, hora extra, FGTS, eSocial). Somente fontes oficiais: Receita Federal, Fazenda, Comitê Gestor do IBS, Ministério do Trabalho, FGTS Digital, eSocial, Planalto, TCU, Câmara, Senado e Diário Oficial. Cada atualização traz o comunicado e o post no padrão Moreira, prontos para baixar.</p>
-  <div class="status" id="status"><span><span class="dot"></span>Carregando…</span></div>
+  <p class="lede">Novidades fiscais, da Reforma Tributária e do Departamento Pessoal, com prazos e vencimentos. Somente fontes oficiais do governo, com comunicado e post no padrão Moreira prontos para baixar.</p>
+  <div class="status kpis" id="status"><div class="kpi"><span>Carregando…</span></div></div>
 </div></header>
 
 <section class="band rule"><div class="wrap">
@@ -196,7 +235,7 @@ const safeUrl=u=>/^https:\/\//.test(String(u||''))?String(u):'';
 const fmt=d=>{const [y,m,dd]=String(d||'').split('-');return dd?`${dd}/${m}/${y}`:esc(d)};
 const IMP={alto:'Impacto alto',medio:'Impacto médio',baixo:'Impacto baixo'};
 let items=[],prazos=[],base=[],meta={};
-fetch('prazos_base.json?v=2',{cache:'no-store'}).then(r=>r.json()).then(b=>{base=b;renderTrack()}).catch(()=>{});
+fetch('prazos_base.json?v=2',{cache:'no-store'}).then(r=>r.json()).then(b=>{base=b;renderTrack();try{status()}catch(e){}}).catch(()=>{});
 
 function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),1800)}
 async function copy(text){try{await navigator.clipboard.writeText(text);toast('Comunicado copiado')}catch(e){toast('Não foi possível copiar — selecione o texto manualmente')}}
@@ -228,12 +267,15 @@ function render(){
   const days=[...new Set(f.map(i=>i.data))];
   $('#list').innerHTML=days.map(d=>{
     const g=f.filter(i=>i.data===d);
-    return `<div class="day"><span>${fmt(d)} · ${g.length} atualizaç${g.length>1?'ões':'ão'}</span><span class="row"><button class="pri" data-dlday="${esc(d)}">Baixar comunicado do dia (imagem Moreira)</button><button data-day="${esc(d)}">Copiar texto</button></span></div>`+
-    g.map(i=>{const u=safeUrl(i.fonte_url);return `<article class="item">
-      <div class="head"><div><h3>${esc(i.titulo)}</h3><div class="org"><b class="area ${i.setor==='dp'?'dp':''}">${i.setor==='dp'?'Departamento Pessoal':'Fiscal'}</b> · ${esc(i.orgao)}</div></div><span class="tag ${esc(i.impacto)}">${esc(IMP[i.impacto]||i.impacto)}</span></div>
+    return `<div class="day"><span><span class="dchip">${fmt(d)}</span> ${g.length} atualizaç${g.length>1?'ões':'ão'}</span><span class="row"><button class="pri" data-dlday="${esc(d)}">Baixar comunicado do dia</button><button data-day="${esc(d)}">Copiar texto</button></span></div>`+
+    g.map(i=>{const u=safeUrl(i.fonte_url);return `<article class="item ${i.setor==='dp'?'is-dp':''}">
+      <div class="ibody">
+      <div class="head"><div><div class="org"><b class="area ${i.setor==='dp'?'dp':''}">${i.setor==='dp'?'Departamento Pessoal':'Fiscal'}</b> · ${esc(i.orgao)}</div><h3>${esc(i.titulo)}</h3></div><span class="tag ${esc(i.impacto)}">${esc(IMP[i.impacto]||i.impacto)}</span></div>
       <p>${esc(i.resumo)}</p>
-      <div class="meta"><div><span>Quem é afetado</span>${esc(i.quem)}</div><div><span>O que fazer</span>${esc(i.acao)}</div><div><span>Fonte</span>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(i.fonte_nome||'Abrir fonte')}</a>`:esc(i.fonte_nome)}</div></div>
-      <details open><summary>Comunicado para o cliente · padrão Moreira</summary><div class="prev"><div><div class="thumbs"><figure><img data-img="${esc(i.id)}" alt="Comunicado no padrão Moreira"><figcaption>Comunicado (WhatsApp)</figcaption><button class="pri" data-dl="${esc(i.id)}">Baixar comunicado</button></figure><figure><img data-post="${esc(i.id)}" alt="Post da notícia no padrão Moreira"><figcaption>Post da notícia (Instagram)</figcaption><button class="pri" data-dlpost="${esc(i.id)}">Baixar post</button></figure></div><div class="row"><button data-id="${esc(i.id)}">Copiar texto do comunicado</button></div></div><div class="msg" style="margin:0">${esc(i.comunicado)}</div></div></details>
+      <div class="meta"><div><span>Quem é afetado</span>${esc(i.quem)}</div><div><span>O que fazer</span>${esc(i.acao)}</div><div><span>Fonte oficial</span>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(i.fonte_nome||'Abrir fonte')}</a>`:esc(i.fonte_nome)}</div></div>
+      <details><summary>Ver texto do comunicado</summary><div class="msg">${esc(i.comunicado)}</div><button data-id="${esc(i.id)}">Copiar texto do comunicado</button></details>
+      </div>
+      <aside class="imedia"><div class="thumbs"><figure><img data-post="${esc(i.id)}" alt="Post da notícia no padrão Moreira"><figcaption>Post · Instagram</figcaption><button class="pri" data-dlpost="${esc(i.id)}">Baixar post</button></figure><figure><img data-img="${esc(i.id)}" alt="Comunicado no padrão Moreira"><figcaption>Comunicado · WhatsApp</figcaption><button class="pri" data-dl="${esc(i.id)}">Baixar comunicado</button></figure></div></aside>
     </article>`}).join('')}).join('');
 }
 
@@ -290,7 +332,8 @@ $('#q').addEventListener('input',()=>{render();renderPost()});$('#imp').addEvent
 
 function status(){
   const last=meta.ultima_verificacao?new Date(meta.ultima_verificacao).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'}):'—';
-  $('#status').innerHTML=`<span><span class="dot"></span>Última verificação: <b>${esc(last)}</b></span><span><b>${items.length}</b> atualizações registradas</span><span><b>${items.filter(i=>i.impacto==='alto').length}</b> de impacto alto</span>${meta.nota?`<span>${esc(meta.nota)}</span>`:''}`;
+  const today=new Date().toISOString().slice(0,10);const key=p=>p.data+'|'+String(p.titulo).toLowerCase().slice(0,22);const ids=new Set(prazos.map(p=>p.id)),ks=new Set(prazos.map(key));const nx=[...prazos,...base.filter(b=>!ids.has(b.id)&&!ks.has(key(b)))].filter(p=>p.data>=today).sort((a,b)=>a.data.localeCompare(b.data))[0];
+  $('#status').innerHTML=`<div class="kpi"><span>Próximo prazo</span><b>${nx?fmt(nx.data).slice(0,5):'—'}</b><small>${nx?esc(String(nx.titulo).split(':')[0].slice(0,38)):''}</small></div><div class="kpi"><span>Atualizações</span><b>${items.length}</b><small>registradas no radar</small></div><div class="kpi"><span>Impacto alto</span><b>${items.filter(i=>i.impacto==='alto').length}</b><small>pedem ação do cliente</small></div><div class="kpi"><span><span class="dot"></span>Última verificação</span><b class="sm">${esc(last)}</b><small>busca automática 2x ao dia</small></div>`;
 }
 
 (async()=>{
@@ -303,7 +346,7 @@ function status(){
   const has=d=>d&&(typeof d.exists==='function'?d.exists():d.exists!==false);
   const docs=s=>(s&&(s.docs||s))||[];
   db.collection('atualizacoes').onSnapshot(s=>{clearTimeout(timer);items=docs(s).map(d=>({...dat(d),id:d.id}));render();status();renderPost()},()=>{clearTimeout(timer);$('#list').innerHTML='<p class="empty">Erro ao carregar as atualizações.</p>'});
-  db.collection('prazos').onSnapshot(s=>{prazos=docs(s).map(d=>({...dat(d),id:d.id})).filter(p=>p.data);renderTrack()});
+  db.collection('prazos').onSnapshot(s=>{prazos=docs(s).map(d=>({...dat(d),id:d.id})).filter(p=>p.data);renderTrack();status()});
   db.doc('config/status').onSnapshot(d=>{meta=has(d)?dat(d):{};status()});
 })();
 }
