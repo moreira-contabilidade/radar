@@ -232,7 +232,7 @@ a.btn.pri{background:var(--azul);color:#fff}
 .vis.off{background:#FFF4E5;border-color:#F0D3A6}
 .visbtn{min-height:38px;font-size:14px;border-color:#1F8F55;color:#1F8F55;background:#fff}
 .vis.off .visbtn{border-color:#B7791F;color:#8A5A12}
-.visbtn[disabled]{opacity:1;cursor:default}
+.visbtn{cursor:pointer}.visbtn:hover{filter:brightness(.96);box-shadow:0 0 0 3px rgba(31,143,85,.15)}.vis small a{color:var(--azul);font-weight:600}
 .vis small{color:var(--mute);font-size:13px}
 .eye{font-size:16px}
 .cliente .rule,.cliente .tools,.cliente #status,.cliente #alerta,.cliente #list,.cliente #areaTabs{display:none!important}
@@ -422,7 +422,7 @@ async function saveBlob(b,name){if(dl){try{await dl.save({filename:name,data:b})
 let calView='lista',calMes=hoje().slice(0,7);
 fetch('prazos_base.json?v=2',{cache:'no-store'}).then(r=>r.json()).then(b=>{base=b;renderTrack();try{status()}catch(e){}}).catch(()=>{});
 
-function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),1800)}
+function toast(t,ms){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),ms||1800)}
 async function copy(text){try{await navigator.clipboard.writeText(text);toast('Texto copiado')}catch(e){toast('Não foi possível copiar — selecione o texto manualmente')}}
 
 const TIPO={imposto:'Guia / imposto',declaracao:'Declaração',trabalhista:'Trabalhista',reforma:'Reforma Tributária',outros:'Prazo',feriado:'Feriado'};let tipoSel='';
@@ -473,7 +473,7 @@ function render(){
       <div class="head"><div><div class="org"><b class="area ${i.setor==='dp'?'dp':''}">${i.setor==='dp'?'Departamento Pessoal':'Fiscal'}</b> · ${esc(i.orgao)}</div><h3>${esc(i.titulo)}</h3></div><span class="tag ${esc(i.impacto)}">${esc(IMP[i.impacto]||i.impacto)}</span></div>
       <p>${esc(i.resumo)}</p>
       <div class="meta"><div><span>Quem é afetado</span>${esc(i.quem)}</div><div><span>O que fazer</span>${esc(i.acao)}</div><div><span>Fonte oficial</span>${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(i.fonte_nome||'Abrir fonte')}</a>`:esc(i.fonte_nome)}</div></div>
-      <div class="vis ${i.cliente===false?'off':'on'}"><button class="visbtn" data-vis="${esc(i.id)}" ${DB&&!DB.__ro?'':'disabled'} aria-pressed="${i.cliente!==false}"><span class="eye">${i.cliente===false?'⊘':'👁'}</span> ${i.cliente===false?'Oculto para o cliente':'Visível para o cliente'}</button><small>${i.cliente===false?(i.aguardando?'Nova notícia aguardando sua aprovação. ':'')+'Não aparece no aplicativo nem na página do cliente.':'Aparece no aplicativo e na página do cliente.'}${DB&&!DB.__ro?'':' Altere no radar do Claude.'}</small></div>
+      <div class="vis ${i.cliente===false?'off':'on'}"><button class="visbtn" data-vis="${esc(i.id)}" aria-pressed="${i.cliente!==false}" title="Clique para ${i.cliente===false?'mostrar ao':'esconder do'} cliente"><span class="eye">${i.cliente===false?'⊘':'👁'}</span> ${i.cliente===false?'Oculto para o cliente':'Visível para o cliente'}</button><small>${i.cliente===false?(i.aguardando?'Nova notícia aguardando sua aprovação. ':'')+'Não aparece no aplicativo nem na página do cliente.':'Aparece no aplicativo e na página do cliente.'}${DB&&!DB.__ro?' <b>Clique no botão para '+(i.cliente===false?'liberar':'esconder')+'.</b>':' <a href="https://claude.ai/artifact/1HVLhmYUjWUrmbh22fjHD5" target="_blank" rel="noopener">Para mudar, abra o radar do Claude ↗</a>'}</small></div>
       <div class="perf">${perfis(i).filter(x=>x!=='todos').map(x=>`<span>${esc(PERFIS[x])}</span>`).join('')||'<span>Todos os clientes</span>'}</div>
       <div class="row acts"><a class="btn wa" href="${esc(waLink(waText(i)))}" target="_blank" rel="noopener">Enviar no WhatsApp</a><button data-leg="${esc(i.id)}">Copiar legenda do Instagram</button><button data-id="${esc(i.id)}">Copiar comunicado</button></div>
       <details><summary>Ver texto do comunicado</summary><div class="msg">${esc(i.comunicado)}</div></details>
@@ -577,8 +577,10 @@ if(CLIENTE){
 $('#list').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   if(b.dataset.id){const i=items.find(x=>x.id===b.dataset.id);if(i)copy(i.comunicado)}
-  if(b.dataset.vis&&DB&&!DB.__ro){const i=items.find(x=>x.id===b.dataset.vis);if(!i)return;const novo=i.cliente===false;b.disabled=true;
-    Promise.resolve(DB.doc('atualizacoes/'+i.id).update({cliente:novo,aguardando:false})).then(()=>toast(novo?'Agora o cliente vê esta notícia':'Notícia ocultada do cliente')).catch(()=>{b.disabled=false;toast('Não foi possível salvar. Tente de novo.')});return}
+  if(b.dataset.vis){if(!DB||DB.__ro){toast('Esta página só mostra. Para liberar ou esconder, abra o radar do Claude.',4500);setTimeout(()=>window.open('https://claude.ai/artifact/1HVLhmYUjWUrmbh22fjHD5','_blank','noopener'),900);return}
+    const i=items.find(x=>x.id===b.dataset.vis);if(!i)return;const antes={cliente:i.cliente,aguardando:i.aguardando};const novo=i.cliente===false;
+    i.cliente=novo;i.aguardando=false;render();status();
+    Promise.resolve(DB.doc('atualizacoes/'+i.id).update({cliente:novo,aguardando:false})).then(()=>toast(novo?'Liberada para o cliente. Chega ao aplicativo em até 1 hora.':'Escondida do cliente. Sai do aplicativo em até 1 hora.',4000)).catch(()=>{Object.assign(i,antes);render();status();toast('Não foi possível salvar. Tente de novo.',4000)});return}
   if(b.dataset.leg){const i=items.find(x=>x.id===b.dataset.leg);if(i)copy(legenda(i))}
   if(b.dataset.dl){const i=items.find(x=>x.id===b.dataset.dl);if(i)savePng(cvItem(i),`comunicado-moreira-${i.id}.png`)}
   if(b.dataset.dlpost){const i=items.find(x=>x.id===b.dataset.dlpost);if(i){const c=document.createElement('canvas');MoreiraCards.noticia(c,i);savePng(c,`post-moreira-${i.id}.png`)}}
