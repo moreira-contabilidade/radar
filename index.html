@@ -362,7 +362,7 @@ button.gold2{background:var(--ouroL);border-color:var(--ouroL);color:var(--navy)
 (function(){
 let DATA=null;const ready=fetch('data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>DATA=d);
 const snap=a=>({docs:a.map(d=>({id:d.id||(d.data+d.titulo),data:()=>d}))});
-const db={collection:n=>({onSnapshot:(cb,err)=>{ready.then(()=>cb(snap(n==='atualizacoes'?DATA.atualizacoes:n==='prazos'?DATA.prazos:[]))).catch(e=>err&&err(e));return()=>{}}}),
+const db={__ro:true,collection:n=>({onSnapshot:(cb,err)=>{ready.then(()=>cb(snap(n==='atualizacoes'?DATA.atualizacoes:n==='prazos'?DATA.prazos:[]))).catch(e=>err&&err(e));return()=>{}}}),
   doc:()=>({onSnapshot:cb=>{ready.then(()=>cb({exists:true,data:()=>({ultima_verificacao:DATA.gerado_em})}));return()=>{}}})};
 const downloads={save:async({filename,data})=>{const url=URL.createObjectURL(data);const a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000)}};
 window.claude={use:async n=>n==='db'?db:n==='downloads'?downloads:null};
