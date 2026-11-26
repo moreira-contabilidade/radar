@@ -1080,10 +1080,10 @@
    "card_tema": "Nota fiscal de serviço",
    "card_titulo": "Presta serviço no Simples?",
    "card_destaque": "A nota agora é nacional",
-   "card_sub": "Desde **1º de novembro de 2026**, as micro e pequenas empresas do Simples Nacional que prestam serviços não emitem mais a nota pelo sistema da prefeitura. A emissão passou para o **Emissor Nacional da NFS-e**, do governo federal.",
+   "card_sub": "Desde **1º de novembro de 2026**, as micro e pequenas empresas do Simples Nacional que prestam serviços não emitem mais a nota pelo sistema da prefeitura. A emissão passou para o Emissor Nacional da NFS-e, do governo federal.",
    "card_pontos": [
-    "O **sistema da prefeitura não vale mais** para notas de serviços feitos a partir de novembro",
-    "Dá para emitir pelo **site do Emissor Nacional** ou pelo seu sistema integrado",
+    "O sistema da prefeitura não vale mais para notas de serviços feitos a partir de novembro",
+    "Dá para emitir pelo site do Emissor Nacional ou pelo seu sistema integrado",
     "Os novos impostos da Reforma **ainda não aparecem na nota em 2026**"
    ],
    "card_acao": "Ainda emite pela prefeitura? **Fale com a gente hoje** para configurarmos o Emissor Nacional.",
@@ -1106,11 +1106,11 @@
    "card_tema": "Imposto Seletivo",
    "card_titulo": "Imposto Seletivo",
    "card_destaque": "começa em fevereiro de 2027",
-   "card_sub": "É um **novo imposto federal** cobrado sobre produtos considerados prejudiciais à saúde ou ao meio ambiente. A Medida Provisória nº 1.399/2026 definiu como ele será cobrado **em 2027**.",
+   "card_sub": "É um novo imposto federal cobrado sobre produtos considerados prejudiciais à saúde ou ao meio ambiente. A Medida Provisória nº 1.399/2026 definiu como ele será cobrado **em 2027**.",
    "card_pontos": [
-    "Atinge **veículos, barcos, aviões, cigarros e bebidas alcoólicas e açucaradas**",
-    "Em 2027, o valor acompanha o **IPI que já é cobrado hoje** sobre esses produtos",
-    "**Quem fabrica ou importa** esses produtos é quem recolhe o imposto"
+    "Atinge veículos, barcos, aviões, cigarros e bebidas alcoólicas e açucaradas",
+    "Em 2027, o valor acompanha o IPI que já é cobrado hoje sobre esses produtos",
+    "Quem fabrica ou importa esses produtos é quem recolhe o imposto"
    ],
    "card_acao": "Fabrica, importa ou revende esses produtos? Vamos calcular o impacto nos seus preços **antes de fevereiro**.",
    "fonte_card": "Medida Provisória nº 1.399/2026",
@@ -1132,11 +1132,11 @@
    "card_tema": "Produtor rural",
    "card_titulo": "Produtor rural",
    "card_destaque": "não precisa de CNPJ até 2028",
-   "card_sub": "Com a Reforma Tributária, produtores rurais e caminhoneiros autônomos passariam a precisar de CNPJ. Um ato oficial adiou essa exigência: **até o fim de 2028**, quem se enquadra **continua usando o CPF**.",
+   "card_sub": "Com a Reforma Tributária, produtores rurais e caminhoneiros autônomos passariam a precisar de CNPJ. Um ato oficial adiou essa exigência: **até o fim de 2028**, quem se enquadra continua usando o CPF.",
    "card_pontos": [
     "Vale para produtor rural pessoa física com faturamento **abaixo de R$ 3,6 milhões por ano**",
-    "Vale também para o **transportador autônomo de cargas** (caminhoneiro)",
-    "**Não vale** para quem escolher o regime regular do IBS e da CBS"
+    "Vale também para o transportador autônomo de cargas (caminhoneiro)",
+    "Não vale para quem escolher o regime regular do IBS e da CBS"
    ],
    "card_acao": "Se você se enquadra, **não precisa abrir CNPJ agora**. Fale com a gente para confirmar o seu caso.",
    "fonte_card": "Ato Conjunto RFB/CGIBS nº 8/2026",
@@ -1158,11 +1158,11 @@
    "card_tema": "Reforma Tributária",
    "card_titulo": "Novo imposto federal:",
    "card_destaque": "proposta de 11,3%",
-   "card_sub": "A CBS é o imposto federal que vai substituir o PIS e a Cofins em 2027. O Tribunal de Contas da União calculou **11,3%** como alíquota de referência, mas quem decide o número final é o **Senado**.",
+   "card_sub": "A CBS é o imposto federal que vai substituir o PIS e a Cofins em 2027. O Tribunal de Contas da União calculou **11,3%** como alíquota de referência, mas quem decide o número final é o Senado.",
    "card_pontos": [
     "O Senado tem até **15 de dezembro de 2026** para definir a alíquota",
-    "Os 11,3% **ainda são uma proposta**, não o valor final",
-    "**Não significa preços 11,3% mais altos**: a CBS substitui impostos que já existem"
+    "Os 11,3% ainda são uma proposta, não o valor final",
+    "Não significa preços 11,3% mais altos: a CBS substitui impostos que já existem"
    ],
    "card_acao": "Aguarde a definição. Assim que sair, simulamos o **impacto nos seus preços e margens**.",
    "fonte_card": "TCU",
@@ -1184,11 +1184,11 @@
    "card_tema": "Setores específicos",
    "card_titulo": "Bancos, planos de saúde",
    "card_destaque": "e loterias: prazo adiado",
-   "card_sub": "A DeRE é uma nova declaração da Reforma Tributária para **serviços financeiros, planos de saúde e loterias**. O Comitê Gestor do IBS **adiou em um mês** a 2ª fase dessa declaração.",
+   "card_sub": "A DeRE é uma nova declaração da Reforma Tributária para **serviços financeiros, planos de saúde e loterias**. O Comitê Gestor do IBS adiou em um mês a 2ª fase dessa declaração.",
    "card_pontos": [
     "A primeira entrega da 2ª fase passou para **15 de dezembro de 2026**",
-    "A 3ª fase continua prevista para **1º de janeiro de 2027**",
-    "Empresas de outros setores **não são afetadas**"
+    "A 3ª fase continua prevista para 1º de janeiro de 2027",
+    "Empresas de outros setores não são afetadas"
    ],
    "card_acao": "Atua nesses setores? Seu **calendário de obrigações já foi atualizado** pela nossa equipe.",
    "fonte_card": "Comitê Gestor do IBS",
@@ -1210,11 +1210,11 @@
    "card_tema": "Reforma Tributária",
    "card_titulo": "Errou por dúvida?",
    "card_destaque": "Sem multa",
-   "card_sub": "A Receita Federal e o Comitê Gestor do IBS anunciaram que empresas de boa-fé **não serão multadas** quando errarem por **dúvida razoável** sobre as novas regras da Reforma Tributária.",
+   "card_sub": "A Receita Federal e o Comitê Gestor do IBS anunciaram que empresas de boa-fé **não serão multadas** quando errarem por dúvida razoável sobre as novas regras da Reforma Tributária.",
    "card_pontos": [
-    "Vale para quem **informa tudo**, sem esconder dados",
-    "A empresa precisa seguir **boas práticas de contabilidade**",
-    "Também vão sair **novas orientações** e um regulamento revisado"
+    "Vale para quem informa tudo, sem esconder dados",
+    "A empresa precisa seguir boas práticas de contabilidade",
+    "Também vão sair novas orientações e um regulamento revisado"
    ],
    "card_acao": "**Mantenha seus documentos em dia** com a contabilidade. É isso que garante a proteção.",
    "fonte_card": "Ministério da Fazenda",
@@ -1236,11 +1236,11 @@
    "card_tema": "Nota fiscal",
    "card_titulo": "Novos impostos na nota:",
    "card_destaque": "prazo adiado para 2027",
-   "card_sub": "A partir de dezembro, as notas fiscais teriam que mostrar o IBS e a CBS, os novos impostos da Reforma. Um ato oficial **adiou essa exigência** para **janeiro ou março de 2027**, conforme a atividade.",
+   "card_sub": "A partir de dezembro, as notas fiscais teriam que mostrar o IBS e a CBS, os novos impostos da Reforma. Um ato oficial adiou essa exigência para **janeiro ou março de 2027**, conforme a atividade.",
    "card_pontos": [
     "Condomínios e locações: a partir de **1º/01/2027**",
-    "Plataformas digitais, TI e streaming: a partir de **1º/03/2027**",
-    "Simples: **janeiro ou março de 2027**, conforme a atividade (o **Emissor Nacional da NFS-e segue obrigatório**)"
+    "Plataformas digitais, TI e streaming: a partir de 1º/03/2027",
+    "Simples: janeiro ou março de 2027, conforme a atividade (o Emissor Nacional da NFS-e segue obrigatório)"
    ],
    "card_acao": "**Continue emitindo normalmente.** Vamos avisar antes de qualquer mudança na sua nota.",
    "fonte_card": "Ato Conjunto RFB/CGIBS nº 7/2026",
@@ -1264,9 +1264,9 @@
    "card_destaque": "informe a folha de 12 meses",
    "card_sub": "O sistema que calcula o imposto do Simples (PGDAS-D) foi atualizado. No cálculo de **novembro e dezembro de 2026**, será obrigatório informar a **folha de salários dos últimos 12 meses**.",
    "card_pontos": [
-    "Vale para **todas as empresas do Simples**, de qualquer atividade",
+    "Vale para todas as empresas do Simples, de qualquer atividade",
     "A exigência vale **só para novembro e dezembro de 2026**",
-    "A partir de **2027**, o imposto será calculado pela **data da venda**, e não do recebimento"
+    "A partir de 2027, o imposto será calculado pela data da venda, e não do recebimento"
    ],
    "card_acao": "**Envie para nós as informações de folha** que ainda estiverem pendentes, para não atrasar a guia.",
    "fonte_card": "Receita Federal",
@@ -1290,8 +1290,8 @@
    "card_destaque": "testar o novo imposto",
    "card_sub": "A Receita Federal abriu para **todas as empresas** o ambiente de testes da CBS, o imposto federal que substitui o PIS e a Cofins em 2027. Antes, só empresas convidadas podiam participar.",
    "card_pontos": [
-    "**Não precisa mais de convite** para participar",
-    "Os testes **não geram imposto, multa nem cobrança**",
+    "Não precisa mais de convite para participar",
+    "Os testes não geram imposto, multa nem cobrança",
     "Ajuda a ajustar o sistema de notas **antes de 2027**"
    ],
    "card_acao": "Quer testar o seu sistema de notas? **Fale com a gente** para avaliarmos juntos.",
@@ -1314,10 +1314,10 @@
    "card_tema": "Simples Nacional",
    "card_titulo": "Simples Nacional",
    "card_destaque": "tem novas regras para 2027",
-   "card_sub": "Saíram as regras que adaptam o Simples aos novos impostos da Reforma Tributária (CBS e IBS), que entram aos poucos a partir de **2027**. Você **continua pagando os impostos pelo Simples Nacional**.",
+   "card_sub": "Saíram as regras que adaptam o Simples aos novos impostos da Reforma Tributária (CBS e IBS), que entram aos poucos a partir de **2027**. Você continua pagando os impostos pelo Simples Nacional.",
    "card_pontos": [
-    "Muda a forma de **declarar o faturamento** e de dividir os impostos dentro da guia",
-    "Vendas e serviços para **órgãos públicos** precisam ser informados separadamente",
+    "Muda a forma de declarar o faturamento e de dividir os impostos dentro da guia",
+    "Vendas e serviços para órgãos públicos precisam ser informados separadamente",
     "A declaração anual de 2026 (Defis) deve ser entregue até **31/03/2027**"
    ],
    "card_acao": "**Nada muda no seu dia a dia agora.** Nossa equipe já está adaptando a sua apuração às novas regras.",
@@ -1342,9 +1342,9 @@
    "card_destaque": "vai mudar de formato",
    "card_sub": "O governo liberou para testes uma nova versão da nota fiscal de serviço (NFS-e), com campos para os novos impostos da Reforma Tributária. Por enquanto, é **só ambiente de testes**.",
    "card_pontos": [
-    "A nota ganha **novos campos e novas regras de preenchimento**",
-    "Por enquanto, **nada muda nas notas que você emite hoje**",
-    "Quem usa **sistema próprio ou integrado** precisa se adaptar antes"
+    "A nota ganha novos campos e novas regras de preenchimento",
+    "Por enquanto, nada muda nas notas que você emite hoje",
+    "Quem usa sistema próprio ou integrado precisa se adaptar antes"
    ],
    "card_acao": "Pergunte ao **fornecedor do seu sistema de notas** se ele já está acompanhando essas mudanças.",
    "fonte_card": "Portal Nacional da NFS-e",
@@ -1367,11 +1367,11 @@
    "card_tema": "Departamento Pessoal",
    "card_titulo": "Fim da escala 6x1:",
    "card_destaque": "42 horas a partir de 16/12",
-   "card_sub": "A Constituição mudou e acabou com a escala de 6 dias de trabalho para 1 de folga. A partir de **16 de dezembro de 2026**, a jornada máxima passa a ser de **42 horas por semana**, com **duas folgas semanais remuneradas**.",
+   "card_sub": "A Constituição mudou e acabou com a escala de 6 dias de trabalho para 1 de folga. A partir de **16 de dezembro de 2026**, a jornada máxima passa a ser de **42 horas por semana**, com duas folgas semanais remuneradas.",
    "card_pontos": [
-    "Em **16/12/2027**, o limite cai para **40 horas por semana**",
-    "O salário **não pode ser reduzido** por causa da jornada menor",
-    "Vale para empregados **urbanos, rurais e domésticos**"
+    "Em **16/12/2027**, o limite cai para 40 horas por semana",
+    "O salário não pode ser reduzido por causa da jornada menor",
+    "Vale para empregados urbanos, rurais e domésticos"
    ],
    "card_quando": "Primeira etapa em 16/12/2026",
    "card_acao": "**Revise as escalas da sua equipe agora.** Nossa equipe de DP ajuda a adaptar contratos e jornadas.",
@@ -1393,11 +1393,11 @@
    "card_tema": "Departamento Pessoal",
    "card_titulo": "Hora extra e folha:",
    "card_destaque": "muda o cálculo da hora",
-   "card_sub": "Com a jornada menor, o valor da hora de trabalho muda. A partir de **16/12/2026**, o salário mensal passa a ser dividido por **210** (antes era 220) para calcular **hora extra** e **adicional noturno**.",
+   "card_sub": "Com a jornada menor, o valor da hora de trabalho muda. A partir de **16/12/2026**, o salário mensal passa a ser dividido por **210** (antes era 220) para calcular hora extra e adicional noturno.",
    "card_pontos": [
-    "O **salário mensal continua o mesmo**: só o valor da hora aumenta",
+    "O salário mensal continua o mesmo: só o valor da hora aumenta",
     "**Banco de horas até 15/12/2026** deve ser compensado ou pago conforme o acordo",
-    "No comércio, a folga deve cair **no domingo ao menos 1 vez a cada 3 semanas**"
+    "No comércio, a folga deve cair no domingo ao menos 1 vez a cada 3 semanas"
    ],
    "card_quando": "Novo cálculo a partir de 16/12/2026",
    "card_acao": "**Não feche a folha de dezembro sem revisar.** Vamos ajustar o cálculo da hora e o banco de horas com você.",
@@ -1421,8 +1421,8 @@
    "card_destaque": "fique atento aos prazos",
    "card_sub": "Todo empregado registrado tem direito ao 13º salário, pago em duas parcelas. A **1ª parcela vence em 30 de novembro** e a **2ª parcela vence em 20 de dezembro**.",
    "card_pontos": [
-    "A 1ª parcela é **metade da remuneração** do mês anterior",
-    "A 2ª parcela **completa o valor total** devido",
+    "A 1ª parcela é metade da remuneração do mês anterior",
+    "A 2ª parcela completa o valor total devido",
     "Com comissões ou horas extras, o **ajuste final vai até 10 de janeiro**"
    ],
    "card_quando": "1ª parcela até 30/11 · 2ª até 20/12",
@@ -1445,11 +1445,11 @@
    "card_tema": "FGTS",
    "card_titulo": "Demissão em dezembro?",
    "card_destaque": "FGTS do 13º ficou simples",
-   "card_sub": "Nas rescisões de **dezembro e janeiro**, o FGTS sobre o 13º é pago junto com as verbas da rescisão. Agora o FGTS Digital **reconhece esse pagamento sozinho** e **evita cobrança em dobro**.",
+   "card_sub": "Nas rescisões de **dezembro e janeiro**, o FGTS sobre o 13º é pago junto com as verbas da rescisão. Agora o FGTS Digital reconhece esse pagamento sozinho e evita cobrança em dobro.",
    "card_pontos": [
-    "Não é mais preciso lançar um **ajuste extra na folha anual do eSocial**",
+    "Não é mais preciso lançar um ajuste extra na folha anual do eSocial",
     "Se o prazo da rescisão for **antes de 20 de janeiro**, o FGTS do 13º vai junto",
-    "Casos de **13º adiantado a mais** ainda precisam de ajuste"
+    "Casos de 13º adiantado a mais ainda precisam de ajuste"
    ],
    "card_quando": "Rescisões de dezembro e janeiro",
    "card_acao": "Vai desligar alguém no fim do ano? **Avise a nossa equipe com antecedência** para calcular tudo certo.",
@@ -1471,10 +1471,10 @@
    "card_tema": "FGTS",
    "card_titulo": "Processo trabalhista:",
    "card_destaque": "FGTS pelo FGTS Digital",
-   "card_sub": "Quando a empresa tem um **processo ou acordo trabalhista**, o FGTS devido deve ser pago pelo **FGTS Digital**, depois de informado no **eSocial**. A regra vale para casos abrangidos a partir de **1º/05/2026**.",
+   "card_sub": "Quando a empresa tem um processo ou acordo trabalhista, o FGTS devido deve ser pago pelo FGTS Digital, depois de informado no eSocial. A regra vale para casos abrangidos a partir de **1º/05/2026**.",
    "card_pontos": [
-    "Vale também para acordos feitos em **comissões de conciliação**",
-    "Antes do pagamento, o processo precisa ser **informado no eSocial**",
+    "Vale também para acordos feitos em comissões de conciliação",
+    "Antes do pagamento, o processo precisa ser informado no eSocial",
     "Casos com sentença **até 30/04/2026** seguem pela guia antiga (GFIP)"
    ],
    "card_quando": "Casos a partir de 1º/05/2026",
@@ -1497,11 +1497,11 @@
    "card_tema": "Salário mínimo",
    "card_titulo": "Salário mínimo 2027:",
    "card_destaque": "proposta de R$ 1.741",
-   "card_sub": "O projeto do Orçamento de 2027 prevê que o salário mínimo passe de **R$ 1.621 para R$ 1.741**, um aumento de **7,4%**. O valor ainda **não é definitivo**.",
+   "card_sub": "O projeto do Orçamento de 2027 prevê que o salário mínimo passe de **R$ 1.621 para R$ 1.741**, um aumento de **7,4%**. O valor ainda não é definitivo.",
    "card_pontos": [
-    "O valor final depende da **inflação (INPC) de novembro**",
-    "Impacta quem recebe o **salário mínimo** e benefícios como **aposentadorias e abono salarial**",
-    "Ainda precisa ser **confirmado oficialmente** pelo governo"
+    "O valor final depende da inflação (INPC) de novembro",
+    "Impacta quem recebe o salário mínimo e benefícios como aposentadorias e abono salarial",
+    "Ainda precisa ser confirmado oficialmente pelo governo"
    ],
    "card_quando": "Valor oficial após o INPC de novembro",
    "card_acao": "Tem funcionários no piso? **Vamos simular o custo da folha** com o novo valor assim que ele for confirmado.",
@@ -1526,8 +1526,8 @@
    "card_sub": "Uma nova lei aumentou os impostos sobre o lucro de parte das empresas. No Lucro Presumido, a base do **IRPJ e da CSLL ficou 10% maior** na parte do faturamento que passar de **R$ 5 milhões por ano**.",
    "card_pontos": [
     "Quem fatura **até R$ 5 milhões por ano** não é afetado por esse aumento",
-    "Benefícios fiscais federais (como **isenções de PIS/Cofins**) foram **reduzidos em 10%**",
-    "Também subiu a tributação de **fintechs, juros sobre capital próprio e bets**"
+    "Benefícios fiscais federais (como isenções de PIS/Cofins) foram reduzidos em 10%",
+    "Também subiu a tributação de fintechs, juros sobre capital próprio e bets"
    ],
    "card_quando": "Em vigor desde 2026",
    "card_acao": "Fatura mais de R$ 5 milhões? **Vamos revisar o seu planejamento tributário de 2027.**",
@@ -1551,9 +1551,9 @@
    "card_destaque": "10% acima de R$ 50 mil",
    "card_sub": "Desde janeiro de 2026, quando uma empresa paga **mais de R$ 50 mil por mês** em lucros a um mesmo sócio, ela precisa **reter 10% de Imposto de Renda** sobre o valor total.",
    "card_pontos": [
-    "Vale também para empresas do **Simples Nacional**",
-    "Até **R$ 50 mil por mês**, por empresa, **não há retenção**",
-    "Renda anual **acima de R$ 600 mil** passa a ter tributação mínima"
+    "Vale também para empresas do Simples Nacional",
+    "Até **R$ 50 mil por mês**, por empresa, não há retenção",
+    "Renda anual acima de R$ 600 mil passa a ter tributação mínima"
    ],
    "card_quando": "Em vigor desde janeiro de 2026",
    "card_acao": "**Fale com a gente antes de distribuir lucros** para planejar os valores do mês.",
@@ -1575,11 +1575,11 @@
    "card_tema": "Imposto de Renda",
    "card_titulo": "Ganha até R$ 5 mil?",
    "card_destaque": "Não paga Imposto de Renda",
-   "card_sub": "A tabela do Imposto de Renda mudou. Desde **1º de janeiro de 2026**, quem ganha **até R$ 5 mil por mês** está isento, e quem ganha **até R$ 7.350** paga menos.",
+   "card_sub": "A tabela do Imposto de Renda mudou. Desde **1º de janeiro de 2026**, quem ganha **até R$ 5 mil por mês** está isento, e quem ganha até R$ 7.350 paga menos.",
    "card_pontos": [
-    "Vale para **salários, aposentadorias e pensões**",
+    "Vale para salários, aposentadorias e pensões",
     "A mudança aparece na **declaração do IR de 2027**",
-    "Quem tem **mais de uma renda** pode ter imposto a complementar"
+    "Quem tem mais de uma renda pode ter imposto a complementar"
    ],
    "card_quando": "Em vigor desde 1º/01/2026",
    "card_acao": "Tem mais de uma fonte de renda? **Fale com a gente** para evitar imposto a pagar na declaração.",
@@ -1601,10 +1601,10 @@
    "card_tema": "Regularização de débitos",
    "card_titulo": "Débito com a Receita?",
    "card_destaque": "Prazo até 30/12",
-   "card_sub": "A Receita Federal **prorrogou até 30 de dezembro de 2026** o prazo para negociar débitos federais que estão em discussão, com **condições diferenciadas e descontos**.",
+   "card_sub": "A Receita Federal **prorrogou até 30 de dezembro de 2026** o prazo para negociar débitos federais que estão em discussão, com condições diferenciadas e descontos.",
    "card_pontos": [
-    "Vale para **empresas e pessoas físicas**",
-    "É para débitos em **discussão administrativa** com a Receita",
+    "Vale para empresas e pessoas físicas",
+    "É para débitos em discussão administrativa com a Receita",
     "Depois de **30/12/2026**, o prazo se encerra"
    ],
    "card_quando": "Adesão até 30/12/2026",
@@ -1627,11 +1627,11 @@
    "card_tema": "Inventário de estoque",
    "card_titulo": "Inventário de estoque:",
    "card_destaque": "conte tudo em 31/12",
-   "card_sub": "Toda empresa do comércio ou da indústria, **inclusive do Simples Nacional**, precisa contar o estoque no último dia do ano: **31 de dezembro de 2026**.",
+   "card_sub": "Toda empresa do comércio ou da indústria, inclusive do Simples Nacional, precisa contar o estoque no último dia do ano: **31 de dezembro de 2026**.",
    "card_pontos": [
-    "Conte **mercadorias, matérias-primas e embalagens** que estão na empresa",
-    "Informe **quantidade e valor** de cada item no Livro de Inventário",
-    "Quem entrega a EFD envia o inventário na **escrituração de fevereiro**, em **março**"
+    "Conte mercadorias, matérias-primas e embalagens que estão na empresa",
+    "Informe quantidade e valor de cada item no Livro de Inventário",
+    "Quem entrega a EFD envia o inventário na escrituração de fevereiro, em março"
    ],
    "card_quando": "Contagem em 31/12/2026",
    "card_acao": "**Faça a contagem em 31/12 e envie a relação do estoque à nossa equipe** no início de janeiro.",
