@@ -508,7 +508,7 @@ $('#calList').addEventListener('click',e=>{const b=e.target.closest('button[data
 $('#tipoBtns').addEventListener('click',e=>{const b=e.target.closest('button[data-tipo]');if(!b)return;tipoSel=b.dataset.tipo;renderTrack()});
 function render(){
   const q=$('#q').value.trim().toLowerCase(),imp=$('#imp').value,st=$('#setor').value,pf=$('#perfil').value;
-  const W=CLIENTE?null:((selWeek&&selWeek!=='todas')?semana():(selWeek==='todas'?null:semana()));const f=items.filter(i=>(!W||(i.data>=W.ini&&i.data<=W.fim))&&(!imp||(imp==='vis:on'?i.cliente!==false:imp==='vis:off'?i.cliente===false:i.impacto===imp))&&(!st||(i.setor||'fiscal')===st)&&(!pf||perfis(i).includes(pf)||perfis(i).includes('todos'))&&(!q||[i.titulo,i.orgao,i.resumo,i.quem,i.acao].join(' ').toLowerCase().includes(q)))
+  const W=CLIENTE?null:((selWeek&&selWeek!=='todas')?semana():(selWeek==='todas'?null:semana()));const f=items.filter(i=>(!W||(i.data>=W.ini&&i.data<=W.fim)||(i.aguardando&&i.cliente===false))&&(!imp||(imp==='vis:on'?i.cliente!==false:imp==='vis:off'?i.cliente===false:i.impacto===imp))&&(!st||(i.setor||'fiscal')===st)&&(!pf||perfis(i).includes(pf)||perfis(i).includes('todos'))&&(!q||[i.titulo,i.orgao,i.resumo,i.quem,i.acao].join(' ').toLowerCase().includes(q)))
     .sort((a,b)=>String(b.data).localeCompare(String(a.data)));
   if(CLIENTE){renderCliente();return}
   if(!f.length){if(CLIENTE)$('#vendo').innerHTML='Nenhuma notícia encontrada para esta escolha.';$('#list').innerHTML=`<p class="empty">${items.length?'Nada encontrado com esses filtros.':'Ainda não há atualizações registradas.'}</p>`;return}
