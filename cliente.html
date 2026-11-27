@@ -244,7 +244,18 @@ a.btn.pri{background:var(--azul);color:#fff}
 .cherr{color:#B42318!important;font-weight:600}.chbtns{display:flex;gap:10px;justify-content:flex-end}
 .chbtns button{border-radius:10px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;border:1px solid #C9D3E0;background:#fff;color:#1D2E46}.chbtns .chok{background:#1D2E46;color:#fff;border-color:#1D2E46}
 @media print{#chavechip{display:none}}
-.vischk{display:flex;align-items:center;gap:10px;font-weight:700;color:#1D2E46;cursor:pointer;font-size:15px}.vischk input{width:22px;height:22px;accent-color:#1F8F55;cursor:pointer}.visst{font-weight:700;color:#1D2E46}.visbtn{cursor:pointer}.visbtn:hover{filter:brightness(.96);box-shadow:0 0 0 3px rgba(31,143,85,.15)}.vis small a{color:var(--azul);font-weight:600}
+.sqbox{background:#fff;border:2px solid #1D2E46;border-radius:16px;padding:16px 16px 12px;margin:4px 0 18px;box-shadow:0 6px 18px rgba(29,46,70,.08)}
+.sqbox.vazio{border-color:#D5DDE8}.sqbox.vazio p{margin:6px 0 0;color:#5A6B82}
+.sqhead{display:flex;flex-direction:column;gap:2px;margin-bottom:10px}.sqhead b,.sqbox>b{font-size:18px;color:#1D2E46}.sqhead small{color:#5A6B82}
+.sqbox ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.sqbox li{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;background:#F2F5F9;border-radius:12px;padding:10px 12px;border-left:4px solid #355380}
+.sqbox li.urg{border-left-color:#B42318;background:#FDF1F0}.sqbox li.sq-escala{border-left-color:#A6841F;background:#FFF7E0;grid-template-columns:62px 1fr}
+.sqbox li.ok{opacity:.55}.sqbox li.ok .sqtxt b{text-decoration:line-through}
+.sqdia{display:flex;flex-direction:column;align-items:center;line-height:1.1}.sqdia b{font-size:17px;color:#1D2E46}.sqdia small{font-size:12px;color:#5A6B82}
+.sqtxt{display:flex;flex-direction:column;gap:3px}.sqtxt b{font-size:15px;color:#1D2E46}.sqtxt small{font-size:13.5px;color:#41516A;line-height:1.4}
+.sqok{display:flex;flex-direction:column;align-items:center;font-size:11.5px;color:#5A6B82;gap:2px;cursor:pointer}.sqok input{width:22px;height:22px;accent-color:#1F8F55}
+.sqnota{display:block;margin-top:10px;color:#7A8AA0;font-size:12px}
+.btnpdf{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:10px;border:1.5px solid #1D2E46;color:#1D2E46;background:#fff;font-weight:700;text-decoration:none;font-size:14.5px}.btnpdf:hover{background:#1D2E46;color:#fff}.visall{border-color:#1F8F55!important;color:#1F8F55!important;font-weight:700}.vischk{display:flex;align-items:center;gap:10px;font-weight:700;color:#1D2E46;cursor:pointer;font-size:15px}.vischk input{width:22px;height:22px;accent-color:#1F8F55;cursor:pointer}.visst{font-weight:700;color:#1D2E46}.visbtn{cursor:pointer}.visbtn:hover{filter:brightness(.96);box-shadow:0 0 0 3px rgba(31,143,85,.15)}.vis small a{color:var(--azul);font-weight:600}
 .vis small{color:var(--mute);font-size:13px}
 .eye{font-size:16px}
 .cliente .rule,.cliente .tools,.cliente #status,.cliente #alerta,.cliente #list,.cliente #areaTabs{display:none!important}
@@ -343,7 +354,7 @@ button.gold2{background:var(--ouroL);border-color:var(--ouroL);color:var(--navy)
   <h2>Próximos prazos e vencimentos</h2>
   <div class="track" id="track"></div>
   <details class="cal2" id="calAll"><summary>Ver calendário completo de obrigações (declarações, impostos, trabalhista e Reforma)</summary>
-    <div class="row calbar"><div class="row" id="viewBtns"><button data-view="lista" aria-pressed="true">Lista</button><button data-view="mes" aria-pressed="false">Calendário do mês</button></div><button class="gold" id="icsAll">Adicionar todos os prazos à agenda (.ics)</button></div>
+    <div class="row calbar"><div class="row" id="viewBtns"><button data-view="lista" aria-pressed="true">Lista</button><button data-view="mes" aria-pressed="false">Calendário do mês</button></div><button class="gold" id="icsAll">Adicionar todos os prazos à agenda (.ics)</button><a class="btnpdf" href="https://moreira-contabilidade.github.io/radar/resumo.html" target="_blank" rel="noopener">Resumo do mês em PDF</a></div>
     <div class="row" style="margin:10px 0 14px" id="tipoBtns"></div>
     <div id="calGrid" hidden></div>
     <div id="calList"></div>
@@ -513,7 +524,7 @@ function render(){
   const days=[...new Set(f.map(i=>i.data))];
   $('#list').innerHTML=days.map(d=>{
     const g=f.filter(i=>i.data===d);
-    return `<div class="day"><span><span class="dchip">${fmt(d)}</span> ${g.length} atualizaç${g.length>1?'ões':'ão'}</span><span class="row"><button class="pri" data-dlday="${esc(d)}">Baixar comunicado do dia</button><button data-day="${esc(d)}">Copiar texto</button></span></div>`+
+    return `<div class="day"><span><span class="dchip">${fmt(d)}</span> ${g.length} atualizaç${g.length>1?'ões':'ão'}</span><span class="row"><button class="pri" data-dlday="${esc(d)}">Baixar comunicado do dia</button><button data-day="${esc(d)}">Copiar texto</button>${DB&&DB.__site&&DB.visOk&&g.some(x=>x.cliente===false)?`<button class="visall" data-visall="${esc(d)}">☑ Mostrar todas deste dia ao cliente</button>`:''}</span></div>`+
     g.map(i=>{const u=safeUrl(i.fonte_url);return `<article class="item ${i.setor==='dp'?'is-dp':''}">
       <div class="ibody">
       <div class="head"><div><div class="org"><b class="area ${i.setor==='dp'?'dp':''}">${i.setor==='dp'?'Departamento Pessoal':'Fiscal'}</b> · ${esc(i.orgao)}</div><h3>${esc(i.titulo)}</h3></div><span class="tag ${esc(i.impacto)}">${esc(IMP[i.impacto]||i.impacto)}</span></div>
@@ -591,6 +602,26 @@ const MULTAS=[
 function renderMultas(){return `<section class="mbox"><div class="mhead"><span class="mico">!</span><div><b>Atenção: o que pode gerar multa</b><small>Os pontos de Departamento Pessoal que mais geram autuação. Toque para ver os detalhes.</small></div></div>`+
   MULTAS.map((m,n)=>`<details class="mitem${m.top?' top':''}"${m.top?' open':''}><summary>${m.top?'<span class="murg">Urgente</span>':''}${esc(m.t)}</summary><div class="gbody">${m.h}<div class="cacao2"><span>O que você deve fazer</span>${esc(m.a)}</div><p class="gfonte">Fonte oficial: <a href="${esc(m.f[1])}" target="_blank" rel="noopener">${esc(m.f[0])}</a></p></div></details>`).join('')+`</section>`}
 const temMulta=i=>i.multa===true||/multa|escala|jornada|6x1|5x2|registro|sal[aá]rio|FGTS|13º|rescis|f[eé]rias/i.test([i.titulo,i.card_sub,i.resumo].join(' '));
+const FEITOS=(()=>{try{return JSON.parse(localStorage.getItem('radar_feitos')||'[]')}catch(e){return []}})();
+function oQueFazer(p){const t=p.titulo;if(p.tipo==='feriado')return p.cidade?'Feriado em '+p.cidade+': organize a escala e combine a folga ou o pagamento em dobro.':'Feriado: organize a escala e combine a folga ou o pagamento em dobro.';
+  if(/sal[aá]rio/i.test(t)&&/5º dia útil|quinto dia/i.test(t))return 'Pague os salários dos funcionários até esta data.';
+  if(/13º|13o|décimo/i.test(t)&&/parcela/i.test(t))return 'Pague a parcela do 13º salário aos funcionários.';
+  if(/FGTS/i.test(t))return 'Pague a guia do FGTS que a Moreira enviar.';
+  if(/DARF da DCTFWeb|INSS/i.test(t))return 'Pague a guia do INSS e do IR dos funcionários que a Moreira enviar.';
+  if(/^DAS/i.test(t))return 'Pague a guia do '+(/MEI/i.test(t)?'MEI':'Simples Nacional')+' que a Moreira enviar.';
+  if(/jornada|escala|6x1|5x2/i.test(t))return 'Comece a nova escala nesta data: no máximo 42 horas e 2 folgas por semana, sem reduzir salário.';
+  if(/invent[aá]rio/i.test(t))return 'Faça a contagem do estoque e envie a lista para a Moreira.';
+  if(p.tipo==='imposto')return 'Pague a guia que a Moreira enviar até esta data.';
+  if(p.tipo==='declaracao'||/eSocial|DCTFWeb|EFD|declara/i.test(t))return 'A Moreira entrega. Envie a tempo as notas, a folha e os documentos do mês.';
+  return 'Fique atento a esta data.'}
+function renderSemana(){const t=hoje();const DS=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+  let ps=allP().filter(p=>p.data>=t&&ddiff(p.data)<=7&&prazoArea(p)===cArea&&(!p.cidade||!cCidade||p.cidade===cCidade));
+  const seen=new Set();ps=ps.filter(p=>{const k=p.data+'|'+amigo(p);if(seen.has(k))return false;seen.add(k);return true});
+  const extra=[];if(cArea==='dp'&&t<='2026-12-16'){const k=ddiff('2026-12-16');extra.push(`<li class="sq-escala"><span class="sqdia"><b>16/12</b><small>${k===0?'hoje':'em '+k+' dias'}</small></span><span class="sqtxt"><b>Nova escala: 42 horas e 2 folgas por semana</b><small>Monte a escala nova de cada funcionário e envie para a Moreira conferir. Escala errada gera multa.</small></span></li>`)}
+  const lis=ps.map(p=>{const id=p.id||p.data+amigo(p);const k=ddiff(p.data);const feito=FEITOS.includes(id);const dt=new Date(p.data+'T12:00:00');
+    return `<li class="${feito?'ok':''}${k<=1?' urg':''}"><span class="sqdia"><b>${esc(p.data.slice(8))}/${esc(p.data.slice(5,7))}</b><small>${k===0?'hoje':k===1?'amanhã':DS[dt.getDay()]}</small></span><span class="sqtxt"><b>${esc(p.tipo==='feriado'?p.titulo:amigo(p))}</b><small>${esc(oQueFazer(p))}</small></span><label class="sqok"><input type="checkbox" data-feito="${esc(id)}" ${feito?'checked':''}><span>Feito</span></label></li>`}).join('');
+  if(!lis&&!extra.length)return `<section class="sqbox vazio"><b>O que fazer esta semana</b><p>Nada vence nos próximos 7 dias em ${cArea==='dp'?'Departamento Pessoal':'Fiscal'}.</p></section>`;
+  return `<section class="sqbox"><div class="sqhead"><b>O que fazer esta semana</b><small>${cArea==='dp'?'Departamento Pessoal':'Fiscal'} · próximos 7 dias${cArea==='dp'&&cCidade?' · '+esc(cCidade):''}</small></div><ul>${extra.join('')}${lis}</ul><small class="sqnota">Marque "Feito" para se organizar. A marcação fica só neste aparelho.</small></section>`}
 function renderCliente(){if(!CLIENTE)return;$('#capp').hidden=false;
   const vis=items.filter(visivel);
   document.querySelectorAll('.cnav button').forEach(b=>{const a=b.dataset.a;b.setAttribute('aria-selected',a===cArea);const n=vis.filter(i=>(i.setor||'fiscal')===a&&isNovo(i)).length;const c=b.querySelector('.cnt');c.textContent=n?n+(n>1?' novas':' nova'):'';c.hidden=!n});
@@ -598,14 +629,14 @@ function renderCliente(){if(!CLIENTE)return;$('#capp').hidden=false;
   const nomeA=cArea==='dp'?'Departamento Pessoal':'Fiscal';
   if(cView==='guia'){$('#cbody').innerHTML=renderGuia();return}
   if(cView==='nov'){const f=vis.filter(i=>(i.setor||'fiscal')===cArea).sort((a,b)=>String(b.data).localeCompare(String(a.data)));
-    $('#cbody').innerHTML=(cArea==='dp'?renderMultas():'')+(cArea==='fiscal'?`<button class="gbanner" data-v2="guia"><span class="gbico">RT</span><span><b>Entenda a Reforma Tributária</b><small>O que muda, quais impostos, alíquotas, Simples, nota fiscal, multas e juros. Toque aqui.</small></span><span class="garr">›</span></button>`:'')+`<p class="vendo">Você está vendo <b>${f.length} ${f.length===1?'novidade':'novidades'}</b> de <b>${nomeA}</b>, da mais recente para a mais antiga.</p>`+(f.map(cCard).join('')||'<p class="empty">Nenhuma novidade nesta área por enquanto.</p>');}
+    $('#cbody').innerHTML=renderSemana()+(cArea==='dp'?renderMultas():'')+(cArea==='fiscal'?`<button class="gbanner" data-v2="guia"><span class="gbico">RT</span><span><b>Entenda a Reforma Tributária</b><small>O que muda, quais impostos, alíquotas, Simples, nota fiscal, multas e juros. Toque aqui.</small></span><span class="garr">›</span></button>`:'')+`<p class="vendo">Você está vendo <b>${f.length} ${f.length===1?'novidade':'novidades'}</b> de <b>${nomeA}</b>, da mais recente para a mais antiga.</p>`+(f.map(cCard).join('')||'<p class="empty">Nenhuma novidade nesta área por enquanto.</p>');}
   else{const t=hoje();const lim=new Date();lim.setDate(lim.getDate()+120);const L=lim.toISOString().slice(0,10);
     const ps=allP().filter(p=>p.data>=t&&p.data<=L&&prazoArea(p)===cArea&&(!p.cidade||!cCidade||p.cidade===cCidade));
     const sem=ps.filter(p=>ddiff(p.data)<=7);const meses=[...new Set(ps.map(p=>p.data.slice(0,7)))];
     $('#cbody').innerHTML=`<p class="vendo">Prazos e datas de <b>${nomeA}</b> dos próximos meses. A Moreira cuida das entregas; fique atento ao que depende de você, como enviar informações e pagar as guias.</p>
     ${sem.length?`<div class="csemana"><b>Esta semana</b>${sem.map(p=>{const k=ddiff(p.data);return `<span class="achip${k<=3?' urg':''}${p.tipo==='feriado'?' fer':''}"><b>${esc(p.data.slice(8))}/${esc(p.data.slice(5,7))}</b> ${esc(p.tipo==='feriado'?p.titulo:amigo(p))}</span>`}).join('')}</div>`:''}
     ${cArea==='dp'?`<label class="ccid">Sua cidade (para os feriados municipais): <select id="cCid"><option value="">Todas as cidades</option>${CIDADES.map(c=>`<option${c===cCidade?' selected':''}>${c}</option>`).join('')}</select></label>`:''}
-    <div class="row" style="margin:6px 0 4px"><button class="gold2" data-icsarea="1">Adicionar estes prazos à minha agenda</button></div>
+    <div class="row" style="margin:6px 0 4px"><button class="gold2" data-icsarea="1">Adicionar estes prazos à minha agenda</button><a class="btnpdf" href="https://moreira-contabilidade.github.io/radar/resumo.html${cCidade?'?cidade='+encodeURIComponent(cCidade):''}" target="_blank" rel="noopener">Baixar o resumo do mês (PDF)</a></div>
     ${meses.map(mk=>{const [y,m]=mk.split('-');let nome=new Date(+y,+m-1,1).toLocaleDateString('pt-BR',{month:'long',year:'numeric'});nome=nome.charAt(0).toUpperCase()+nome.slice(1);
       return `<h3 class="cmes">${esc(nome)}</h3>`+ps.filter(p=>p.data.startsWith(mk)).map(p=>{const dt=new Date(p.data+'T12:00:00');const k=ddiff(p.data);
         return `<div class="cprazo${p.tipo==='feriado'?' fer':''}"><div class="cdia"><b>${esc(p.data.slice(8))}</b><small>${DSEM[dt.getDay()]}</small></div><div><div class="ctit">${p.tipo==='feriado'?'<span class="tfer">'+(p.cidade?'Feriado · '+esc(p.cidade):'Feriado')+'</span> ':''}${esc(p.tipo==='feriado'?p.titulo:amigo(p))}${k<=3?' <span class="cimp">'+(k===0?'hoje':k===1?'amanhã':'em '+k+' dias')+'</span>':''}${cArea==='dp'&&p.tipo!=='feriado'?' <span class="cmulta">Atraso gera multa</span>':''}</div>${p.detalhe?`<p>${esc(p.detalhe.replace(/ Data calculada pela regra oficial;.*$/,''))}</p>`:''}</div></div>`}).join('')}).join('')||'<p class="empty">Nenhum prazo cadastrado para os próximos meses.</p>'}`}
@@ -613,6 +644,7 @@ function renderCliente(){if(!CLIENTE)return;$('#capp').hidden=false;
   renderPost()}
 if(CLIENTE){
   $('#capp').addEventListener('change',e=>{if(e.target.id==='cCid'){cCidade=e.target.value;try{localStorage.setItem('radar_cidade',cCidade)}catch(x){}renderCliente()}});
+  $('#capp').addEventListener('change',e=>{const f=e.target.closest('input[data-feito]');if(!f)return;const id=f.dataset.feito;const i=FEITOS.indexOf(id);if(f.checked&&i<0)FEITOS.push(id);if(!f.checked&&i>=0)FEITOS.splice(i,1);try{localStorage.setItem('radar_feitos',JSON.stringify(FEITOS.slice(-300)))}catch(x){}f.closest('li').classList.toggle('ok',f.checked)});
   $('#capp').addEventListener('click',e=>{const a=e.target.closest('.cnav button');if(a){cArea=a.dataset.a;if(cView==='guia')cView='nov';try{localStorage.setItem('radar_area',cArea)}catch(x){}renderCliente();return}
     const v=e.target.closest('.cview button');if(v){cView=v.dataset.v;renderCliente();return}
     const v2=e.target.closest('[data-v2]');if(v2){cView=v2.dataset.v2;renderCliente();window.scrollTo({top:$('#capp').offsetTop-10,behavior:'smooth'});return}
@@ -636,6 +668,9 @@ $('#list').addEventListener('click',e=>{
   if(b.dataset.dl){const i=items.find(x=>x.id===b.dataset.dl);if(i)savePng(cvItem(i),`comunicado-moreira-${i.id}.png`)}
   if(b.dataset.dlpost){const i=items.find(x=>x.id===b.dataset.dlpost);if(i){const c=document.createElement('canvas');MoreiraCards.noticia(c,i);savePng(c,`post-moreira-${i.id}.png`)}}
   if(b.dataset.dlday){const d=b.dataset.dlday;savePng(cvDay(d),`comunicado-moreira-${d}.png`)}
+  if(b.dataset.visall){if(!DB||!DB.__site||!DB.visOk)return;const g=items.filter(x=>x.data===b.dataset.visall&&x.cliente===false);if(!g.length)return;b.disabled=true;b.textContent='Marcando '+g.length+'...';
+    g.forEach(i=>{i._antes=i.cliente;i.cliente=true;i.aguardando=false});render();status();
+    (async()=>{let ok=0;for(const i of g){try{await DB.setVis(i.id,true);ok++}catch(e){i.cliente=false}}render();status();toast(ok===g.length?ok+' notícias marcadas: o cliente já vê todas.':'Marquei '+ok+' de '+g.length+'. Tente de novo para as que faltaram.',4500)})();return}
   if(b.dataset.day)copy(dayClient(items.filter(x=>x.data===b.dataset.day),b.dataset.day));
   
 });
