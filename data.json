@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-27T10:58:00Z",
+ "gerado_em": "2026-11-27T12:10:00Z",
  "prazos": [
   {
    "data": "2026-11-30",
@@ -73,6 +73,16 @@
    "detalhe": "Envio da folha de pagamento e dos eventos periódicos de todas as empresas com empregados ou pró-labore. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
    "fonte_url": "https://www.gov.br/esocial/pt-br/documentacao-tecnica/manuais/mos-s-1-3-consolidada-ate-a-no-s-1-3-08-2026-com-marcacoes.pdf",
    "fonte_nome": "eSocial (gov.br)"
+  },
+  {
+   "id": "2026-12-15-prorefis-pa",
+   "data": "2026-12-15",
+   "titulo": "Prorefis Pará: prazo para pagar à vista ou a 1ª parcela (50%) com desconto em multas e juros",
+   "tipo": "imposto",
+   "area": "fiscal",
+   "detalhe": "Último dia para quitar débitos de ICMS, IPVA, ITCD, TFRM e TFRH (fatos ou vencimentos até 30/06/2026) com redução de até 100% das multas e juros à vista, ou 80% no parcelamento com 50% de entrada (Lei estadual nº 11.797/2026). As adesões dependem de decreto estadual.",
+   "fonte_url": "https://www.sefa.pa.gov.br/post/bbgfb",
+   "fonte_nome": "Sefa-PA (sefa.pa.gov.br)"
   },
   {
    "data": "2026-12-16",
@@ -1915,6 +1925,93 @@
    "card_quando": "Contagem em 31/12/2026",
    "card_acao": "Faça a contagem em 31/12 e envie a relação do estoque à nossa equipe no início de janeiro.",
    "fonte_card": "Resolução CGSN nº 140/2018 e Sped"
+  },
+  {
+   "id": "2026-11-25-prorefis-pa",
+   "setor": "fiscal",
+   "data": "2026-11-25",
+   "impacto": "alto",
+   "multa": false,
+   "titulo": "Prorefis Pará: desconto de até 100% em multas e juros de ICMS, IPVA e ITCD, com adesão até 15/12/2026 (Lei estadual nº 11.797/2026)",
+   "orgao": "Governo do Pará · Sefa-PA",
+   "quem": "Empresas e pessoas com débitos de ICMS, IPVA, ITCD, TFRM ou TFRH no Pará (fatos geradores ou vencimentos até 30/06/2026)",
+   "resumo": "A Lei estadual nº 11.797/2026, publicada no Diário Oficial do Estado de 24/11/2026, criou o Programa de Regularização Fiscal (Prorefis) para débitos de ICMS, IPVA, ITCD, TFRM e TFRH com fatos geradores ou vencimentos até 30/06/2026. À vista, a redução é de até 100% das multas e juros (95% para multas isoladas), com pagamento integral até 15/12/2026; parcelado, a redução é de 80%, pagando 50% na primeira parcela até 15/12/2026 e o restante em até 4 parcelas. As adesões começam com a publicação de decreto estadual.",
+   "acao": "Levantar os débitos estaduais de cada cliente no Pará e simular a adesão à vista ou parcelada antes de 15/12/2026.",
+   "fonte_nome": "Secretaria de Estado da Fazenda do Pará (sefa.pa.gov.br)",
+   "fonte_url": "https://www.sefa.pa.gov.br/post/bbgfb",
+   "comunicado": "Prezado(a) cliente,\n\nO Governo do Pará criou o Programa de Regularização Fiscal (Prorefis), pela Lei estadual nº 11.797/2026. Ele permite quitar dívidas estaduais com grandes descontos: ICMS, IPVA, ITCD e as taxas de mineração (TFRM) e de recursos hídricos (TFRH), referentes a fatos ou vencimentos até 30 de junho de 2026.\n\nComo funciona:\n- Pagamento à vista: desconto de até 100% das multas e dos juros (95% no caso de multas isoladas), pagando tudo até 15 de dezembro de 2026.\n- Pagamento parcelado: desconto de 80% das multas e dos juros, pagando 50% da dívida na primeira parcela até 15 de dezembro de 2026 e o restante em até 4 parcelas mensais.\n\nAs adesões começam quando o Governo publicar o decreto que regulamenta o programa. É a primeira vez que o Pará concede desconto de 100% em multas e juros.\n\nSe a sua empresa tem algum débito com a Sefa, fale com a nossa equipe agora para conferirmos os valores e escolhermos a melhor opção antes do prazo.\n\nAtenciosamente,",
+   "card_tema": "Dívidas com o Estado",
+   "card_titulo": "Prorefis Pará:",
+   "card_destaque": "até 100% de desconto",
+   "card_sub": "O Governo do Pará abriu um programa para quitar dívidas de ICMS, IPVA e ITCD com desconto de até **100%** em multas e juros. O prazo para pagar é **15 de dezembro de 2026**.",
+   "card_pontos": [
+    "Vale para dívidas com vencimento ou fato até 30/06/2026",
+    "À vista: até 100% de desconto em multas e juros",
+    "Parcelado: 80% de desconto, com 50% pagos na 1ª parcela"
+   ],
+   "card_quando": "Pagamento até 15/12/2026",
+   "card_acao": "Tem débito com a Sefa? Fale com a gente agora para simular o desconto antes do prazo.",
+   "fonte_card": "Lei estadual nº 11.797/2026 · Sefa-PA",
+   "cliente": false,
+   "aguardando": true
+  },
+  {
+   "id": "2026-11-23-icms-st-sao-paulo",
+   "setor": "fiscal",
+   "data": "2026-11-23",
+   "impacto": "alto",
+   "multa": true,
+   "titulo": "ICMS de autopeças, pneus e tintas vindos de São Paulo: agora o comprador do Pará recolhe o ICMS Antecipado na entrada (saída de SP dos Protocolos 41/2008, 102/2017 e 118/2017)",
+   "orgao": "Sefa-PA",
+   "quem": "Empresas do Pará que compram autopeças, pneus, câmaras de ar, protetores de borracha, tintas e vernizes de fornecedores de São Paulo",
+   "resumo": "Desde 1º/10/2026, com a saída de São Paulo dos Protocolos ICMS nº 41/2008, 102/2017 e 118/2017, os fornecedores paulistas deixaram de recolher o ICMS-ST devido ao Pará nesses segmentos. A empresa compradora no Pará passa a ser responsável e paga o ICMS na modalidade Antecipado Entradas, no momento em que a mercadoria entra no estado. Não houve isenção nem redução do imposto.",
+   "acao": "Identificar clientes que compram desses segmentos em SP e ajustar a apuração para o ICMS Antecipado Entradas desde outubro/2026.",
+   "fonte_nome": "Secretaria de Estado da Fazenda do Pará (sefa.pa.gov.br)",
+   "fonte_url": "https://www.sefa.pa.gov.br/post/bbgdd",
+   "comunicado": "Prezado(a) cliente,\n\nA Sefa do Pará alertou que, desde 1º de outubro de 2026, mudou a forma de pagar o ICMS de algumas mercadorias compradas de fornecedores de São Paulo: autopeças, pneus, câmaras de ar, protetores de borracha, tintas e vernizes.\n\nAntes, o fornecedor de São Paulo já recolhia o imposto devido ao Pará (substituição tributária). Agora, isso acabou: quem paga é a sua empresa, aqui no Pará, no momento em que a mercadoria entra no estado (ICMS Antecipado Entradas).\n\nAtenção: não houve isenção nem redução do imposto. Se ele não for pago corretamente, pode haver cobrança com multa e juros.\n\nSe a sua empresa compra esses produtos de São Paulo, envie para a nossa equipe as notas de compra desde outubro, para conferirmos o imposto devido.\n\nAtenciosamente,",
+   "card_tema": "ICMS",
+   "card_titulo": "Compra de São Paulo?",
+   "card_destaque": "o ICMS agora é seu",
+   "card_sub": "Desde **1º de outubro de 2026**, quem compra autopeças, pneus e tintas de São Paulo é que paga o ICMS ao Pará, na entrada da mercadoria. Antes, o fornecedor paulista pagava.",
+   "card_pontos": [
+    "Vale para autopeças, pneus, câmaras de ar, protetores de borracha, tintas e vernizes",
+    "O imposto não diminuiu: só mudou quem paga",
+    "Imposto não pago pode gerar cobrança com multa e juros"
+   ],
+   "card_quando": "Em vigor desde 1º/10/2026",
+   "card_acao": "Compra desses produtos de SP? Envie as notas desde outubro para conferirmos o imposto.",
+   "fonte_card": "Sefa-PA",
+   "cliente": false,
+   "aguardando": true
+  },
+  {
+   "id": "2026-10-06-mei-nota-fiscal-facil-pa",
+   "setor": "fiscal",
+   "data": "2026-10-06",
+   "impacto": "medio",
+   "multa": false,
+   "titulo": "MEI do Pará emite NF-e e NFC-e pelo aplicativo Nota Fiscal Fácil; Nota Fiscal Avulsa deixou de valer desde 21/09/2026 (Decreto estadual nº 5.490/2026)",
+   "orgao": "Sefa-PA",
+   "quem": "Microempreendedores individuais (MEI) do Pará que vendem mercadorias",
+   "resumo": "O Decreto estadual nº 5.490/2026 alterou o Regulamento do ICMS do Pará: desde 21/09/2026 o MEI não pode mais emitir Nota Fiscal Avulsa Eletrônica (NFA-e) no site da Sefa, exceto em operações de comércio exterior. A NF-e (modelo 55) e a NFC-e (modelo 65) passam a ser emitidas pelo aplicativo Nota Fiscal Fácil (NFF), pelo celular.",
+   "acao": "Orientar os clientes MEI a instalar e configurar o aplicativo Nota Fiscal Fácil.",
+   "fonte_nome": "Secretaria de Estado da Fazenda do Pará (sefa.pa.gov.br)",
+   "fonte_url": "https://www.sefa.pa.gov.br/post/bbcfb",
+   "comunicado": "Prezado(a) cliente MEI,\n\nA Sefa do Pará informou que, desde 21 de setembro de 2026, o Microempreendedor Individual não pode mais emitir a Nota Fiscal Avulsa no site da Sefa (só continua valendo para operações de comércio exterior). A mudança veio com o Decreto estadual nº 5.490/2026.\n\nAgora, as notas fiscais de venda de mercadorias (NF-e e NFC-e) são emitidas pelo aplicativo Nota Fiscal Fácil (NFF), direto pelo celular.\n\nSe ainda não usa o aplicativo, fale com a nossa equipe que ajudamos a instalar e configurar.\n\nAtenciosamente,",
+   "card_tema": "MEI",
+   "card_titulo": "MEI do Pará:",
+   "card_destaque": "nota agora é pelo app",
+   "card_sub": "Desde **21 de setembro de 2026**, o MEI do Pará não emite mais a Nota Fiscal Avulsa no site da Sefa. A nota de venda agora é feita no aplicativo Nota Fiscal Fácil, pelo celular.",
+   "card_pontos": [
+    "Vale para NF-e e NFC-e de venda de mercadorias",
+    "A Nota Fiscal Avulsa só continua para comércio exterior",
+    "O aplicativo Nota Fiscal Fácil funciona no celular"
+   ],
+   "card_quando": "Desde 21/09/2026",
+   "card_acao": "Ainda não usa o Nota Fiscal Fácil? Fale com a gente para instalar e configurar.",
+   "fonte_card": "Decreto estadual nº 5.490/2026 · Sefa-PA",
+   "cliente": false,
+   "aguardando": true
   }
  ]
 }
