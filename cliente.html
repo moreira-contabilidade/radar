@@ -393,18 +393,16 @@ button.gold2{background:var(--ouroL);border-color:var(--ouroL);color:var(--navy)
 <script>
 (function(){
 const ls={get:k=>{try{return localStorage.getItem(k)||''}catch(e){return ''}}};
-let BLOB='';const URLB=()=>'https://jsonblob.com/api/jsonBlob/'+BLOB;
-const cfg=fetch('vis-config.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{}).then(c=>{BLOB=(c&&c.blob)||''}).catch(()=>{});
-const lerVis=()=>cfg.then(()=>BLOB?fetch(URLB(),{headers:{Accept:'application/json'},cache:'no-store'}).then(r=>r.ok?r.json():{itens:{}}):{itens:{}}).catch(()=>({itens:{}}));
+let BLOB='';
+const cfg=fetch('vis-config.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{}).then(c=>{BLOB=(c&&c.script)||''}).catch(()=>{});
+const lerVis=()=>cfg.then(()=>BLOB?fetch(BLOB+'?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{itens:{}}):{itens:{}}).catch(()=>({itens:{}}));
 let DATA=null;
 const ready=Promise.all([fetch('data.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()),lerVis()]).then(([d,v])=>{
   const it=(v&&v.itens)||{};(d.atualizacoes||[]).forEach(a=>{const x=it[a.id];if(x&&typeof x.cliente==='boolean'){a.cliente=x.cliente;a.aguardando=false;a.vis_em=x.em||''}});DATA=d;db.visOk=!!BLOB});
 const snap=a=>({docs:a.map(d=>({id:d.id||(d.data+d.titulo),data:()=>d}))});
 let fila=Promise.resolve();
 function setVis(id,val){const p=fila.then(async()=>{if(!BLOB)throw 'rede';
-  const r0=await fetch(URLB(),{headers:{Accept:'application/json'},cache:'no-store'});if(!r0.ok)throw 'rede';const j=await r0.json();j.itens=j.itens||{};
-  const agora=new Date().toISOString();j.itens[id]={cliente:val,em:agora};j.atualizado_em=agora;
-  const r=await fetch(URLB(),{method:'PUT',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(j)});if(!r.ok)throw 'rede';return true});
+  const r=await fetch(BLOB,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({id,cliente:val})});if(!r.ok)throw 'rede';const j=await r.json();if(!j||!j.itens||!j.itens[id]||j.itens[id].cliente!==val)throw 'rede';return true});
   fila=p.catch(()=>{});return p}
 const db={__ro:true,__site:!window.MODO_CLIENTE,visOk:false,setVis,
   collection:n=>({onSnapshot:(cb,err)=>{ready.then(()=>cb(snap(n==='atualizacoes'?DATA.atualizacoes:n==='prazos'?DATA.prazos:[]))).catch(e=>err&&err(e));return()=>{}}}),
