@@ -49,15 +49,6 @@
   "fonte_nome": "Receita Federal / Sped (gov.br)"
  },
  {
-  "id": "2026-12-15-dctfweb-202611",
-  "data": "2026-12-15",
-  "titulo": "DCTFWeb (competência novembro/2026): entrega",
-  "tipo": "declaracao",
-  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Se o dia 15 não for útil, o prazo passa para o próximo dia útil. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
-  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
-  "fonte_nome": "Receita Federal (gov.br)"
- },
- {
   "id": "2026-12-15-esocial-202611",
   "data": "2026-12-15",
   "titulo": "eSocial: fechamento da folha (competência novembro/2026)",
@@ -140,6 +131,15 @@
   "fonte_nome": "Receita Federal (gov.br)"
  },
  {
+  "id": "2026-12-15-dctfweb-202611",
+  "data": "2026-12-31",
+  "titulo": "DCTFWeb (competência novembro/2026): entrega",
+  "tipo": "declaracao",
+  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Prazo alterado por IN RFB nº 2.248/2025: a entrega vai até o último dia útil do mês seguinte ao dos fatos geradores (não mais dia 15). O vencimento dos DARFs não mudou. Data confirmada pelo padrão da Agenda Tributária oficial (em 2025, a DCTFWeb de novembro venceu em 31/12).",
+  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
+  "fonte_nome": "Receita Federal (gov.br)"
+ },
+ {
   "id": "2026-12-31-inventario",
   "data": "2026-12-31",
   "titulo": "Inventário físico dos estoques em 31/12/2026 (Livro Registro de Inventário)",
@@ -176,15 +176,6 @@
   "detalhe": "Empresas do Lucro Presumido e do Lucro Real enviam a escrituração de PIS/Cofins até o 10º dia útil do segundo mês seguinte. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
   "fonte_url": "https://www.gov.br/receitafederal/pt-br/portais-relacionados/sped/migracao/efd-contribuicoes/o-que-e-1",
   "fonte_nome": "Receita Federal / Sped (gov.br)"
- },
- {
-  "id": "2027-01-15-dctfweb-202612",
-  "data": "2027-01-15",
-  "titulo": "DCTFWeb (competência dezembro/2026): entrega",
-  "tipo": "declaracao",
-  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Se o dia 15 não for útil, o prazo passa para o próximo dia útil. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
-  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
-  "fonte_nome": "Receita Federal (gov.br)"
  },
  {
   "id": "2027-01-15-esocial-202612",
@@ -243,6 +234,15 @@
   "fonte_nome": "Presidência da República"
  },
  {
+  "id": "2027-01-15-dctfweb-202612",
+  "data": "2027-01-29",
+  "titulo": "DCTFWeb (competência dezembro/2026): entrega",
+  "tipo": "declaracao",
+  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Prazo alterado por IN RFB nº 2.248/2025: a entrega vai até o último dia útil do mês seguinte ao dos fatos geradores (não mais dia 15). O vencimento dos DARFs não mudou. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
+  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
+  "fonte_nome": "Receita Federal (gov.br)"
+ },
+ {
   "id": "2027-01-29-irpj-csll-estimativa-202612",
   "data": "2027-01-29",
   "titulo": "IRPJ e CSLL por estimativa mensal (competência dezembro/2026)",
@@ -298,15 +298,6 @@
   "detalhe": "Não é feriado nacional. Para empresas privadas, só há folga obrigatória se houver lei municipal ou convenção coletiva que preveja.",
   "fonte_url": "https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/dezembro/confira-o-calendario-oficial-de-feriados-nacionais-e-pontos-facultativos-em-2026",
   "fonte_nome": "Ministério da Gestão (gov.br)"
- },
- {
-  "id": "2027-02-15-dctfweb-202701",
-  "data": "2027-02-15",
-  "titulo": "DCTFWeb (competência janeiro/2027): entrega",
-  "tipo": "declaracao",
-  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Se o dia 15 não for útil, o prazo passa para o próximo dia útil. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
-  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
-  "fonte_nome": "Receita Federal (gov.br)"
  },
  {
   "id": "2027-02-15-esocial-202701",
@@ -390,6 +381,15 @@
   "fonte_nome": "Presidência da República"
  },
  {
+  "id": "2027-02-15-dctfweb-202701",
+  "data": "2027-02-26",
+  "titulo": "DCTFWeb (competência janeiro/2027): entrega",
+  "tipo": "declaracao",
+  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Prazo alterado por IN RFB nº 2.248/2025: a entrega vai até o último dia útil do mês seguinte ao dos fatos geradores (não mais dia 15). O vencimento dos DARFs não mudou. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
+  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
+  "fonte_nome": "Receita Federal (gov.br)"
+ },
+ {
   "id": "2027-02-26-irpj-csll-estimativa-202701",
   "data": "2027-02-26",
   "titulo": "IRPJ e CSLL por estimativa mensal (competência janeiro/2027)",
@@ -452,15 +452,6 @@
   "detalhe": "Empresas do Lucro Presumido e do Lucro Real enviam a escrituração de PIS/Cofins até o 10º dia útil do segundo mês seguinte. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
   "fonte_url": "https://www.gov.br/receitafederal/pt-br/portais-relacionados/sped/migracao/efd-contribuicoes/o-que-e-1",
   "fonte_nome": "Receita Federal / Sped (gov.br)"
- },
- {
-  "id": "2027-03-15-dctfweb-202702",
-  "data": "2027-03-15",
-  "titulo": "DCTFWeb (competência fevereiro/2027): entrega",
-  "tipo": "declaracao",
-  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Se o dia 15 não for útil, o prazo passa para o próximo dia útil. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
-  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
-  "fonte_nome": "Receita Federal (gov.br)"
  },
  {
   "id": "2027-03-15-esocial-202702",
@@ -567,6 +558,15 @@
   "fonte_nome": "Câmara de Xinguara · Lei nº 983/2017 (pa.gov.br)"
  },
  {
+  "id": "2027-03-15-dctfweb-202702",
+  "data": "2027-03-31",
+  "titulo": "DCTFWeb (competência fevereiro/2027): entrega",
+  "tipo": "declaracao",
+  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Prazo alterado por IN RFB nº 2.248/2025: a entrega vai até o último dia útil do mês seguinte ao dos fatos geradores (não mais dia 15). O vencimento dos DARFs não mudou. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
+  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
+  "fonte_nome": "Receita Federal (gov.br)"
+ },
+ {
   "id": "2027-03-31-irpj-csll-estimativa-202702",
   "data": "2027-03-31",
   "titulo": "IRPJ e CSLL por estimativa mensal (competência fevereiro/2027)",
@@ -613,15 +613,6 @@
   "detalhe": "Empresas do Lucro Presumido e do Lucro Real enviam a escrituração de PIS/Cofins até o 10º dia útil do segundo mês seguinte. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
   "fonte_url": "https://www.gov.br/receitafederal/pt-br/portais-relacionados/sped/migracao/efd-contribuicoes/o-que-e-1",
   "fonte_nome": "Receita Federal / Sped (gov.br)"
- },
- {
-  "id": "2027-04-15-dctfweb-202703",
-  "data": "2027-04-15",
-  "titulo": "DCTFWeb (competência março/2027): entrega",
-  "tipo": "declaracao",
-  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Se o dia 15 não for útil, o prazo passa para o próximo dia útil. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
-  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
-  "fonte_nome": "Receita Federal (gov.br)"
  },
  {
   "id": "2027-04-15-esocial-202703",
@@ -704,6 +695,15 @@
   "detalhe": "Indústrias e equiparadas pagam o IPI do mês (regra geral); se o dia 25 não for útil, antecipa. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
   "fonte_url": "https://www.presidencia.gov.br/ccivil_03/_ato2007-2010/2008/exm/em-189-mf-mpv-447.htm",
   "fonte_nome": "Presidência da República"
+ },
+ {
+  "id": "2027-04-15-dctfweb-202703",
+  "data": "2027-04-30",
+  "titulo": "DCTFWeb (competência março/2027): entrega",
+  "tipo": "declaracao",
+  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Prazo alterado por IN RFB nº 2.248/2025: a entrega vai até o último dia útil do mês seguinte ao dos fatos geradores (não mais dia 15). O vencimento dos DARFs não mudou. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
+  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
+  "fonte_nome": "Receita Federal (gov.br)"
  },
  {
   "id": "2027-04-30-irpj-csll-estimativa-202703",
@@ -793,15 +793,6 @@
   "fonte_nome": "Receita Federal · SPED"
  },
  {
-  "id": "2027-05-17-dctfweb-202704",
-  "data": "2027-05-17",
-  "titulo": "DCTFWeb (competência abril/2027): entrega",
-  "tipo": "declaracao",
-  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Se o dia 15 não for útil, o prazo passa para o próximo dia útil. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
-  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
-  "fonte_nome": "Receita Federal (gov.br)"
- },
- {
   "id": "2027-05-17-esocial-202704",
   "data": "2027-05-17",
   "titulo": "eSocial: fechamento da folha (competência abril/2027)",
@@ -875,6 +866,15 @@
   "fonte_nome": "Ministério da Gestão (gov.br)"
  },
  {
+  "id": "2027-05-17-dctfweb-202704",
+  "data": "2027-05-31",
+  "titulo": "DCTFWeb (competência abril/2027): entrega",
+  "tipo": "declaracao",
+  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Prazo alterado por IN RFB nº 2.248/2025: a entrega vai até o último dia útil do mês seguinte ao dos fatos geradores (não mais dia 15). O vencimento dos DARFs não mudou. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
+  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
+  "fonte_nome": "Receita Federal (gov.br)"
+ },
+ {
   "id": "2027-05-31-irpj-csll-estimativa-202704",
   "data": "2027-05-31",
   "titulo": "IRPJ e CSLL por estimativa mensal (competência abril/2027)",
@@ -928,15 +928,6 @@
   "detalhe": "Empresas do Lucro Presumido e do Lucro Real enviam a escrituração de PIS/Cofins até o 10º dia útil do segundo mês seguinte. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
   "fonte_url": "https://www.gov.br/receitafederal/pt-br/portais-relacionados/sped/migracao/efd-contribuicoes/o-que-e-1",
   "fonte_nome": "Receita Federal / Sped (gov.br)"
- },
- {
-  "id": "2027-06-15-dctfweb-202705",
-  "data": "2027-06-15",
-  "titulo": "DCTFWeb (competência maio/2027): entrega",
-  "tipo": "declaracao",
-  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Se o dia 15 não for útil, o prazo passa para o próximo dia útil. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
-  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
-  "fonte_nome": "Receita Federal (gov.br)"
  },
  {
   "id": "2027-06-15-esocial-202705",
@@ -1011,6 +1002,15 @@
   "fonte_nome": "Presidência da República"
  },
  {
+  "id": "2027-06-15-dctfweb-202705",
+  "data": "2027-06-30",
+  "titulo": "DCTFWeb (competência maio/2027): entrega",
+  "tipo": "declaracao",
+  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Prazo alterado por IN RFB nº 2.248/2025: a entrega vai até o último dia útil do mês seguinte ao dos fatos geradores (não mais dia 15). O vencimento dos DARFs não mudou. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
+  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
+  "fonte_nome": "Receita Federal (gov.br)"
+ },
+ {
   "id": "2027-06-30-irpj-csll-estimativa-202705",
   "data": "2027-06-30",
   "titulo": "IRPJ e CSLL por estimativa mensal (competência maio/2027)",
@@ -1066,15 +1066,6 @@
   "detalhe": "Data da emancipação de Itupiranga, declarada feriado municipal por decreto da Prefeitura. Confirme o decreto do ano; a Moreira avisa quando for publicado. Se a empresa abrir, quem trabalhar tem direito a folga em outro dia ou pagamento em dobro, conforme a lei e a convenção coletiva da categoria.",
   "fonte_url": "https://itupiranga.pa.gov.br/wp-content/uploads/2017/01/072.pdf",
   "fonte_nome": "Prefeitura de Itupiranga · Decreto nº 072/2017 (pa.gov.br)"
- },
- {
-  "id": "2027-07-15-dctfweb-202706",
-  "data": "2027-07-15",
-  "titulo": "DCTFWeb (competência junho/2027): entrega",
-  "tipo": "declaracao",
-  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Se o dia 15 não for útil, o prazo passa para o próximo dia útil. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
-  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
-  "fonte_nome": "Receita Federal (gov.br)"
  },
  {
   "id": "2027-07-15-esocial-202706",
@@ -1147,6 +1138,15 @@
   "detalhe": "Indústrias e equiparadas pagam o IPI do mês (regra geral); se o dia 25 não for útil, antecipa. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
   "fonte_url": "https://www.presidencia.gov.br/ccivil_03/_ato2007-2010/2008/exm/em-189-mf-mpv-447.htm",
   "fonte_nome": "Presidência da República"
+ },
+ {
+  "id": "2027-07-15-dctfweb-202706",
+  "data": "2027-07-30",
+  "titulo": "DCTFWeb (competência junho/2027): entrega",
+  "tipo": "declaracao",
+  "detalhe": "Empresas com empregados, pró-labore ou retenções declaram as contribuições previdenciárias e, no módulo MIT, os tributos federais (IRPJ, CSLL, PIS/Cofins, IPI). Prazo alterado por IN RFB nº 2.248/2025: a entrega vai até o último dia útil do mês seguinte ao dos fatos geradores (não mais dia 15). O vencimento dos DARFs não mudou. Data calculada pela regra oficial; a tarefa diária confere com a Agenda Tributária do mês.",
+  "fonte_url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2023/outubro/postergado-prazo-de-entrega-da-dctfweb",
+  "fonte_nome": "Receita Federal (gov.br)"
  },
  {
   "id": "2027-07-30-irpj-csll-estimativa-202706",
